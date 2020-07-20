@@ -13,13 +13,13 @@ import cart from './../cart/cart-helper'
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#bef67a'}
+    return {color: 'white'}
   else
     return {color: '#ffffff'}
 }
 const isPartActive = (history, path) => {
   if (history.location.pathname.includes(path))
-    return {color: '#bef67a'}
+    return {color: 'white'}
   else
     return {color: '#ffffff'}
 }
@@ -27,7 +27,7 @@ const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="h6" color="inherit">
-        MERN Marketplace
+        DoDoma
       </Typography>
       <div>
         <Link to="/">
@@ -39,7 +39,7 @@ const Menu = withRouter(({history}) => (
           <Button style={isActive(history, "/shops/all")}>All Shops</Button>
         </Link>
         <Link to="/auctions/all">
-          <Button style={isActive(history, "/auctions/all")}>All Auctions</Button>
+          <Button style={isActive(history, "/auctions/all")}>All Actions</Button>
         </Link>
         <Link to="/cart">
           <Button style={isActive(history, "/cart")}>

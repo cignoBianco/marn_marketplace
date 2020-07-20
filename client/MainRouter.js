@@ -25,6 +25,7 @@ import OpenAuctions from './auction/OpenAuctions'
 import NewAuction from './auction/NewAuction'
 import EditAuction from './auction/EditAuction'
 import Auction from './auction/Auction'
+import Html from './html/Html'
 
 const MainRouter = () => {
   return (<div>
@@ -36,6 +37,8 @@ const MainRouter = () => {
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
+
+        <Route path="/html" component={Html}/>
 
         <Route path="/cart" component={Cart}/>
         <Route path="/product/:productId" component={Product}/>

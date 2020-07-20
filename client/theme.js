@@ -4,14 +4,14 @@ import { blueGrey, lightGreen } from '@material-ui/core/colors'
 const theme = createMuiTheme({
     palette: {
       primary: {
-      light: '#8eacbb',
-      main: '#607d8b',
-      dark: '#34515e',
+      light: '#ffb266',
+      main: '#ff8a16',
+      dark: '#d96c00',
       contrastText: '#fff',
     },
     secondary: {
       light: '#e7ff8c',
-      main: '#b2ff59',
+      main: '#ffc000',
       dark: '#7ecb20',
       contrastText: '#000',
     },
