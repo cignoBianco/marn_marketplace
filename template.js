@@ -4,6 +4,7 @@ export default ({markup, css}) => {
         <head>
           <meta charset="utf-8">
           <title>DoDoma</title>
+          <base href="/">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400">
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
           <style>
