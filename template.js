@@ -46,16 +46,17 @@ export default ({markup, css}) => {
           <link rel="stylesheet" href="css/styles.e7726758f4812a2ea370.css">
       
            - Javascript    
-          <script src="js/sdk.js" async crossorigin="anonymous"></script>
-          <script src="js/sdk_3.js" async crossorigin="anonymous"></script>
+          <script type="text/javascript"  src="js/sdk.js" async crossorigin="anonymous"></script>
+          <script type="text/javascript"  src="js/sdk_3.js" async crossorigin="anonymous"></script>
           <script type="text/javascript" async src="js/analytics.js"></script>
           <script type="text/javascript" src="js/appboy.min.js" async></script>
-          <script async src="js/fbevents.js"></script>
+          <script type="text/javascript"  async src="js/fbevents.js"></script>
           <script type="text/javascript" async src="js/amplitude-4.2.1-min.gz.js"></script>
           <script type="text/javascript" async src="js/conversion_async.js"></script>
-          <script async src="index_1.html"></script><script type="text/javascript" async src="js/ec.js"></script>
+          <script type="text/javascript"  async src="index_1.html"></script><script type="text/javascript" async src="js/ec.js"></script>
           <script type="text/javascript" async src="js/recaptcha__en.js"></script>
-          <script async src="js/analytics.js"></script><script async src="js/gtm.js"></script>
+          <script type="text/javascript"  async src="js/analytics.js"></script>
+          <script type="text/javascript"  async src="js/gtm.js"></script>
           <script type="text/javascript" charset="UTF-8" src="js/common.js"></script>
           <script type="text/javascript" charset="UTF-8" src="js/util.js"></script>
           <script type="text/javascript" charset="UTF-8" src="js/map.js"></script>
@@ -63,13 +64,13 @@ export default ({markup, css}) => {
           <script type="text/javascript" charset="UTF-8" src="js/poly.js"></script>
           <script type="text/javascript" charset="UTF-8" src="js/controls.js"></script>
           <script type="text/javascript" charset="UTF-8" src="js/places_impl.js"></script>
-          <script charset="utf-8" src="js/8.96492cf812b805c3e918.js"></script>
-          <script charset="utf-8" src="js/common.072af4ef0258fadb62f9.js"></script>
-          <script charset="utf-8" src="js/34.2d4940c9ebdd74bca05f.js"></script>
-          <script charset="utf-8" src="js/37.64c021262803d0beec61.js"></script>
-          <script charset="utf-8" src="js/20.d9ae84720313360a29e8.js"></script>
-          <script charset="utf-8" src="js/9.2bb8edae4d571f4a1cda.js"></script>
-          <script charset="utf-8" src="js/15.979828e0e1b348877de3.js"></script>
+          <script type="text/javascript"  charset="utf-8" src="js/8.96492cf812b805c3e918.js"></script>
+          <script type="text/javascript"  charset="utf-8" src="js/common.072af4ef0258fadb62f9.js"></script>
+          <script  type="text/javascript" charset="utf-8" src="js/34.2d4940c9ebdd74bca05f.js"></script>
+          <script type="text/javascript"  charset="utf-8" src="js/37.64c021262803d0beec61.js"></script>
+          <script type="text/javascript"  charset="utf-8" src="js/20.d9ae84720313360a29e8.js"></script>
+          <script type="text/javascript"  charset="utf-8" src="js/9.2bb8edae4d571f4a1cda.js"></script>
+          <script type="text/javascript"  charset="utf-8" src="js/15.979828e0e1b348877de3.js"></script>
           <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -82,13 +83,13 @@ export default ({markup, css}) => {
         <body style="margin:0">
           <div id="root">${markup}</div>
           <style id="jss-server-side">${css}</style>
-          <script id="stripe-js" src="https://js.stripe.com/v3/" async></script>
+          <script type="text/javascript"  id="stripe-js" src="https://js.stripe.com/v3/" async></script>
           <script type="text/javascript" src="/dist/bundle.js"></script>
         
           <script type="text/javascript" id src="js/sdk_1.js"></script>
-          
-          </script><script src="js/polyfills.93e277369afc6b115767.js" defer></script><script src="js/scripts.d3ce5f863e8906b6cfa9.js" defer></script><script src="js/vendor.0b684f0c2981f44b60fb.js" defer></script>
-          <script src="js/main.695629c62b9e6030ffb7.js" defer></script>
+
+          </script><script type="text/javascript"  src="js/polyfills.93e277369afc6b115767.js" defer></script><script src="js/scripts.d3ce5f863e8906b6cfa9.js" defer></script><script src="js/vendor.0b684f0c2981f44b60fb.js" defer></script>
+          <script type="text/javascript"  src="js/main.695629c62b9e6030ffb7.js" defer></script>
           
         
           </body>

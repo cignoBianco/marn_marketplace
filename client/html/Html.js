@@ -62,7 +62,7 @@ export default function Html() {
                         <app-country>
                           <div className   ="cont-country hidden-mobile">
                             <div className   ="active-country ng-star-inserted">
-                              <img src="images/ar-flag.png" alt={{Brasil flag}}/>
+                              <img src="images/ar-flag.png" alt="Brasil flag"/>
                               <p className   ="f-caption-1 hidden-mobile">Санкт-Петербург</p>
                               <i className   ="iconf-keyboard_arrow_down f-headline hidden-mobile"></i>
                             </div>
