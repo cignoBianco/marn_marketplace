@@ -1,4 +1,4 @@
-import "./";
+import "./c.css";
 
 export default ({markup, css}) => {
 
