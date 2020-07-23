@@ -1,4 +1,4 @@
-import styles from "../client/public/css/сss.module.css";
+import "./";
 
 export default ({markup, css}) => {
 
