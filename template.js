@@ -1,8 +1,8 @@
-import "./c.css";
+import css from "c.css";
 
 export default ({markup, css}) => {
 
-    return `<!doctype html>
+    return `<!doctype tml>
       <html lang="en">
         <head>
           <meta charset="utf-8">

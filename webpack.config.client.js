@@ -40,10 +40,7 @@ const config = {
             }*/
             {
                 test: /\.css$/i,
-                loader: 'css-loader',
-                options: {
-                  modules: true,
-                },
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
