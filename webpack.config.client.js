@@ -28,17 +28,26 @@ const config = {
                     'babel-loader'
                 ]
             },
+            /*{
+                test: /\.css$/,
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader',
+                    options: { url: false } // tell css-loader to not package images referenced in css. perhaps re-activate this for base64 injection
+                    },
+                ] 
+                
+            }*/
+            {
+                test: /\.css$/i,
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                },
+            },
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
                 use: 'file-loader'
-            },
-            {
-                test: /\.css$/,
-                use: ExtractTextPlugin.extract(
-                  {
-                    fallback: 'style-loader',
-                    use: ['css-loader']
-                  })
             }
         ]
     },  plugins: [
@@ -48,5 +57,4 @@ const config = {
           new ExtractTextPlugin({filename: 'style.css'})
       ]
 }
-
 module.exports = config

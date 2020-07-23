@@ -1,4 +1,4 @@
-import cssPath from "./client/public/css/style.css";
+import cssPath from "./client/public/css/сss.modules.css";
 
 export default ({markup, css}) => {
 
