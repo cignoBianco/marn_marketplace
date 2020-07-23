@@ -224,7 +224,7 @@ export default function Html() {
   <img  className="img-4 ng-star-inserted" src="./images/mrs.png"/>      <div  className="title">   <h1  className="bold ng-star-inserted" style={{"font-size": "40px"}}>Marketplace что-то такое    </h1></div></div>   
     
     <div  className="location-container ng-star-inserted"><div  className="location-input border-input"><i  className="iconf-pointer-secondary-fill pointer"></i><app-search-autocomplete  className="input"><input id="autocomplete-address-input" type="text" placeholder="Введите свой адрес"  className="ng-untouched ng-pristine ng-valid pac-target-input" autoComplete="off" /><span  className="no-search-results-content"></span></app-search-autocomplete>   </div><button  className="primary-button-filled"> Искать </button></div>
-    <img  className="img-5 ng-star-inserted" src={require("public/images/fashion.png")}/>
+    <img  className="img-5 ng-star-inserted" src={"./public/images/fashion.png"}/>
     <img  className="img-6 ng-star-inserted" src="images/markets.png"/></div></app-banner>
     
     <div  className="home-container"><app-cpgs-container _nghost-ng-web-c43><div _ngcontent-ng-web-c43  className="cpgs-container"><h4 _ngcontent-ng-web-c43  className="subtitle"> Выберите подходящую категорию </h4><h2 _ngcontent-ng-web-c43  className="title"> Категории </h2><ul _ngcontent-ng-web-c43  className="cpgs-grid">

@@ -1,4 +1,7 @@
+import "./client/public/css/style.css";
+
 export default ({markup, css}) => {
+
     return `<!doctype html>
       <html lang="en">
         <head>
@@ -43,7 +46,7 @@ export default ({markup, css}) => {
       
            - Styles    
           <link rel="stylesheet" href="css/styles.e7726758f4812a2ea370.css">
-          <link rel="stylesheet" href="css/style.css">
+          <link rel="stylesheet" href="dist/css/style.css">
           <link rel="stylesheet" href="css/styles.e7726758f4812a2ea370.css">
       
            - Javascript    
