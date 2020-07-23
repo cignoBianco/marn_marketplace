@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {makeStyles} from '@material-ui/core/styles'
+import logo from '../../client/public/images/br-flag.png';
 
 
 const useStyles = makeStyles(theme => ({
@@ -15,6 +16,7 @@ const useStyles = makeStyles(theme => ({
 export default function Html() {
     return (
         <div>
+          
   <app-container ng-version="8.2.14">
       <app-header  className="home ng-star-inserted">
         <header id="header"  className="header home hide-header">
