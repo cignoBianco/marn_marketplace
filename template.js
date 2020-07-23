@@ -1,4 +1,4 @@
-import cssPath from "./client/public/css/сss.module.css";
+import styles from "../client/public/css/сss.module.css";
 
 export default ({markup, css}) => {
 
@@ -15,7 +15,7 @@ export default ({markup, css}) => {
                 text-decoration: none
               }
           </style>
-          <link rel="stylesheet" href={cssPath}>
+          <link rel="stylesheet" href={styles}>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
           <meta name="theme-color" content="#f75d63">
