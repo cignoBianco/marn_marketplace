@@ -2,7 +2,7 @@
  *  Font Awesome v4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-@import url('font-awesome-css.min.css');
+@import url('../fonts/font-awesome-css.min.css');
 /* FONT PATH
  * -------------------------- */
 @font-face {
