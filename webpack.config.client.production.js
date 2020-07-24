@@ -23,11 +23,15 @@ const config = {
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
                 use: 'file-loader'
-            },/*
+            },
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
-            }*/
+            },
+            {
+                test: /\.(jpeg|png|woff|woff2)$/,
+                loader: 'url-loader?limit=100000'
+            }
         ]
     }
 }
