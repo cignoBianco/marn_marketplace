@@ -39,9 +39,9 @@ export default function Html() {
                 <app-search  className="ng-star-inserted">
                   <div  className="search">
                     <app-search-bar _nghost-ng-web-c30>
-                      <form _ngcontent-ng-web-c30  className="search-bar" noValidate>
-                        <button _ngcontent-ng-web-c30  className="search-button" type="submit">
-                          <i _ngcontent-ng-web-c30  className="iconf-search"></i>
+                      <form  _ngcontent-ng-web-c30="true"  className="search-bar" noValidate>
+                        <button  _ngcontent-ng-web-c30="true"  className="search-button" type="submit">
+                          <i  _ngcontent-ng-web-c30="true"  className="iconf-search"></i>
                         </button>
                         <app-input-debounce input>
                           <input  className="search-input ng-untouched ng-pristine ng-valid" maxLength="125" type="text" placeholder="Поиск по товарам" /></app-input-debounce>
@@ -132,25 +132,25 @@ export default function Html() {
                 </div>
                 <div  className="basket-header ng-star-inserted">
                   <app-basket-side-bar _nghost-ng-web-c13>
-                    <div _ngcontent-ng-web-c13  className="view-basket show-coupon">
-                      <div _ngcontent-ng-web-c13  className="options-container">
-                        <app-tooltip _ngcontent-ng-web-c13  className="hidden-mobile" tooltipdirection="bottom-left" _nghost-ng-web-c33>
-                          <div _ngcontent-ng-web-c33  className="generic-tooltip ">
-                            <div _ngcontent-ng-web-c33  className="input-content ng-star-inserted">
-                              <button _ngcontent-ng-web-c13  className="coupon-icon">
-                                <i _ngcontent-ng-web-c13  className="iconf-ico-cupon2"></i>
+                    <div  _ngcontent-ng-web-c13="true"  className="view-basket show-coupon">
+                      <div  _ngcontent-ng-web-c13="true"  className="options-container">
+                        <app-tooltip  _ngcontent-ng-web-c13="true"  className="hidden-mobile" tooltipdirection="bottom-left" _nghost-ng-web-c33>
+                          <div  _ngcontent-ng-web-c33="true"  className="generic-tooltip ">
+                            <div  _ngcontent-ng-web-c33="true"  className="input-content ng-star-inserted">
+                              <button  _ngcontent-ng-web-c13="true"  className="coupon-icon">
+                                <i  _ngcontent-ng-web-c13="true"  className="iconf-ico-cupon2"></i>
                               </button>
                             </div>
-                            <div _ngcontent-ng-web-c33  className="tooltip-content tooltip-bottom-left ng-star-inserted">
-                              <h4 _ngcontent-ng-web-c33  className="title"></h4>
-                              <p _ngcontent-ng-web-c33  className="content ng-star-inserted"> Colocar cupom </p>
+                            <div  _ngcontent-ng-web-c33="true"  className="tooltip-content tooltip-bottom-left ng-star-inserted">
+                              <h4  _ngcontent-ng-web-c33="true"  className="title"></h4>
+                              <p  _ngcontent-ng-web-c33="true"  className="content ng-star-inserted"> Colocar cupom </p>
                             </div>
                           </div>
-                        </app-tooltip><app-basket-tooltip _ngcontent-ng-web-c13  className="hidden-mobile" _nghost-ng-web-c34><div _ngcontent-ng-web-c34  className="basket-tooltip-wrapper">
-                          <app-tooltip _ngcontent-ng-web-c34 tooltipdirection="bottom-left" _nghost-ng-web-c33><div _ngcontent-ng-web-c33  className="generic-tooltip ">
-                            <div _ngcontent-ng-web-c33  className="input-content ng-star-inserted">
-                              <button _ngcontent-ng-web-c34  className="basket-icon">
-                                <i _ngcontent-ng-web-c34  className="iconf-basket"></i>
+                        </app-tooltip><app-basket-tooltip  _ngcontent-ng-web-c13="true"  className="hidden-mobile" _nghost-ng-web-c34><div  _ngcontent-ng-web-c34="true"  className="basket-tooltip-wrapper">
+                          <app-tooltip  _ngcontent-ng-web-c34="true" tooltipdirection="bottom-left" _nghost-ng-web-c33><div  _ngcontent-ng-web-c33="true"  className="generic-tooltip ">
+                            <div  _ngcontent-ng-web-c33="true"  className="input-content ng-star-inserted">
+                              <button  _ngcontent-ng-web-c34="true"  className="basket-icon">
+                                <i  _ngcontent-ng-web-c34="true"  className="iconf-basket"></i>
                               </button>
                             </div>
                           </div>
@@ -159,31 +159,31 @@ export default function Html() {
                     </app-basket-tooltip>
                   </div>
                 </div>
-                <div _ngcontent-ng-web-c13  className="basket-container">
-                  <div _ngcontent-ng-web-c13  className="global-overlay-popup"></div>
-                  <div _ngcontent-ng-web-c13  className="basket-box">
-                    <div _ngcontent-ng-web-c13  className="basket-head">
-                      <div _ngcontent-ng-web-c13  className="basket-head-title">
-                        <h5 _ngcontent-ng-web-c13>Entregar para:</h5>
-                        <div _ngcontent-ng-web-c13  className="address-container">
-                          <button _ngcontent-ng-web-c13  className="primary-button-transparent ng-star-inserted"> Digite o endereço </button>
+                <div  _ngcontent-ng-web-c13="true"  className="basket-container">
+                  <div  _ngcontent-ng-web-c13="true"  className="global-overlay-popup"></div>
+                  <div  _ngcontent-ng-web-c13="true"  className="basket-box">
+                    <div  _ngcontent-ng-web-c13="true"  className="basket-head">
+                      <div  _ngcontent-ng-web-c13="true"  className="basket-head-title">
+                        <h5  _ngcontent-ng-web-c13="true">Entregar para:</h5>
+                        <div  _ngcontent-ng-web-c13="true"  className="address-container">
+                          <button  _ngcontent-ng-web-c13="true"  className="primary-button-transparent ng-star-inserted"> Digite o endereço </button>
                         </div>
                       </div>
-                      <i _ngcontent-ng-web-c13  className="iconf-modal-close close-basket f-body"></i>
+                      <i  _ngcontent-ng-web-c13="true"  className="iconf-modal-close close-basket f-body"></i>
                     </div>
-                  <div _ngcontent-ng-web-c13  className="basket-body">
-                    <app-coupon-available-detail _ngcontent-ng-web-c13 _nghost-ng-web-c37  className="ng-star-inserted"></app-coupon-available-detail>
-                    <div _ngcontent-ng-web-c13  className="content-basket-empty f-title ng-star-inserted">
-                      <div _ngcontent-ng-web-c13>
-                        <i _ngcontent-ng-web-c13  className="iconf-basket"></i>
-                        <p _ngcontent-ng-web-c13>
-                          <strong _ngcontent-ng-web-c13  className="f-body">Sua cesta esta vazia</strong>
+                  <div  _ngcontent-ng-web-c13="true"  className="basket-body">
+                    <app-coupon-available-detail  _ngcontent-ng-web-c13="true" _nghost-ng-web-c37  className="ng-star-inserted"></app-coupon-available-detail>
+                    <div  _ngcontent-ng-web-c13="true"  className="content-basket-empty f-title ng-star-inserted">
+                      <div  _ngcontent-ng-web-c13="true">
+                        <i  _ngcontent-ng-web-c13="true"  className="iconf-basket"></i>
+                        <p  _ngcontent-ng-web-c13="true">
+                          <strong  _ngcontent-ng-web-c13="true"  className="f-body">Sua cesta esta vazia</strong>
                         </p>
-                        <p _ngcontent-ng-web-c13  className="f-caption-1">Retorne as nossas lojas e adicione produtos a sua cesta.</p>
+                        <p  _ngcontent-ng-web-c13="true"  className="f-caption-1">Retorne as nossas lojas e adicione produtos a sua cesta.</p>
                       </div>
                     </div>
-                    <div _ngcontent-ng-web-c13  className="cont-products-basket">
-                      <ul _ngcontent-ng-web-c13  className="order-by-store">
+                    <div  _ngcontent-ng-web-c13="true"  className="cont-products-basket">
+                      <ul  _ngcontent-ng-web-c13="true"  className="order-by-store">
                       </ul>
                     </div>
                   </div>
@@ -194,9 +194,9 @@ export default function Html() {
           <div  className="separator-mobile visible-mobile"></div>
           <div  className="header-user-dropdown ng-star-inserted">
             <app-user-drop-down _nghost-ng-web-c14>
-              <div _ngcontent-ng-web-c14  className="dropdown-user">
-                <button _ngcontent-ng-web-c14  className="dropdown-anonymous primary-button-filled ng-star-inserted"> Войти </button>
-                <app-drop-down-list _ngcontent-ng-web-c14></app-drop-down-list>
+              <div  _ngcontent-ng-web-c14="true"  className="dropdown-user">
+                <button  _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted"> Войти </button>
+                <app-drop-down-list  _ngcontent-ng-web-c14="true"></app-drop-down-list>
               </div>
             </app-user-drop-down>
           </div>
@@ -229,33 +229,33 @@ export default function Html() {
     <img  className="img-5 ng-star-inserted" src={"./public/images/fashion.png"}/>
     <img  className="img-6 ng-star-inserted" src="images/markets.png"/></div></app-banner>
     
-    <div  className="home-container"><app-cpgs-container _nghost-ng-web-c43><div _ngcontent-ng-web-c43  className="cpgs-container"><h4 _ngcontent-ng-web-c43  className="subtitle"> Выберите подходящую категорию </h4><h2 _ngcontent-ng-web-c43  className="title"> Категории </h2><ul _ngcontent-ng-web-c43  className="cpgs-grid">
+    <div  className="home-container"><app-cpgs-container _nghost-ng-web-c43><div  _ngcontent-ng-web-c43="true"  className="cpgs-container"><h4  _ngcontent-ng-web-c43="true"  className="subtitle"> Выберите подходящую категорию </h4><h2  _ngcontent-ng-web-c43="true"  className="title"> Категории </h2><ul  _ngcontent-ng-web-c43="true"  className="cpgs-grid">
       
-      <li _ngcontent-ng-web-c43  className="store-item ng-star-inserted">
-        <app-cpg-card _ngcontent-ng-web-c43 _nghost-ng-web-c29>
-          <a _ngcontent-ng-web-c29  className="cpg-card ng-star-inserted" title="Supermercados" href="/lojas/tipo/supermercados">
-            <div _ngcontent-ng-web-c29  className="cpg-img-container" style={{"background-color": "rgb(238, 244, 198)"}}>
-              <img _ngcontent-ng-web-c29 src="images/markets.png"/>
+      <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted">
+        <app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>
+          <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Supermercados" href="/lojas/tipo/supermercados">
+            <div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(238, 244, 198)"}}>
+              <img  _ngcontent-ng-web-c29="true" src="images/markets.png"/>
             </div>
-            <h4 _ngcontent-ng-web-c29  className="cpg-title"> Супермаркеты </h4>
+            <h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Супермаркеты </h4>
           </a>
         </app-cpg-card>
       </li>
       
-      <li _ngcontent-ng-web-c43  className="store-item ng-star-inserted"><app-cpg-card _ngcontent-ng-web-c43 _nghost-ng-web-c29>         <a _ngcontent-ng-web-c29  className="cpg-card ng-star-inserted" title="Restaurantes" href="/restaurantes"><div _ngcontent-ng-web-c29  className="cpg-img-container" style={{"background-color": "rgb(255, 131, 86)"}}><img _ngcontent-ng-web-c29 src="images/restaurant-1591639715.png"/></div><h4 _ngcontent-ng-web-c29  className="cpg-title"> Рестораны </h4></a>      </app-cpg-card></li>         
+      <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Restaurantes" href="/restaurantes"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(255, 131, 86)"}}><img  _ngcontent-ng-web-c29="true" src="images/restaurant-1591639715.png"/></div><h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Рестораны </h4></a>      </app-cpg-card></li>         
       
-      <li _ngcontent-ng-web-c43  className="store-item ng-star-inserted"><app-cpg-card _ngcontent-ng-web-c43 _nghost-ng-web-c29>         <a _ngcontent-ng-web-c29  className="cpg-card ng-star-inserted" title="Adidas" href="/lojas/tipo/adidasbotao"><div _ngcontent-ng-web-c29  className="cpg-img-container" style={{"background-color": "rgb(255, 255, 255)"}}><img _ngcontent-ng-web-c29 src="images/adidas_botao-1585611619.png"/></div><h4 _ngcontent-ng-web-c29  className="cpg-title"> Спорт </h4></a>      </app-cpg-card></li>
+      <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Adidas" href="/lojas/tipo/adidasbotao"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(255, 255, 255)"}}><img  _ngcontent-ng-web-c29="true" src="images/adidas_botao-1585611619.png"/></div><h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Спорт </h4></a>      </app-cpg-card></li>
       
-               <li _ngcontent-ng-web-c43  className="store-item ng-star-inserted"><app-cpg-card _ngcontent-ng-web-c43 _nghost-ng-web-c29>         <a _ngcontent-ng-web-c29  className="cpg-card ng-star-inserted" title="Bebidas" href="/lojas/tipo/bebidas-24"><div _ngcontent-ng-web-c29  className="cpg-img-container" style={{"background-color": "rgb(251, 233, 201)"}}><img _ngcontent-ng-web-c29 src="images/liquor_store-1593126769.png"/></div><h4 _ngcontent-ng-web-c29  className="cpg-title"> Напитки </h4></a>      </app-cpg-card></li>         
+               <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Bebidas" href="/lojas/tipo/bebidas-24"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(251, 233, 201)"}}><img  _ngcontent-ng-web-c29="true" src="images/liquor_store-1593126769.png"/></div><h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Напитки </h4></a>      </app-cpg-card></li>         
       
-      <li _ngcontent-ng-web-c43  className="store-item ng-star-inserted"><app-cpg-card _ngcontent-ng-web-c43 _nghost-ng-web-c29>         <a _ngcontent-ng-web-c29  className="cpg-card ng-star-inserted" title="Farmácia 24h" href="/lojas/tipo/farmacia"><div _ngcontent-ng-web-c29  className="cpg-img-container" style={{"background-color": "rgb(155, 222, 231)"}}><img _ngcontent-ng-web-c29 src="images/farmacia-1591397052.png"/></div><h4 _ngcontent-ng-web-c29  className="cpg-title"> Аптеки </h4></a>      </app-cpg-card></li>
+      <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Farmácia 24h" href="/lojas/tipo/farmacia"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(155, 222, 231)"}}><img  _ngcontent-ng-web-c29="true" src="images/farmacia-1591397052.png"/></div><h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Аптеки </h4></a>      </app-cpg-card></li>
       
-      <app-cpg-card _ngcontent-ng-web-c43 _nghost-ng-web-c29  className="ng-star-inserted">
-        <a _ngcontent-ng-web-c29  className="cpg-card ng-star-inserted" title="Ver mais">
-          <div _ngcontent-ng-web-c29  className="cpg-icon-container">
-            <i _ngcontent-ng-web-c29  className="iconf-more-stores"></i>
+      <app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29  className="ng-star-inserted">
+        <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Ver mais">
+          <div  _ngcontent-ng-web-c29="true"  className="cpg-icon-container">
+            <i  _ngcontent-ng-web-c29="true"  className="iconf-more-stores"></i>
           </div>
-          <h4 _ngcontent-ng-web-c29  className="cpg-title"> Больше </h4>
+          <h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Больше </h4>
         </a>
       </app-cpg-card>
     </ul>
@@ -264,55 +264,55 @@ export default function Html() {
   </app-cpgs-container>
     <div  className="with-margin">
       <app-items _nghost-ng-web-c44>
-        <div _ngcontent-ng-web-c44  className="items">
-          <div _ngcontent-ng-web-c44  className="item ng-star-inserted">
-            <div _ngcontent-ng-web-c44  className="img">
-              <i _ngcontent-ng-web-c44  className="iconf-clock-4"></i>
+        <div  _ngcontent-ng-web-c44="true"  className="items">
+          <div  _ngcontent-ng-web-c44="true"  className="item ng-star-inserted">
+            <div  _ngcontent-ng-web-c44="true"  className="img">
+              <i  _ngcontent-ng-web-c44="true"  className="iconf-clock-4"></i>
             </div>
-            <div _ngcontent-ng-web-c44  className="description">
-              <h2 _ngcontent-ng-web-c44  className="title">Экономь время</h2>
-              <h4 _ngcontent-ng-web-c44  className="text">Доставка до дома меньше чем за час</h4>
+            <div  _ngcontent-ng-web-c44="true"  className="description">
+              <h2  _ngcontent-ng-web-c44="true"  className="title">Экономь время</h2>
+              <h4  _ngcontent-ng-web-c44="true"  className="text">Доставка до дома меньше чем за час</h4>
             </div>
           </div>
 
-          <div _ngcontent-ng-web-c44  className="item ng-star-inserted">
-            <div _ngcontent-ng-web-c44  className="img">
-              <i _ngcontent-ng-web-c44  className="iconf-heart3x"></i>
+          <div  _ngcontent-ng-web-c44="true"  className="item ng-star-inserted">
+            <div  _ngcontent-ng-web-c44="true"  className="img">
+              <i  _ngcontent-ng-web-c44="true"  className="iconf-heart3x"></i>
             </div>
-            <div _ngcontent-ng-web-c44  className="description">
-              <h2 _ngcontent-ng-web-c44  className="title">В надежных руках</h2><h4 _ngcontent-ng-web-c44  className="text">Только проверенные организации</h4>
+            <div  _ngcontent-ng-web-c44="true"  className="description">
+              <h2  _ngcontent-ng-web-c44="true"  className="title">В надежных руках</h2><h4  _ngcontent-ng-web-c44="true"  className="text">Только проверенные организации</h4>
             </div>
           </div>
           
-          <div _ngcontent-ng-web-c44  className="item ng-star-inserted">
-            <div _ngcontent-ng-web-c44  className="img">
-              <i _ngcontent-ng-web-c44  className="iconf-quality3x"></i>
+          <div  _ngcontent-ng-web-c44="true"  className="item ng-star-inserted">
+            <div  _ngcontent-ng-web-c44="true"  className="img">
+              <i  _ngcontent-ng-web-c44="true"  className="iconf-quality3x"></i>
             </div>
-            <div _ngcontent-ng-web-c44  className="description">
-              <h2 _ngcontent-ng-web-c44  className="title">100% качество</h2>
-              <h4 _ngcontent-ng-web-c44  className="text">Если ваш товар пришел в плохом состоянии, вы не будете платить за негоы!</h4></div></div></div></app-items></div>
+            <div  _ngcontent-ng-web-c44="true"  className="description">
+              <h2  _ngcontent-ng-web-c44="true"  className="title">100% качество</h2>
+              <h4  _ngcontent-ng-web-c44="true"  className="text">Если ваш товар пришел в плохом состоянии, вы не будете платить за негоы!</h4></div></div></div></app-items></div>
         </div>
         <div  className="home-container with-margin">
-          <h2    className="title"> Другие города </h2>
-        <div    className="badge-row">
-          <a    className="badge ng-star-inserted" href="/grande-sao-paulo"> Архангельск </a>
-          <a    className="badge ng-star-inserted" href="/rio-de-janeiro"> Брянск </a>
-          <a    className="badge ng-star-inserted" href="/belo-horizonte"> Волгоград </a>
-          <a    className="badge ng-star-inserted" href="/curitiba"> Галицин </a>
-          <a    className="badge ng-star-inserted" href="/fortaleza"> Дальнегорск </a>
-          <a    className="badge ng-star-inserted" href="/recife"> Екатеринбург </a>
-          <a    className="badge ng-star-inserted" href="/campinas"> Зеленогорск </a>
-          <a    className="badge ng-star-inserted" href="/florianopolis"> Иркутск </a>
-          <a    className="badge ng-star-inserted" href="/ribeirao-preto"> Красноярск </a>
-          <a    className="badge ng-star-inserted" href="/ribeirao-preto"> Казань </a>
-          <a    className="badge ng-star-inserted" href="/goiania"> Москва </a>
-          <a    className="badge ng-star-inserted" href="/sao-jose-do-rio-preto"> Норильск </a>
-          <a    className="badge ng-star-inserted" href="/natal"> Омск </a>
-          <a    className="badge ng-star-inserted" href="/sorocaba"> Петропавловск </a>
-          <a    className="badge ng-star-inserted" href="/blumenau"> Ростов </a>
-          <a    className="badge ng-star-inserted" href="/anapolis"> Смоленск </a>
-          <a    className="badge ng-star-inserted" href="/valinhos"> Тюмень </a>
-          <a    className="badge ng-star-inserted" href="/itu"> Уфа </a>
+          <h2 _ngcontent-ng-web-c48="true"  className="title"> Другие города </h2>
+        <div _ngcontent-ng-web-c48="true"  className="badge-row">
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/grande-sao-paulo"> Архангельск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/rio-de-janeiro"> Брянск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/belo-horizonte"> Волгоград </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/curitiba"> Галицин </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/fortaleza"> Дальнегорск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/recife"> Екатеринбург </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/campinas"> Зеленогорск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/florianopolis"> Иркутск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/ribeirao-preto"> Красноярск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/ribeirao-preto"> Казань </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/goiania"> Москва </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/sao-jose-do-rio-preto"> Норильск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/natal"> Омск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/sorocaba"> Петропавловск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/blumenau"> Ростов </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/anapolis"> Смоленск </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/valinhos"> Тюмень </a>
+          <a _ngcontent-ng-web-c48="true"  className="badge ng-star-inserted" href="/itu"> Уфа </a>
         </div>
       </div>
     </div>
