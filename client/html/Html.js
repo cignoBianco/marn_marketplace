@@ -293,26 +293,26 @@ export default function Html() {
               <h4 _ngcontent-ng-web-c44  className="text">Если ваш товар пришел в плохом состоянии, вы не будете платить за негоы!</h4></div></div></div></app-items></div>
         </div>
         <div  className="home-container with-margin">
-          <h2 _ngcontent-ng-web-c48  className="title"> Другие города </h2>
-        <div _ngcontent-ng-web-c48  className="badge-row">
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/grande-sao-paulo"> Архангельск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/rio-de-janeiro"> Брянск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/belo-horizonte"> Волгоград </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/curitiba"> Галицин </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/fortaleza"> Дальнегорск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/recife"> Екатеринбург </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/campinas"> Зеленогорск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/florianopolis"> Иркутск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/ribeirao-preto"> Красноярск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/ribeirao-preto"> Казань </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/goiania"> Москва </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/sao-jose-do-rio-preto"> Норильск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/natal"> Омск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/sorocaba"> Петропавловск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/blumenau"> Ростов </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/anapolis"> Смоленск </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/valinhos"> Тюмень </a>
-          <a _ngcontent-ng-web-c48  className="badge ng-star-inserted" href="/itu"> Уфа </a>
+          <h2    className="title"> Другие города </h2>
+        <div    className="badge-row">
+          <a    className="badge ng-star-inserted" href="/grande-sao-paulo"> Архангельск </a>
+          <a    className="badge ng-star-inserted" href="/rio-de-janeiro"> Брянск </a>
+          <a    className="badge ng-star-inserted" href="/belo-horizonte"> Волгоград </a>
+          <a    className="badge ng-star-inserted" href="/curitiba"> Галицин </a>
+          <a    className="badge ng-star-inserted" href="/fortaleza"> Дальнегорск </a>
+          <a    className="badge ng-star-inserted" href="/recife"> Екатеринбург </a>
+          <a    className="badge ng-star-inserted" href="/campinas"> Зеленогорск </a>
+          <a    className="badge ng-star-inserted" href="/florianopolis"> Иркутск </a>
+          <a    className="badge ng-star-inserted" href="/ribeirao-preto"> Красноярск </a>
+          <a    className="badge ng-star-inserted" href="/ribeirao-preto"> Казань </a>
+          <a    className="badge ng-star-inserted" href="/goiania"> Москва </a>
+          <a    className="badge ng-star-inserted" href="/sao-jose-do-rio-preto"> Норильск </a>
+          <a    className="badge ng-star-inserted" href="/natal"> Омск </a>
+          <a    className="badge ng-star-inserted" href="/sorocaba"> Петропавловск </a>
+          <a    className="badge ng-star-inserted" href="/blumenau"> Ростов </a>
+          <a    className="badge ng-star-inserted" href="/anapolis"> Смоленск </a>
+          <a    className="badge ng-star-inserted" href="/valinhos"> Тюмень </a>
+          <a    className="badge ng-star-inserted" href="/itu"> Уфа </a>
         </div>
       </div>
     </div>
