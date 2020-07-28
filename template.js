@@ -28,7 +28,7 @@ export default ({markup, css}) => {
           <meta property="og:site_name" content="ДоДома Томск">
           <meta property="og:type" content="website">
       
-           - Favicons    
+          
           <link rel="apple-touch-icon" sizes="57x57" href="images/favicon.png">
           <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.png">
           <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.png">
@@ -43,12 +43,12 @@ export default ({markup, css}) => {
           <link rel="mask-icon" href="images/favicon.png">
           <link rel="shortcut icon" href="images/favicon.png">
       
-           - Styles    
+            
           <link rel="stylesheet" href="css/styles.e7726758f4812a2ea370.css">
           <link rel="stylesheet" href={cssPath}>
           <link rel="stylesheet" href="css/styles.e7726758f4812a2ea370.css">
       
-           - Javascript    
+             
           <script type="text/javascript"  src="js/sdk.js" async crossorigin="anonymous"></script>
           <script type="text/javascript"  src="js/sdk_3.js" async crossorigin="anonymous"></script>
           <script type="text/javascript" async src="js/analytics.js"></script>
