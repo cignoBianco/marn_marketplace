@@ -1,4 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400");
+.ml30 {margin-left: 10px;}
+.logo-h6 {
+    font-size: 1.5rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 900;
+    line-height: 2.85;
+    letter-spacing: 0.0075em;
+    color: orange;
+    text-align: center;
+}
+.header-menu-left {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    flex: 1;
+}
 .pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}
 .pac-logo:after{content:"";padding:1px 1px 1px 0;height:18px;box-sizing:border-box;text-align:right;display:block;background-image:url(../images/powered-by-google-on-white3.png);background-position:right;background-repeat:no-repeat;background-size:120px 14px}
 .hdpi.pac-logo:after{background-image:url(../images/powered-by-google-on-white3_hdpi.png)}

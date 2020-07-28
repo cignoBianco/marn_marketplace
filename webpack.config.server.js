@@ -29,7 +29,7 @@ const config = {
                 use: 'file-loader'
             },
             {
-                test: /\.(jpeg|png|woff|woff2)$/,
+                test: /\.(jpeg|woff|woff2)$/,
                 loader: 'url-loader?limit=100000'
             }
         ]

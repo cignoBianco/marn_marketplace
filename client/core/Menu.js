@@ -26,59 +26,7 @@ const isPartActive = (history, path) => {
 const Menu = withRouter(({history}) => (
   <AppBar position="static">
     <Toolbar>
-      <Typography variant="h6" color="inherit">
-        DoDoma
-      </Typography>
-      <div>
-        <Link to="/">
-          <IconButton aria-label="Home" style={isActive(history, "/")}>
-            <HomeIcon/>
-          </IconButton>
-        </Link>
-        <Link to="/shops/all">
-          <Button style={isActive(history, "/shops/all")}>All Shops</Button>
-        </Link>
-        <Link to="/auctions/all">
-          <Button style={isActive(history, "/auctions/all")}>All Actions</Button>
-        </Link>
-        <Link to="/cart">
-          <Button style={isActive(history, "/cart")}>
-            Cart
-            <Badge invisible={false} color="secondary" badgeContent={cart.itemTotal()} style={{'marginLeft': '7px'}}>
-              <CartIcon />
-            </Badge>
-          </Button>
-        </Link>      
-      </div>
-      <div style={{'position':'absolute', 'right': '10px'}}><span style={{'float': 'right'}}>
-      {
-        !auth.isAuthenticated() && (<span>
-          <Link to="/signup">
-            <Button style={isActive(history, "/signup")}>Sign up
-            </Button>
-          </Link>
-          <Link to="/signin">
-            <Button style={isActive(history, "/signin")}>Sign In
-            </Button>
-          </Link>
-        </span>)
-      }
-      {
-        auth.isAuthenticated() && (<span>
-          {auth.isAuthenticated().user.seller && (<>
-            <Link to="/seller/shops"><Button style={isPartActive(history, "/seller/")}>My Shops</Button></Link>
-            <Link to="/myauctions"><Button style={isPartActive(history, "/myauctions")}>My Auctions</Button></Link>
-            </>
-          )}
-          <Link to={"/user/" + auth.isAuthenticated().user._id}>
-            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
-          </Link>
-          <Button color="inherit" onClick={() => {
-              auth.clearJWT(() => history.push('/'))
-            }}>Sign out</Button>
-        </span>)
-      }
-      </span></div>
+      
       <header id="header"  className="header home">
           <div  className="header-bar">
             <div  className="header-content-left">
@@ -91,24 +39,22 @@ const Menu = withRouter(({history}) => (
                   </button>
                 </div>
               </div>
-              <div  className="header-logo hidden-tablet">
-                <a href="/"  className="ng-star-inserted"></a>
+              <div  className="header-logo ">
+              <Link to="/"><h6 class="logo-h6">
+                DoDoma
+              </h6></Link>
               </div>
               <div  className="back-header"></div>
-              <div  className="header-search ng-star-inserted">
-                <app-search  className="ng-star-inserted">
-                  <div  className="search">
-                    <app-search-bar _nghost-ng-web-c30>
-                      <form  _ngcontent-ng-web-c30="true"  className="search-bar" noValidate>
-                        <button  _ngcontent-ng-web-c30="true"  className="search-button" type="submit">
-                          <i  _ngcontent-ng-web-c30="true"  className="iconf-search"></i>
-                        </button>
-                        <app-input-debounce input>
-                          <input  className="search-input ng-untouched ng-pristine ng-valid" maxLength="125" type="text" placeholder="Поиск по товарам" /></app-input-debounce>
-                        </form>
-                      </app-search-bar>
+              <div  className="header-menu-left ng-star-inserted">
+                  <div>
+                  <Link to="/shops/all">
+                    <Button>All Shops</Button>
+                  </Link>
+                  <Link to="/auctions/all">
+                    <Button>All Actions</Button>
+                  </Link>
                     </div>
-                  </app-search>
+                    
                 </div>
               </div>
               <div  className="header-content-center">
@@ -209,9 +155,15 @@ const Menu = withRouter(({history}) => (
                         </app-tooltip><app-basket-tooltip  _ngcontent-ng-web-c13="true"  className="hidden-mobile" _nghost-ng-web-c34><div  _ngcontent-ng-web-c34="true"  className="basket-tooltip-wrapper">
                           <app-tooltip  _ngcontent-ng-web-c34="true" tooltipdirection="bottom-left" _nghost-ng-web-c33><div  _ngcontent-ng-web-c33="true"  className="generic-tooltip ">
                             <div  _ngcontent-ng-web-c33="true"  className="input-content ng-star-inserted">
-                              <button  _ngcontent-ng-web-c34="true"  className="basket-icon">
-                                <i  _ngcontent-ng-web-c34="true"  className="iconf-basket"></i>
+                            <Link to="/cart">
+                            <button  _ngcontent-ng-web-c34="true"  className="basket-icon" style={isActive(history, "/cart")}>
+                            <i  _ngcontent-ng-web-c34="true"  className="iconf-basket"></i>
+                                <Badge invisible={false} color="secondary" badgeContent={cart.itemTotal()} style={{'marginLeft': '7px'}}>
+                                  <CartIcon />
+                                </Badge>
                               </button>
+                            </Link>  
+                             
                             </div>
                           </div>
                         </app-tooltip>
@@ -255,15 +207,14 @@ const Menu = withRouter(({history}) => (
           <div  className="header-user-dropdown ng-star-inserted">
             <app-user-drop-down _nghost-ng-web-c14>
               <div  _ngcontent-ng-web-c14="true"  className="dropdown-user">
-                
                 {
                   !auth.isAuthenticated() && (<span>
                     <Link to="/signup">
-                    <button  _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted" style={isActive(history, "/signup")}>Sign up
+                    <button  _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted" style={isActive(history, "/signup")}>Зарегистрироваться
                       </button>
                     </Link>
                     <Link to="/signin">
-                    <button  _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted"> style={isActive(history, "/signin")}>Sign In
+                    <button  _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted ml30" style={isActive(history, "/signin")}>Войти
                       </button>
                     </Link>
                   </span>)
