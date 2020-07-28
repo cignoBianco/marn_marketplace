@@ -53,7 +53,7 @@ export default function Html() {
   </div>
 </app-header-stores>
 </app-header>   
-<div id="app-container"  className="app-container home header-active with-search-bar"><div  className="total-width">      
+<div id="app-container"  className="app-container home header-active with-search-bar"><div  className="total-width pt-75">      
 <span  className="app-span-container ng-star-inserted"><app-page-not-found>   
     <div  className="ng-star-inserted">   </div></app-page-not-found>
     <router-outlet></router-outlet>

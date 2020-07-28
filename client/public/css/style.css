@@ -16,6 +16,9 @@
     flex-direction: row;
     flex: 1;
 }
+.pt-75 {
+    padding-top: 75px;
+}
 .pac-container{background-color:#fff;position:absolute!important;z-index:1000;border-radius:2px;border-top:1px solid #d9d9d9;font-family:Arial,sans-serif;box-shadow:0 2px 6px rgba(0,0,0,0.3);-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;overflow:hidden}
 .pac-logo:after{content:"";padding:1px 1px 1px 0;height:18px;box-sizing:border-box;text-align:right;display:block;background-image:url(../images/powered-by-google-on-white3.png);background-position:right;background-repeat:no-repeat;background-size:120px 14px}
 .hdpi.pac-logo:after{background-image:url(../images/powered-by-google-on-white3_hdpi.png)}

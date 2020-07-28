@@ -24,7 +24,7 @@ const isPartActive = (history, path) => {
     return {color: '#ffffff'}
 }
 const Menu = withRouter(({history}) => (
-  <AppBar position="static">
+  <AppBar position="fixed">
     <Toolbar>
       
       <header id="header"  className="header home">
