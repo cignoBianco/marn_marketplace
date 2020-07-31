@@ -44,7 +44,7 @@ const Menu = withRouter(({history}) => (
                 </div>
               </div>
               <div  className="header-logo ">
-              <Link to="/"><h6 class="logo-h6">
+              <Link to="/"><h6 className="logo-h6">
                 DoDoma
               </h6></Link>
               </div>
