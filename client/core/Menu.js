@@ -221,6 +221,28 @@ const Menu = withRouter(({history}) => (
                     <button  _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted ml30" style={isActive(history, "/signin")}>Войти
                       </button>
                     </Link>
+                  </span>) 
+                } 
+                {
+                  auth.isAuthenticated() && (<span>
+                    {auth.isAuthenticated().user.seller && (<>
+                      <Link to="/seller/shops">
+                        <button style={isPartActive(history, "/seller/")} _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted" style={isActive(history, "/signup")}>My shops
+                      </button>
+                      </Link>
+                      <Link to="/myauctions">
+                      <button style={isPartActive(history, "/myauctions")} style={isPartActive(history, "/seller/")} _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted" >
+                        My actions
+                      </button></Link>
+                      </>
+                    )}
+                    <Link to={"/user/" + auth.isAuthenticated().user._id}>
+                      <button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)} _ngcontent-ng-web-c14="true"  className="dropdown-anonymous primary-button-filled ng-star-inserted" style={isActive(history, "/signup")}>My profile
+                      </button>
+                    </Link>
+                    <Button color="inherit" onClick={() => {
+                        auth.clearJWT(() => history.push('/'))
+                      }}>Sign out</Button>
                   </span>)
                 }
                 <app-drop-down-list  _ngcontent-ng-web-c14="true"></app-drop-down-list>

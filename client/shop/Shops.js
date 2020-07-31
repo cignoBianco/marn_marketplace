@@ -9,6 +9,9 @@ import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import {list} from './api-shop.js'
 import {Link} from 'react-router-dom'
+import Search from './../product/Search'
+import Categories from './../product/Categories'
+import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -42,6 +45,7 @@ const useStyles = makeStyles(theme => ({
 export default function Shops(){
   const classes = useStyles()
   const [shops, setShops] = useState([])
+  const [categories, setCategories] = useState([])
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -58,6 +62,21 @@ export default function Shops(){
     }
 
   }, [])
+
+  useEffect(() => {
+   const abortController = new AbortController()
+   const signal = abortController.signal
+   listCategories(signal).then((data) => {
+     if (data.error) {
+       console.log(data.error)
+     } else {
+       setCategories(data)
+     }
+   })
+   return function cleanup(){
+     abortController.abort()
+   }
+ }, [])
 
     return (
     <div>
@@ -261,6 +280,10 @@ export default function Shops(){
                      </div>
                   </div>
                </div>
+               <Grid item xs={8} sm={8}>
+            <Search categories={categories}/>
+            <Categories categories={categories}/>
+          </Grid>
             </app-store-list>
          </div>
          <div _ngcontent-ng-web-c48="" className="load-more-button ng-star-inserted"><button _ngcontent-ng-web-c48="" className="button-loading-search primary-button-filled ng-star-inserted"> Ver mais </button></div>
