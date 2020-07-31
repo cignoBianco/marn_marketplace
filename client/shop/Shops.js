@@ -120,7 +120,9 @@ export default function Shops(){
                                  <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{ backgroundImage: "url("+ '/api/shops/logo/'+shop._id+"?" + new Date().getTime() +")"}}></span>
                                  <span _ngcontent-ng-web-c55="" class="store-info ng-star-inserted">
                                     <div _ngcontent-ng-web-c55="" class="container-title"><span _ngcontent-ng-web-c55="" class="store-name" title="Nakamura"> {shop.name} </span></div>
-                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Japonesa · Asiática"> {shop.description} </span><span _ngcontent-ng-web-c55="" class="store-filters"><span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 40 min </span><span _ngcontent-ng-web-c55="" class="price ng-star-inserted"><span _ngcontent-ng-web-c55="" class="separator">●</span> R$&nbsp;9,90 </span></span>
+                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Japonesa · Asiática"> {shop.description} </span><span _ngcontent-ng-web-c55="" class="store-filters">
+                                      <span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 40 min </span><span _ngcontent-ng-web-c55="" class="price ng-star-inserted">
+                                        <span _ngcontent-ng-web-c55="" class="separator">●</span> R$&nbsp;9,90 </span></span>
                                  </span>
                               </a>
                               <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" class="ng-star-inserted">
@@ -415,33 +417,5 @@ export default function Shops(){
    </app-stores-content>
 </app-by-stores-home>
 
-
-
-      
-      <Paper className={classes.root} elevation={4}>
-        <Typography type="title" className={classes.title}>
-          All Shops
-        </Typography>
-        <List dense>
-          {shops.map((shop, i) => {
-            return <Link to={"/shops/"+shop._id} key={i}>
-              <Divider/>
-              <ListItem button>
-                <ListItemAvatar>
-                  <Avatar className={classes.avatar}  src={'/api/shops/logo/'+shop._id+"?" + new Date().getTime()}/>
-                </ListItemAvatar>
-                <div className={classes.details}>
-                  <Typography type="headline" component="h2" color="primary" className={classes.shopTitle}>
-                    {shop.name}
-                  </Typography>
-                  <Typography type="subheading" component="h4" className={classes.subheading}>
-                    {shop.description}
-                  </Typography>
-                </div>
-              </ListItem>
-              <Divider/>
-            </Link>})}
-        </List>
-      </Paper>
     </div>)
 }
