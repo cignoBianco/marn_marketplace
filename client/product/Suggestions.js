@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
     padding: theme.spacing(1),
     paddingBottom: 24,
-    backgroundColor: '#80808024'
+    /*backgroundColor: '#80808024'*/
   }),
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
@@ -79,7 +79,7 @@ const useStyles = makeStyles(theme => ({
 export default function Suggestions (props) {
   const classes = useStyles()
     return (<div>
-      <Paper className={classes.root} elevation={4}>
+      <Paper className={classes.root} elevation={2}>
         <Typography type="title" className={classes.title}>
           {props.title}
         </Typography>

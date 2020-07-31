@@ -33,12 +33,15 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#93c5ae3d',
     fontSize: '1.3em',
     color: '#375a53',
+    width: 'max-content',
   },
   media: {
     height: 200,
     display: 'inline-block',
-    width: '50%',
-    marginLeft: '24px'
+    marginLeft: '24px',
+    width: '-webkit-fill-available',
+    display: 'inline-block',
+    backgroundSize: 'contain'
   },
   icon: {
     verticalAlign: 'sub'
@@ -57,6 +60,11 @@ const useStyles = makeStyles(theme => ({
   action: {
     margin: '8px 24px',
     display: 'inline-block'
+  },
+  description: {
+    width: 175,
+    maxHeight: 150,
+    overflowY: 'scroll'
   }
 }))
 
@@ -112,15 +120,7 @@ export default function Product ({match}) {
               
               
               <Card className={classes.card}>
-                <CardHeader
-                  title={product.name}
-                  subheader={product.quantity > 0? 'In Stock': 'Out of Stock'}
-                  action={
-                    <span className={classes.action}>
-                      <AddToCart cartStyle={classes.addCart} item={product}/>
-                    </span>
-                  }
-                />
+                
                 <div className={classes.flex}>
                   <CardMedia
                     className={classes.media}
@@ -128,7 +128,7 @@ export default function Product ({match}) {
                     title={product.name}
                   />
                   <Typography component="p" variant="subtitle1" className={classes.subheading}>
-                    {product.description}<br/>
+                    <p className={classes.description}>{product.description}</p><br/>
                     <span className={classes.price}>$ {product.price}</span>
                     <Link to={'/shops/'+product.shop._id} className={classes.link}>
                       <span>
@@ -138,6 +138,15 @@ export default function Product ({match}) {
                   </Typography>
 
                 </div>
+                <CardHeader
+                  title={product.name}
+                  subheader={product.quantity > 0? 'In Stock': 'Out of Stock'}
+                  action={
+                    <span className={classes.action}>
+                      <AddToCart cartStyle={classes.addCart} item={product}/>
+                    </span>
+                  }
+                />
               </Card>
             </Grid>
             {suggestions.length > 0 &&

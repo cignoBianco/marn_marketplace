@@ -69,7 +69,7 @@ export default function Products(props){
             
           </div>
           <div className="content-container">
-          <a href={'/product/'+item.product._id}>
+          <a href={'/product/'+product._id}>
             <h3 className="product-name">{product.name}</h3>
           </a>
             <p className="product-description f-caption-2"> {product.description} </p>
