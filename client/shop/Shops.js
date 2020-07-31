@@ -62,74 +62,74 @@ export default function Shops(){
     return (
     <div>
 
-<app-by-stores-home _nghost-ng-web-c48="" class="ng-star-inserted">
-   <div _ngcontent-ng-web-c48="" class="by-stores-container pt-75">
-      <div _ngcontent-ng-web-c48="" class="generic-restaurant-categories ng-star-inserted  pt-50">
+<app-by-stores-home _nghost-ng-web-c48="" className="ng-star-inserted">
+   <div _ngcontent-ng-web-c48="" className="by-stores-container pt-75">
+      <div _ngcontent-ng-web-c48="" className="generic-restaurant-categories ng-star-inserted  pt-50">
          <app-generic-categories _ngcontent-ng-web-c48="">
-            <div class="categories">
+            <div className="categories">
                <ul id="categories-sub-menu">
-                  <li class="title-order-categories ng-star-inserted">
+                  <li className="title-order-categories ng-star-inserted">
                      <p>Organizar por</p>
                   </li>
-                  <li routerlinkactive="active" class="ng-star-inserted active"><a href="/restaurantes"> Todos </a></li>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/pizza" class="ng-star-inserted"> Pizza </a></li>
+                  <li routerlinkactive="active" className="ng-star-inserted active"><a href="/restaurantes"> Todos </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/pizza" className="ng-star-inserted"> Pizza </a></li>
                   </span>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/burgers" class="ng-star-inserted"> Burgers </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/burgers" className="ng-star-inserted"> Burgers </a></li>
                   </span>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/japonesa" class="ng-star-inserted"> Japonesa </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/japonesa" className="ng-star-inserted"> Japonesa </a></li>
                   </span>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/saudavel" class="ng-star-inserted"> Saudável </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/saudavel" className="ng-star-inserted"> Saudável </a></li>
                   </span>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/arabe" class="ng-star-inserted"> Árabe </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/arabe" className="ng-star-inserted"> Árabe </a></li>
                   </span>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/brasileira" class="ng-star-inserted"> Brasileira </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/brasileira" className="ng-star-inserted"> Brasileira </a></li>
                   </span>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/asiatica" class="ng-star-inserted"> Asiática </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/asiatica" className="ng-star-inserted"> Asiática </a></li>
                   </span>
-                  <span class="ng-star-inserted">
-                     <li><a href="/restaurantes/category/grelhado" class="ng-star-inserted"> Grelhado </a></li>
+                  <span className="ng-star-inserted">
+                     <li><a href="/restaurantes/category/grelhado" className="ng-star-inserted"> Grelhado </a></li>
                   </span>
                </ul>
             </div>
          </app-generic-categories>
       </div>
-      <div _ngcontent-ng-web-c48="" class="by-stores">
-         <div _ngcontent-ng-web-c48="" class="open-stores" id="restaurantsResult">
-            <div _ngcontent-ng-web-c48="" class="by-stores-breadcrumbs">
+      <div _ngcontent-ng-web-c48="" className="by-stores">
+         <div _ngcontent-ng-web-c48="" className="open-stores" id="restaurantsResult">
+            <div _ngcontent-ng-web-c48="" className="by-stores-breadcrumbs">
                <h1 _ngcontent-ng-web-c48=""> Restaurantes e Cafés para Você </h1>
             </div>
-            <app-seo-breadcrumbs-section _ngcontent-ng-web-c48="" class="ng-star-inserted">
+            <app-seo-breadcrumbs-section _ngcontent-ng-web-c48="" className="ng-star-inserted">
             </app-seo-breadcrumbs-section>
             <app-store-list _ngcontent-ng-web-c48="">
-               <div class="store-list-boxes-grid">
+               <div className="store-list-boxes-grid">
                  
                {shops.map((shop, i) => {
                  return <Link to={"/shops/"+shop._id} key={i}>
-                  <div class="store-boxes ng-star-inserted">
-                     <div class="store-item-box">
+                  <div className="store-boxes ng-star-inserted">
+                     <div className="store-item-box">
                         <app-store-item _nghost-ng-web-c55="">
                            <article _ngcontent-ng-web-c55="">
-                              <a _ngcontent-ng-web-c55="" class="store-item" id="store-900030623" href={"/shops/"+shop._id} key={i}> 
-                                 <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{ backgroundImage: "url("+ '/api/shops/logo/'+shop._id+"?" + new Date().getTime() +")"}}></span>
-                                 <span _ngcontent-ng-web-c55="" class="store-info ng-star-inserted">
-                                    <div _ngcontent-ng-web-c55="" class="container-title"><span _ngcontent-ng-web-c55="" class="store-name" title="Nakamura"> {shop.name} </span></div>
-                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Japonesa · Asiática"> {shop.description} </span><span _ngcontent-ng-web-c55="" class="store-filters">
-                                      <span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 40 min </span><span _ngcontent-ng-web-c55="" class="price ng-star-inserted">
-                                        <span _ngcontent-ng-web-c55="" class="separator">●</span> R$&nbsp;9,90 </span></span>
+                              <a _ngcontent-ng-web-c55="" className="store-item" id="store-900030623" href={"/shops/"+shop._id} key={i}> 
+                                 <span _ngcontent-ng-web-c55="" className="store-background ng-star-inserted" style={{ backgroundImage: "url("+ '/api/shops/logo/'+shop._id+"?" + new Date().getTime() +")"}}></span>
+                                 <span _ngcontent-ng-web-c55="" className="store-info ng-star-inserted">
+                                    <div _ngcontent-ng-web-c55="" className="container-title"><span _ngcontent-ng-web-c55="" className="store-name" title="Nakamura"> {shop.name} </span></div>
+                                    <span _ngcontent-ng-web-c55="" className="store-tags ng-star-inserted" title="Japonesa · Asiática"> {shop.description} </span><span _ngcontent-ng-web-c55="" className="store-filters">
+                                      <span _ngcontent-ng-web-c55="" className="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" className="iconf-clock-4"></i> 40 min </span><span _ngcontent-ng-web-c55="" className="price ng-star-inserted">
+                                        <span _ngcontent-ng-web-c55="" className="separator">●</span> R$&nbsp;9,90 </span></span>
                                  </span>
                               </a>
-                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" class="ng-star-inserted">
-                                 <span _ngcontent-ng-web-c57="" class="is-marketplace">
-                                    <div _ngcontent-ng-web-c57="" class="is-marketplace-content">
-                                       <p _ngcontent-ng-web-c57="" class="f-caption-2">Externo</p>
-                                       <i _ngcontent-ng-web-c57="" class="iconf-marketplace"></i>
+                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" className="ng-star-inserted">
+                                 <span _ngcontent-ng-web-c57="" className="is-marketplace">
+                                    <div _ngcontent-ng-web-c57="" className="is-marketplace-content">
+                                       <p _ngcontent-ng-web-c57="" className="f-caption-2">Externo</p>
+                                       <i _ngcontent-ng-web-c57="" className="iconf-marketplace"></i>
                                     </div>
                                  </span>
                               </app-marketplace-component>
@@ -137,30 +137,30 @@ export default function Shops(){
                         </app-store-item>
                      </div>
                </div></Link>})}
-                  <div class="store-boxes ng-star-inserted">
-                     <div class="store-item-box">
+                  <div className="store-boxes ng-star-inserted">
+                     <div className="store-item-box">
                         <app-store-item _nghost-ng-web-c55="">
                            <article _ngcontent-ng-web-c55="">
-                              <a _ngcontent-ng-web-c55="" class="store-item" id="store-900139199" href="/restaurantes/diaspizza">
-                                 <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/homehjgsio28d9e-1588702822833.jpg?d=128x80&amp;e=webp')"}}></span>
-                                 <span _ngcontent-ng-web-c55="" class="store-info ng-star-inserted">
-                                    <div _ngcontent-ng-web-c55="" class="container-title"><span _ngcontent-ng-web-c55="" class="store-name" title="Dias Pizza"> Dias Pizza </span></div>
-                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Pizza"> Pizza </span><span _ngcontent-ng-web-c55="" class="store-filters"><span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 30 min </span></span>
-                                    <app-global-offers _ngcontent-ng-web-c55="" class="ng-star-inserted">
-                                       <div class="app-global-offers">
-                                          <div class="global-offers ng-star-inserted" style={{backgroundImage: 'linear-gradient(to right, rgb(143, 58, 255), rgb(104, 22, 252))'}}>
+                              <a _ngcontent-ng-web-c55="" className="store-item" id="store-900139199" href="/restaurantes/diaspizza">
+                                 <span _ngcontent-ng-web-c55="" className="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/homehjgsio28d9e-1588702822833.jpg?d=128x80&amp;e=webp')"}}></span>
+                                 <span _ngcontent-ng-web-c55="" className="store-info ng-star-inserted">
+                                    <div _ngcontent-ng-web-c55="" className="container-title"><span _ngcontent-ng-web-c55="" className="store-name" title="Dias Pizza"> Dias Pizza </span></div>
+                                    <span _ngcontent-ng-web-c55="" className="store-tags ng-star-inserted" title="Pizza"> Pizza </span><span _ngcontent-ng-web-c55="" className="store-filters"><span _ngcontent-ng-web-c55="" className="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" className="iconf-clock-4"></i> 30 min </span></span>
+                                    <app-global-offers _ngcontent-ng-web-c55="" className="ng-star-inserted">
+                                       <div className="app-global-offers">
+                                          <div className="global-offers ng-star-inserted" style={{backgroundImage: 'linear-gradient(to right, rgb(143, 58, 255), rgb(104, 22, 252))'}}>
                                              <p>ATÉ 31% OFF</p>
                                           </div>
-                                          <app-modal id="global-offers" class="ng-tns-c24-11"></app-modal>
+                                          <app-modal id="global-offers" className="ng-tns-c24-11"></app-modal>
                                        </div>
                                     </app-global-offers>
                                  </span>
                               </a>
-                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" class="ng-star-inserted">
-                                 <span _ngcontent-ng-web-c57="" class="is-marketplace">
-                                    <div _ngcontent-ng-web-c57="" class="is-marketplace-content">
-                                       <p _ngcontent-ng-web-c57="" class="f-caption-2">Externo</p>
-                                       <i _ngcontent-ng-web-c57="" class="iconf-marketplace"></i>
+                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" className="ng-star-inserted">
+                                 <span _ngcontent-ng-web-c57="" className="is-marketplace">
+                                    <div _ngcontent-ng-web-c57="" className="is-marketplace-content">
+                                       <p _ngcontent-ng-web-c57="" className="f-caption-2">Externo</p>
+                                       <i _ngcontent-ng-web-c57="" className="iconf-marketplace"></i>
                                     </div>
                                  </span>
                               </app-marketplace-component>
@@ -168,30 +168,30 @@ export default function Shops(){
                         </app-store-item>
                      </div>
                   </div>
-                  <div class="store-boxes ng-star-inserted">
-                     <div class="store-item-box">
+                  <div className="store-boxes ng-star-inserted">
+                     <div className="store-item-box">
                         <app-store-item _nghost-ng-web-c55="">
                            <article _ngcontent-ng-web-c55="">
-                              <a _ngcontent-ng-web-c55="" class="store-item" id="store-900139144" href="/restaurantes/dias-burguer">
-                                 <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/hometer03-1588688969359.jpg?d=128x80&amp;e=webp')"}}></span>
-                                 <span _ngcontent-ng-web-c55="" class="store-info ng-star-inserted">
-                                    <div _ngcontent-ng-web-c55="" class="container-title"><span _ngcontent-ng-web-c55="" class="store-name" title="Dias Burgers"> Dias Burgers </span></div>
-                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Burgers · Grelhado"> Burgers ,  Grelhado </span><span _ngcontent-ng-web-c55="" class="store-filters"><span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 30 min </span></span>
-                                    <app-global-offers _ngcontent-ng-web-c55="" class="ng-star-inserted">
-                                       <div class="app-global-offers">
-                                          <div class="global-offers ng-star-inserted" style={{backgroundImage: 'linear-gradient(to right, rgb(143, 58, 255), rgb(104, 22, 252))'}}>
+                              <a _ngcontent-ng-web-c55="" className="store-item" id="store-900139144" href="/restaurantes/dias-burguer">
+                                 <span _ngcontent-ng-web-c55="" className="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/hometer03-1588688969359.jpg?d=128x80&amp;e=webp')"}}></span>
+                                 <span _ngcontent-ng-web-c55="" className="store-info ng-star-inserted">
+                                    <div _ngcontent-ng-web-c55="" className="container-title"><span _ngcontent-ng-web-c55="" className="store-name" title="Dias Burgers"> Dias Burgers </span></div>
+                                    <span _ngcontent-ng-web-c55="" className="store-tags ng-star-inserted" title="Burgers · Grelhado"> Burgers ,  Grelhado </span><span _ngcontent-ng-web-c55="" className="store-filters"><span _ngcontent-ng-web-c55="" className="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" className="iconf-clock-4"></i> 30 min </span></span>
+                                    <app-global-offers _ngcontent-ng-web-c55="" className="ng-star-inserted">
+                                       <div className="app-global-offers">
+                                          <div className="global-offers ng-star-inserted" style={{backgroundImage: 'linear-gradient(to right, rgb(143, 58, 255), rgb(104, 22, 252))'}}>
                                              <p>ATÉ 14% OFF</p>
                                           </div>
-                                          <app-modal id="global-offers" class="ng-tns-c24-12"></app-modal>
+                                          <app-modal id="global-offers" className="ng-tns-c24-12"></app-modal>
                                        </div>
                                     </app-global-offers>
                                  </span>
                               </a>
-                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" class="ng-star-inserted">
-                                 <span _ngcontent-ng-web-c57="" class="is-marketplace">
-                                    <div _ngcontent-ng-web-c57="" class="is-marketplace-content">
-                                       <p _ngcontent-ng-web-c57="" class="f-caption-2">Externo</p>
-                                       <i _ngcontent-ng-web-c57="" class="iconf-marketplace"></i>
+                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" className="ng-star-inserted">
+                                 <span _ngcontent-ng-web-c57="" className="is-marketplace">
+                                    <div _ngcontent-ng-web-c57="" className="is-marketplace-content">
+                                       <p _ngcontent-ng-web-c57="" className="f-caption-2">Externo</p>
+                                       <i _ngcontent-ng-web-c57="" className="iconf-marketplace"></i>
                                     </div>
                                  </span>
                               </app-marketplace-component>
@@ -199,22 +199,22 @@ export default function Shops(){
                         </app-store-item>
                      </div>
                   </div>
-                  <div class="store-boxes ng-star-inserted">
-                     <div class="store-item-box">
+                  <div className="store-boxes ng-star-inserted">
+                     <div className="store-item-box">
                         <app-store-item _nghost-ng-web-c55="">
                            <article _ngcontent-ng-web-c55="">
-                              <a _ngcontent-ng-web-c55="" class="store-item" id="store-900119168" href="/restaurantes/kyara-sushi">
-                                 <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/dsad45125-1577729170191.jpg?d=128x80&amp;e=webp')"}}></span>
-                                 <span _ngcontent-ng-web-c55="" class="store-info ng-star-inserted">
-                                    <div _ngcontent-ng-web-c55="" class="container-title"><span _ngcontent-ng-web-c55="" class="store-name" title="Kyara Sushi"> Kyara Sushi </span></div>
-                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Japonesa"> Japonesa </span><span _ngcontent-ng-web-c55="" class="store-filters"><span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 30 min </span><span _ngcontent-ng-web-c55="" class="price ng-star-inserted"><span _ngcontent-ng-web-c55="" class="separator">●</span> R$&nbsp;5,00 </span></span>
+                              <a _ngcontent-ng-web-c55="" className="store-item" id="store-900119168" href="/restaurantes/kyara-sushi">
+                                 <span _ngcontent-ng-web-c55="" className="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/dsad45125-1577729170191.jpg?d=128x80&amp;e=webp')"}}></span>
+                                 <span _ngcontent-ng-web-c55="" className="store-info ng-star-inserted">
+                                    <div _ngcontent-ng-web-c55="" className="container-title"><span _ngcontent-ng-web-c55="" className="store-name" title="Kyara Sushi"> Kyara Sushi </span></div>
+                                    <span _ngcontent-ng-web-c55="" className="store-tags ng-star-inserted" title="Japonesa"> Japonesa </span><span _ngcontent-ng-web-c55="" className="store-filters"><span _ngcontent-ng-web-c55="" className="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" className="iconf-clock-4"></i> 30 min </span><span _ngcontent-ng-web-c55="" className="price ng-star-inserted"><span _ngcontent-ng-web-c55="" className="separator">●</span> R$&nbsp;5,00 </span></span>
                                  </span>
                               </a>
-                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" class="ng-star-inserted">
-                                 <span _ngcontent-ng-web-c57="" class="is-marketplace">
-                                    <div _ngcontent-ng-web-c57="" class="is-marketplace-content">
-                                       <p _ngcontent-ng-web-c57="" class="f-caption-2">Externo</p>
-                                       <i _ngcontent-ng-web-c57="" class="iconf-marketplace"></i>
+                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" className="ng-star-inserted">
+                                 <span _ngcontent-ng-web-c57="" className="is-marketplace">
+                                    <div _ngcontent-ng-web-c57="" className="is-marketplace-content">
+                                       <p _ngcontent-ng-web-c57="" className="f-caption-2">Externo</p>
+                                       <i _ngcontent-ng-web-c57="" className="iconf-marketplace"></i>
                                     </div>
                                  </span>
                               </app-marketplace-component>
@@ -222,22 +222,22 @@ export default function Shops(){
                         </app-store-item>
                      </div>
                   </div>
-                  <div class="store-boxes ng-star-inserted">
-                     <div class="store-item-box">
+                  <div className="store-boxes ng-star-inserted">
+                     <div className="store-item-box">
                         <app-store-item _nghost-ng-web-c55="">
                            <article _ngcontent-ng-web-c55="">
-                              <a _ngcontent-ng-web-c55="" class="store-item" id="store-900065438" href="/restaurantes/mestres-do-sushi">
-                                 <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{backgroundImage: "url('https://images.rappi.com.br/restaurants_background/900030623-1551975847.jpg?d=128x80&amp;e=webp')"}}></span>
-                                 <span _ngcontent-ng-web-c55="" class="store-info ng-star-inserted">
-                                    <div _ngcontent-ng-web-c55="" class="container-title"><span _ngcontent-ng-web-c55="" class="store-name" title="Mestres do Sushi"> Mestres do Sushi </span></div>
-                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Japonesa · Asiática"> Japonesa ,  Asiática </span><span _ngcontent-ng-web-c55="" class="store-filters"><span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 30 min </span><span _ngcontent-ng-web-c55="" class="price ng-star-inserted"><span _ngcontent-ng-web-c55="" class="separator">●</span> R$&nbsp;10,90 </span></span>
+                              <a _ngcontent-ng-web-c55="" className="store-item" id="store-900065438" href="/restaurantes/mestres-do-sushi">
+                                 <span _ngcontent-ng-web-c55="" className="store-background ng-star-inserted" style={{backgroundImage: "url('https://images.rappi.com.br/restaurants_background/900030623-1551975847.jpg?d=128x80&amp;e=webp')"}}></span>
+                                 <span _ngcontent-ng-web-c55="" className="store-info ng-star-inserted">
+                                    <div _ngcontent-ng-web-c55="" className="container-title"><span _ngcontent-ng-web-c55="" className="store-name" title="Mestres do Sushi"> Mestres do Sushi </span></div>
+                                    <span _ngcontent-ng-web-c55="" className="store-tags ng-star-inserted" title="Japonesa · Asiática"> Japonesa ,  Asiática </span><span _ngcontent-ng-web-c55="" className="store-filters"><span _ngcontent-ng-web-c55="" className="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" className="iconf-clock-4"></i> 30 min </span><span _ngcontent-ng-web-c55="" className="price ng-star-inserted"><span _ngcontent-ng-web-c55="" className="separator">●</span> R$&nbsp;10,90 </span></span>
                                  </span>
                               </a>
-                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" class="ng-star-inserted">
-                                 <span _ngcontent-ng-web-c57="" class="is-marketplace">
-                                    <div _ngcontent-ng-web-c57="" class="is-marketplace-content">
-                                       <p _ngcontent-ng-web-c57="" class="f-caption-2">Externo</p>
-                                       <i _ngcontent-ng-web-c57="" class="iconf-marketplace"></i>
+                              <app-marketplace-component _ngcontent-ng-web-c55="" _nghost-ng-web-c57="" className="ng-star-inserted">
+                                 <span _ngcontent-ng-web-c57="" className="is-marketplace">
+                                    <div _ngcontent-ng-web-c57="" className="is-marketplace-content">
+                                       <p _ngcontent-ng-web-c57="" className="f-caption-2">Externo</p>
+                                       <i _ngcontent-ng-web-c57="" className="iconf-marketplace"></i>
                                     </div>
                                  </span>
                               </app-marketplace-component>
@@ -245,15 +245,15 @@ export default function Shops(){
                         </app-store-item>
                      </div>
                   </div>
-                  <div class="store-boxes ng-star-inserted">
-                     <div class="store-item-box">
+                  <div className="store-boxes ng-star-inserted">
+                     <div className="store-item-box">
                         <app-store-item _nghost-ng-web-c55="">
                            <article _ngcontent-ng-web-c55="">
-                              <a _ngcontent-ng-web-c55="" class="store-item" id="store-900140033" href="/restaurantes/pizza-vip---centro">
-                                 <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/home1hsvdgh2-1589206251341.jpg?d=128x80&amp;e=webp')"}}></span>
-                                 <span _ngcontent-ng-web-c55="" class="store-info ng-star-inserted">
-                                    <div _ngcontent-ng-web-c55="" class="container-title"><span _ngcontent-ng-web-c55="" class="store-name" title="Pizza Vip "> Pizza Vip  </span></div>
-                                    <span _ngcontent-ng-web-c55="" class="store-tags ng-star-inserted" title="Pizza"> Pizza </span><span _ngcontent-ng-web-c55="" class="store-filters"><span _ngcontent-ng-web-c55="" class="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i> 31 min </span><span _ngcontent-ng-web-c55="" class="price ng-star-inserted"><span _ngcontent-ng-web-c55="" class="separator">●</span> R$&nbsp;13,20 </span></span>
+                              <a _ngcontent-ng-web-c55="" className="store-item" id="store-900140033" href="/restaurantes/pizza-vip---centro">
+                                 <span _ngcontent-ng-web-c55="" className="store-background ng-star-inserted" style={{ backgroundImage: "url('https://images.rappi.com.br/restaurants_background/home1hsvdgh2-1589206251341.jpg?d=128x80&amp;e=webp')"}}></span>
+                                 <span _ngcontent-ng-web-c55="" className="store-info ng-star-inserted">
+                                    <div _ngcontent-ng-web-c55="" className="container-title"><span _ngcontent-ng-web-c55="" className="store-name" title="Pizza Vip "> Pizza Vip  </span></div>
+                                    <span _ngcontent-ng-web-c55="" className="store-tags ng-star-inserted" title="Pizza"> Pizza </span><span _ngcontent-ng-web-c55="" className="store-filters"><span _ngcontent-ng-web-c55="" className="store-eta ng-star-inserted"><i _ngcontent-ng-web-c55="" className="iconf-clock-4"></i> 31 min </span><span _ngcontent-ng-web-c55="" className="price ng-star-inserted"><span _ngcontent-ng-web-c55="" className="separator">●</span> R$&nbsp;13,20 </span></span>
                                  </span>
                               </a>
                            </article>
@@ -263,12 +263,12 @@ export default function Shops(){
                </div>
             </app-store-list>
          </div>
-         <div _ngcontent-ng-web-c48="" class="load-more-button ng-star-inserted"><button _ngcontent-ng-web-c48="" class="button-loading-search primary-button-filled ng-star-inserted"> Ver mais </button></div>
+         <div _ngcontent-ng-web-c48="" className="load-more-button ng-star-inserted"><button _ngcontent-ng-web-c48="" className="button-loading-search primary-button-filled ng-star-inserted"> Ver mais </button></div>
       </div>
    </div>
-   <app-stores-content _ngcontent-ng-web-c48="" class="ng-star-inserted">
-      <div class="store-content">
-         <div class="store-content-wrapper hidden">
+   <app-stores-content _ngcontent-ng-web-c48="" className="ng-star-inserted">
+      <div className="store-content">
+         <div className="store-content-wrapper hidden">
             <h2>Peça comida em domicílio na Rappi, delivery em tempo recorde!</h2>
             <p>Se você estiver morrendo de fome e não quiser sair de casa pra nada, estiver com preguiça de cozinhar ou estiver com muito trabalho no escritório ou maratonando uma série no Netflix, por que não pede sua comida preferida pela Rappi? </p>
             <p>Temos uma infinidade de restaurantes que farão seu estômago roncar. Simplesmente peça o que mais te apetecer e nós entregaremos o seu pedido para sua casa ou escritório.</p>
@@ -410,8 +410,8 @@ export default function Shops(){
             <h2>Organize seu tempo livre como quiser e torne sua vida mais fácil!</h2>
             <p>Com a Rappi você pode dizer adeus às comidas congeladas! Além de ter comida em casa em tempo recorde e a qualquer hora do dia, também poderá conseguir ofertas exclusivas. Deixe-nos fazer as coisas por você para que possa desfrutar do seu tempo livre fazendo o que mais gosta.</p>
          </div>
-         <div class="store-content-button-wrapper">
-            <div class="store-content-size-button"><i class="iconf-keyboard_arrow_down"></i></div>
+         <div className="store-content-button-wrapper">
+            <div className="store-content-size-button"><i className="iconf-keyboard_arrow_down"></i></div>
          </div>
       </div>
    </app-stores-content>

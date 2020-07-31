@@ -97,50 +97,50 @@ export default function Shop({match}) {
     const logoUrl = shop._id
           ? `/api/shops/logo/${shop._id}?${new Date().getTime()}`
           : '/api/shops/defaultphoto'
-    return (<div className={classes.root} class="pt-50">
+    return (<div className={classes.root} className="pt-50">
 
-<span class="app-span-container ng-star-inserted">
+<span className="app-span-container ng-star-inserted">
    
-   <app-specific-restaurant class="container ng-star-inserted" _nghost-ng-web-c53="">
+   <app-specific-restaurant className="container ng-star-inserted" _nghost-ng-web-c53="">
     
-      <app-breadcrumbs _ngcontent-ng-web-c53="" class="hidden-mobile ng-star-inserted" _nghost-ng-web-c54="">
-         <div _ngcontent-ng-web-c54="" class="breadcrumbs">
+      <app-breadcrumbs _ngcontent-ng-web-c53="" className="hidden-mobile ng-star-inserted" _nghost-ng-web-c54="">
+         <div _ngcontent-ng-web-c54="" className="breadcrumbs">
             <ul _ngcontent-ng-web-c54="">
                
-               <li _ngcontent-ng-web-c54="" class="ng-star-inserted"><span _ngcontent-ng-web-c54=""><a _ngcontent-ng-web-c54="" href="https://www.rappi.com.br/restaurantes">restaurantes</a><i _ngcontent-ng-web-c54="" class="iconf-right"></i></span></li>
+               <li _ngcontent-ng-web-c54="" className="ng-star-inserted"><span _ngcontent-ng-web-c54=""><a _ngcontent-ng-web-c54="" href="https://www.rappi.com.br/restaurantes">restaurantes</a><i _ngcontent-ng-web-c54="" className="iconf-right"></i></span></li>
             </ul>
          </div>
       </app-breadcrumbs>
       
-      <div _ngcontent-ng-web-c53="" class="app-specific-restaurant ng-star-inserted">
-         <app-restaurant-info _ngcontent-ng-web-c53="" class="wrapper" _nghost-ng-web-c55="">
-            <div _ngcontent-ng-web-c55="" class="app-restaurant-info">
-               <div _ngcontent-ng-web-c55="" class="restaurant-info-container">
-                  <div _ngcontent-ng-web-c55="" class="store-background  ng-lazyloaded" style={{ backgroundImage: "url("+ '/api/shops/logo/'+shop._id+"?" + new Date().getTime() +")"}}></div>
-                  <div _ngcontent-ng-web-c55="" class="content-container">
-                     <h1 _ngcontent-ng-web-c55="" class="store-name" id="store-name" title="Pizza Y   "> {shop.name}   </h1>
+      <div _ngcontent-ng-web-c53="" className="app-specific-restaurant ng-star-inserted">
+         <app-restaurant-info _ngcontent-ng-web-c53="" className="wrapper" _nghost-ng-web-c55="">
+            <div _ngcontent-ng-web-c55="" className="app-restaurant-info">
+               <div _ngcontent-ng-web-c55="" className="restaurant-info-container">
+                  <div _ngcontent-ng-web-c55="" className="store-background  ng-lazyloaded" style={{ backgroundImage: "url("+ '/api/shops/logo/'+shop._id+"?" + new Date().getTime() +")"}}></div>
+                  <div _ngcontent-ng-web-c55="" className="content-container">
+                     <h1 _ngcontent-ng-web-c55="" className="store-name" id="store-name" title="Pizza Y   "> {shop.name}   </h1>
                      
-                     <ul _ngcontent-ng-web-c55="" class="meals-categories ng-star-inserted">
+                     <ul _ngcontent-ng-web-c55="" className="meals-categories ng-star-inserted">
                         
-                        <li _ngcontent-ng-web-c55="" class="f-caption-1 ng-star-inserted"> Pizza  <span _ngcontent-ng-web-c55=""></span></li>
+                        <li _ngcontent-ng-web-c55="" className="f-caption-1 ng-star-inserted"> Pizza  <span _ngcontent-ng-web-c55=""></span></li>
                      </ul>
-                     <div _ngcontent-ng-web-c55="" class="detail-container">
-                        <div _ngcontent-ng-web-c55="" class="eta-container"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i><span _ngcontent-ng-web-c55="" class="f-caption-1">30 min</span></div>
+                     <div _ngcontent-ng-web-c55="" className="detail-container">
+                        <div _ngcontent-ng-web-c55="" className="eta-container"><i _ngcontent-ng-web-c55="" className="iconf-clock-4"></i><span _ngcontent-ng-web-c55="" className="f-caption-1">30 min</span></div>
                         
-                        <p _ngcontent-ng-web-c55="" class="delivery_price f-caption-1 ng-star-inserted"> R$&nbsp;10,50 </p>
+                        <p _ngcontent-ng-web-c55="" className="delivery_price f-caption-1 ng-star-inserted"> R$&nbsp;10,50 </p>
                         
-                        <div _ngcontent-ng-web-c55="" class="rating-container ng-star-inserted"><i _ngcontent-ng-web-c55="" class="iconf-start"></i><span _ngcontent-ng-web-c55="" class="f-caption-1">4.6</span></div>
+                        <div _ngcontent-ng-web-c55="" className="rating-container ng-star-inserted"><i _ngcontent-ng-web-c55="" className="iconf-start"></i><span _ngcontent-ng-web-c55="" className="f-caption-1">4.6</span></div>
                      </div>
                      
                      <app-global-offers _ngcontent-ng-web-c55="">
-                        <div class="app-global-offers">
+                        <div className="app-global-offers">
                            
-                           <div class="global-offers has-one-offer ng-star-inserted" style={{backgroundImage: 'linear-gradient(to right, rgb(143, 58, 255), rgb(104, 22, 252))'}}>
+                           <div className="global-offers has-one-offer ng-star-inserted" style={{backgroundImage: 'linear-gradient(to right, rgb(143, 58, 255), rgb(104, 22, 252))'}}>
                               
                               <p>ATÉ 50% OFF</p>
                               
                            </div>
-                           <app-modal id="global-offers" class="ng-tns-c24-4">
+                           <app-modal id="global-offers" className="ng-tns-c24-4">
                               
                            </app-modal>
                         </div>
@@ -151,39 +151,39 @@ export default function Shop({match}) {
             </div>
             
          </app-restaurant-info>
-         <div _ngcontent-ng-web-c53="" class="corridors-categories-container">
-            <app-generic-categories _ngcontent-ng-web-c53="" class="sticky">
-               <div class="categories">
+         <div _ngcontent-ng-web-c53="" className="corridors-categories-container">
+            <app-generic-categories _ngcontent-ng-web-c53="" className="sticky">
+               <div className="categories">
                   <ul id="categories-sub-menu">
                      
-                     <li routerlinkactive="active" class="ng-star-inserted">
+                     <li routerlinkactive="active" className="ng-star-inserted">
                         <a>
                            <p>Rappi Promo - Pizza Grande</p>
                            
                         </a>
                         
                      </li>
-                     <li routerlinkactive="active" class="ng-star-inserted">
+                     <li routerlinkactive="active" className="ng-star-inserted">
                         <a>
                            <p>Pizzas Salgadas Individual</p>
                         </a>
                      </li>
-                     <li routerlinkactive="active" class="ng-star-inserted">
+                     <li routerlinkactive="active" className="ng-star-inserted">
                         <a>
                            <p>Pizzas Doces</p>
                         </a>
                      </li>
-                     <li routerlinkactive="active" class="ng-star-inserted">
+                     <li routerlinkactive="active" className="ng-star-inserted">
                         <a>
                            <p>Sobremesa</p>
                         </a>
                      </li>
-                     <li routerlinkactive="active" class="ng-star-inserted">
+                     <li routerlinkactive="active" className="ng-star-inserted">
                         <a>
                            <p>Bebidas</p>
                         </a>
                      </li>
-                     <li routerlinkactive="active" class="ng-star-inserted">
+                     <li routerlinkactive="active" className="ng-star-inserted">
                         <a>
                            <p>Ajuda de Casa</p>
                         </a>
@@ -193,10 +193,10 @@ export default function Shop({match}) {
                </div>
                
             </app-generic-categories>
-            <app-corridors-restaurant _ngcontent-ng-web-c53="" class="wrapper">
-               <div class="app-corridors-restaurant">
-                  <h2 class="f-headline">Preços Cardapio Pizza Y   </h2>
-                  <div class="ng-star-inserted"></div>
+            <app-corridors-restaurant _ngcontent-ng-web-c53="" className="wrapper">
+               <div className="app-corridors-restaurant">
+                  <h2 className="f-headline">Preços Cardapio Pizza Y   </h2>
+                  <div className="ng-star-inserted"></div>
             <Products products={products} searched={false}/>
                   </div>
                <router-outlet></router-outlet>

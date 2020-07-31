@@ -59,22 +59,22 @@ export default function Products(props){
 
 {props.products.map((product, i) => (
 
-<div class="product-detail-container">
+<div className="product-detail-container">
                 
-<a id="category-products-591091" class="ng-star-inserted">
-    <div class="product-detail">
-      <div class="product-detail-content">
-          <div class="image-container">
+<a id="category-products-591091" className="ng-star-inserted">
+    <div className="product-detail">
+      <div className="product-detail-content">
+          <div className="image-container">
             
-            <app-img-ssr><img class="  ng-lazyloaded" src={'/api/product/image/'+product._id} alt="Pizza Grande de Mussarela" title="Pizza Grande de Mussarela"/></app-img-ssr>
+            <app-img-ssr><img className="  ng-lazyloaded" src={'/api/product/image/'+product._id} alt="Pizza Grande de Mussarela" title="Pizza Grande de Mussarela"/></app-img-ssr>
             
           </div>
-          <div class="content-container">
-            <h3 class="product-name">{product.name}</h3>
-            <p class="product-description f-caption-2"> {product.description} </p>
-            <div class="price-add-continer">
-                <div class="prices-container">
-                  <span class="product-price f-caption-1">{product.price} </span>
+          <div className="content-container">
+            <h3 className="product-name">{product.name}</h3>
+            <p className="product-description f-caption-2"> {product.description} </p>
+            <div className="price-add-continer">
+                <div className="prices-container">
+                  <span className="product-price f-caption-1">{product.price} </span>
                 </div>
                   <AddToCart  item={product}/>
                 

@@ -34,7 +34,7 @@ export default function AddToCart(props) {
     return (<span>
       {props.item.quantity >= 0 ?
         <IconButton color="secondary" dense="dense" onClick={addToCart}>
-          <button class="primary-button-filled"> Adicionar </button>
+          <button className="primary-button-filled"> Adicionar </button>
         </IconButton> :
         <IconButton disabled={true} color="secondary" dense="dense">
           <DisabledCartIcon className={props.cartStyle || classes.disabledIconButton}/>
