@@ -61,7 +61,6 @@ export default function Products(props){
 
 <div className="product-detail-container">
                 
-<a id="category-products-591091" className="ng-star-inserted">
     <div className="product-detail">
       <div className="product-detail-content">
           <div className="image-container">
@@ -70,7 +69,9 @@ export default function Products(props){
             
           </div>
           <div className="content-container">
+          <a href={'/product/'+item.product._id}>
             <h3 className="product-name">{product.name}</h3>
+          </a>
             <p className="product-description f-caption-2"> {product.description} </p>
             <div className="price-add-continer">
                 <div className="prices-container">
@@ -82,7 +83,6 @@ export default function Products(props){
           </div>
       </div>
     </div>
-</a>
 
 </div> ))}
 

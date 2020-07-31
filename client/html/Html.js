@@ -79,7 +79,7 @@ export default function Html() {
                                 <img  className="img-2 ng-star-inserted" src={pharmacyImg}/>
                                 <img  className="img-3 ng-star-inserted" src={burgerImg}/>
                                 <img  className="img-4 ng-star-inserted" src={mrsImg}/>      
-                                <div  className="title">   <h1  className="bold ng-star-inserted" style={{"font-size": "40px"}}>Marketplace что-то такое    </h1></div>
+                                <div  className="title">   <h1  className="bold ng-star-inserted" style={{"fontSize": "40px"}}>Marketplace что-то такое    </h1></div>
                             </div>
                             <div  className="location-container ng-star-inserted">
                                 <div  className="location-input border-input">
@@ -101,26 +101,26 @@ export default function Html() {
                                   <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted">
                                       <app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>
                                         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Supermercados" href="/lojas/tipo/supermercados">
-                                            <div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(238, 244, 198)"}}>
+                                            <div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"backgroundColor": "rgb(238, 244, 198)"}}>
                                             <img  _ngcontent-ng-web-c29="true" src={marketsImg}/>
                             </div>
                             <h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Супермаркеты </h4>
                             </a>
                             </app-cpg-card>
                             </li>
-                            <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Restaurantes" href="/restaurantes"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(255, 131, 86)"}}>
+                            <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Restaurantes" href="/restaurantes"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"backgroundColor": "rgb(255, 131, 86)"}}>
                             <img  _ngcontent-ng-web-c29="true" src={restaurantImg}/>
                       </div>
                       <h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Рестораны </h4></a>      </app-cpg-card></li>         
-                      <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Adidas" href="/lojas/tipo/adidasbotao"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(255, 255, 255)"}}>
+                      <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Adidas" href="/lojas/tipo/adidasbotao"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"backgroundColor": "rgb(255, 255, 255)"}}>
                       <img  _ngcontent-ng-web-c29="true" src={adidasImg}/>
                     </div>
                     <h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Спорт </h4></a>      </app-cpg-card></li>
-                    <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Bebidas" href="/lojas/tipo/bebidas-24"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(251, 233, 201)"}}>
+                    <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Bebidas" href="/lojas/tipo/bebidas-24"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"backgroundColor": "rgb(251, 233, 201)"}}>
                     <img  _ngcontent-ng-web-c29="true" src={liquorImg}/>
               </div>
               <h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Напитки </h4></a>      </app-cpg-card></li>         
-              <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Farmácia 24h" href="/lojas/tipo/farmacia"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"background-color": "rgb(155, 222, 231)"}}>
+              <li  _ngcontent-ng-web-c43="true"  className="store-item ng-star-inserted"><app-cpg-card  _ngcontent-ng-web-c43="true" _nghost-ng-web-c29>         <a  _ngcontent-ng-web-c29="true"  className="cpg-card ng-star-inserted" title="Farmácia 24h" href="/lojas/tipo/farmacia"><div  _ngcontent-ng-web-c29="true"  className="cpg-img-container" style={{"backgroundColor": "rgb(155, 222, 231)"}}>
               <img  _ngcontent-ng-web-c29="true" src={farmaciaImg}/>
           </div>
           <h4  _ngcontent-ng-web-c29="true"  className="cpg-title"> Аптеки </h4></a>      </app-cpg-card></li>
