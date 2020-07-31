@@ -26,10 +26,12 @@ import NewAuction from './auction/NewAuction'
 import EditAuction from './auction/EditAuction'
 import Auction from './auction/Auction'
 import Html from './html/Html'
+import Sidebar from './core/Sidebar'
 
 const MainRouter = () => {
   return (<div>
       <Menu/>
+      <Sidebar/>
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/users" component={Users}/>

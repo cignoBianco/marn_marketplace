@@ -23,6 +23,10 @@ const isPartActive = (history, path) => {
   else
     return {color: '#ffffff'}
 }
+function sidebarToggle() {
+  let sidebar = document.querySelector('.stores-list-cont');
+  (sidebar.style.width == 0 || sidebar.style.width == "0px") ? sidebar.style.width = "max-content" : sidebar.style.width = 0;
+}
 const Menu = withRouter(({history}) => (
   <AppBar position="fixed">
     <Toolbar>
@@ -32,7 +36,7 @@ const Menu = withRouter(({history}) => (
             <div  className="header-content-left">
               <div  className="hidden-tablet ng-star-inserted">
                 <div  className="header-menu-button">
-                  <button  className="hamburger hamburger--elastic" type="button">
+                  <button  className="hamburger hamburger--elastic" type="button" onClick={sidebarToggle}>
                     <span  className="hamburger-box">
                       <span  className="hamburger-inner"></span>
                     </span>
@@ -228,7 +232,9 @@ const Menu = withRouter(({history}) => (
     </header>
     
     </Toolbar>
+    
   </AppBar>
+  
 ))
 
 export default Menu
