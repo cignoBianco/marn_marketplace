@@ -122,7 +122,7 @@ export default function Shop({match}) {
                      
                      <ul _ngcontent-ng-web-c55="" class="meals-categories ng-star-inserted">
                         
-                        <li _ngcontent-ng-web-c55="" class="f-caption-1 ng-star-inserted">{shop.description}  <span _ngcontent-ng-web-c55=""></span></li>
+                        <li _ngcontent-ng-web-c55="" class="f-caption-1 ng-star-inserted"> Pizza  <span _ngcontent-ng-web-c55=""></span></li>
                      </ul>
                      <div _ngcontent-ng-web-c55="" class="detail-container">
                         <div _ngcontent-ng-web-c55="" class="eta-container"><i _ngcontent-ng-web-c55="" class="iconf-clock-4"></i><span _ngcontent-ng-web-c55="" class="f-caption-1">30 min</span></div>
@@ -196,38 +196,8 @@ export default function Shop({match}) {
             <app-corridors-restaurant _ngcontent-ng-web-c53="" class="wrapper">
                <div class="app-corridors-restaurant">
                   <h2 class="f-headline">Preços Cardapio Pizza Y   </h2>
-                  <div class="ng-star-inserted">
-                  <Typography type="title" component="h2" className={classes.productTitle}>Products</Typography>
+                  <div class="ng-star-inserted"></div>
             <Products products={products} searched={false}/>
-            </div>
-                  <div class="ng-star-inserted">
-                     <h3 class="f-medium-title">Rappi Promo - Pizza Grande</h3>
-                     <div class="product-detail-container">
-                        
-                        <a id="category-products-591091" class="ng-star-inserted">
-                           <div class="product-detail">
-                              <div class="product-detail-content">
-                                 <div class="image-container">
-                                    
-                                    <app-img-ssr><img class="  ng-lazyloaded" src="./Delivery Pizza Y em Minutos _ Rappi_files/2097410993-1584026874602.png" alt="Pizza Grande de Mussarela" title="Pizza Grande de Mussarela"/></app-img-ssr>
-                                    
-                                 </div>
-                                 <div class="content-container">
-                                    <h3 class="product-name">Pizza Grande de Mussarela</h3>
-                                    <p class="product-description f-caption-2"> Pizza coberta com tomates italianos e mussarela. </p>
-                                    <div class="price-add-continer">
-                                       <div class="prices-container">
-                                          <span class="product-price f-caption-1"> R$&nbsp;58,00 </span>
-                                       </div>
-                                       <button class="primary-button-filled"> Adicionar </button>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </a>
-                      
-                      </div>
-                  </div>
                   </div>
                <router-outlet></router-outlet>
             </app-corridors-restaurant>
@@ -238,28 +208,5 @@ export default function Shop({match}) {
   </app-specific-restaurant>
 </span>
 
-      <Grid container spacing={8}>
-        <Grid item xs={4} sm={4}>
-          <Card className={classes.card}>
-            <CardContent>
-            <span _ngcontent-ng-web-c55="" class="store-background ng-star-inserted" style={{ backgroundImage: "url("+ '/api/shops/logo/'+shop._id+"?" + new Date().getTime() +")"}}></span>
-              <Typography type="headline" component="h2" className={classes.title}>
-                {shop.name}
-              </Typography>
-              <br/>
-              <Avatar src={logoUrl} className={classes.bigAvatar}/><br/>
-                <Typography type="subheading" component="h2" className={classes.subheading}>
-                  {shop.description}
-                </Typography><br/>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={8} sm={8}>
-          <Card>
-            <Typography type="title" component="h2" className={classes.productTitle}>Products</Typography>
-            <Products products={products} searched={false}/>
-          </Card>
-        </Grid>
-      </Grid>
     </div>)
 }
