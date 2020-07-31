@@ -41,7 +41,7 @@ const useStyles = makeStyles(theme => ({
     marginLeft: '24px',
     width: '-webkit-fill-available',
     display: 'inline-block',
-    backgroundSize: 'contain'
+    backgroundSize: 'cover'
   },
   icon: {
     verticalAlign: 'sub'

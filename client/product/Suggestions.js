@@ -12,6 +12,7 @@ import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import AddToCart from './../cart/AddToCart'
+import CustomDivider from './../core/Divider'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -116,7 +117,7 @@ export default function Suggestions (props) {
                     </div>
                   </div>
                 </Card>
-                <Divider/>
+                <CustomDivider/>
               </span>
             })
           }

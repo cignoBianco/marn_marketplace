@@ -69,7 +69,7 @@ export default function Signup() {
       }
     })
   }   
-    return (<div>
+    return (<div className="pt-75">
       <Card className={classes.card}>
         <CardContent>
           <Typography variant="h6" className={classes.title}>

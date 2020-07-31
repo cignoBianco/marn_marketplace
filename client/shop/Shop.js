@@ -12,7 +12,8 @@ import {listByShop} from './../product/api-product.js'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    margin: 30,
+    padding: 30,
+    backgroundColor: '#f9f9f8'
   },
   card: {
     textAlign: 'center',
@@ -97,7 +98,7 @@ export default function Shop({match}) {
     const logoUrl = shop._id
           ? `/api/shops/logo/${shop._id}?${new Date().getTime()}`
           : '/api/shops/defaultphoto'
-    return (<div className={classes.root} className="pt-50">
+    return (<div className={classes.root}>
 
 <span className="app-span-container ng-star-inserted">
    

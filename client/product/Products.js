@@ -7,6 +7,7 @@ import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 import {Link} from 'react-router-dom'
 import AddToCart from './../cart/AddToCart'
+import CustomDivider from './../core/Divider'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,9 +15,10 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    background: theme.palette.background.paper,
+    
     textAlign: 'left',
-    padding: '0 8px'
+    padding: '0 8px',
+    marginBottom: 20
   },
   container: {
     minWidth: '100%',
@@ -47,6 +49,22 @@ const useStyles = makeStyles(theme => ({
     marginBottom:'5px',
     color:'rgb(189, 222, 219)',
     display:'block'
+  }, 
+  div: {
+    background: 'white',
+    marginBottom: 15,
+    boxShadow: '2px 2px 3px 1px #0000000a',
+    borderRadius: 8
+  },
+  price: {
+    padding: '6px 16px',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-end',
+    fontSize: 20,
+    width: '-webkit-fill-available',
+    textAlign: '-webkit-left',
   }
 }))
 
@@ -59,7 +77,10 @@ export default function Products(props){
 
 {props.products.map((product, i) => (
 
-<div className="product-detail-container">
+<div className="product-detail-container " style={{background: 'white',
+    marginBottom: 15, paddingLeft: 10,
+    boxShadow: '2px 2px 3px 1px #0000000a',
+    borderRadius: 8}}>
                 
     <div className="product-detail">
       <div className="product-detail-content">
@@ -69,13 +90,13 @@ export default function Products(props){
             
           </div>
           <div className="content-container">
-          <a href={'/product/'+product._id}>
+          <a href={'/product/'+product._id} style={{marginBottom: 0, marginLeft: 0}}>
             <h3 className="product-name">{product.name}</h3>
           </a>
             <p className="product-description f-caption-2"> {product.description} </p>
             <div className="price-add-continer">
                 <div className="prices-container">
-                  <span className="product-price f-caption-1">{product.price} </span>
+                  <span className={classes.price}>{product.price} </span>
                 </div>
                   <AddToCart  item={product}/>
                 
@@ -84,7 +105,7 @@ export default function Products(props){
       </div>
     </div>
 
-</div> ))}
+</div> ) ) } 
 
           </div>) : props.searched && (<Typography variant="subheading" component="h4" className={classes.title}>No products found! :(</Typography>)}
       </div>)
