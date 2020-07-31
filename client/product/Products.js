@@ -56,20 +56,37 @@ export default function Products(props){
       <div className={classes.root}>
       {props.products.length > 0 ?
         (<div className={classes.container}>
-          <GridList cellHeight={200} className={classes.gridList} cols={3}>
-          {props.products.map((product, i) => (
-            <GridListTile key={i} className={classes.tile}>
-              <Link to={"/product/"+product._id}><img className={classes.image} src={'/api/product/image/'+product._id} alt={product.name} /></Link>
-              <GridListTileBar className={classes.tileBar}
-                title={<Link to={"/product/"+product._id} className={classes.tileTitle}>{product.name}</Link>}
-                subtitle={<span>$ {product.price}</span>}
-                actionIcon={
-                  <AddToCart item={product}/>
-                }
-              />
-            </GridListTile>
-          ))}
-        </GridList></div>) : props.searched && (<Typography variant="subheading" component="h4" className={classes.title}>No products found! :(</Typography>)}
+
+{props.products.map((product, i) => (
+
+<div class="product-detail-container">
+                
+<a id="category-products-591091" class="ng-star-inserted">
+    <div class="product-detail">
+      <div class="product-detail-content">
+          <div class="image-container">
+            
+            <app-img-ssr><img class="  ng-lazyloaded" src={'/api/product/image/'+product._id} alt="Pizza Grande de Mussarela" title="Pizza Grande de Mussarela"/></app-img-ssr>
+            
+          </div>
+          <div class="content-container">
+            <h3 class="product-name">{product.name}</h3>
+            <p class="product-description f-caption-2"> {product.description} </p>
+            <div class="price-add-continer">
+                <div class="prices-container">
+                  <span class="product-price f-caption-1">{product.price} </span>
+                </div>
+                  <AddToCart  item={product}/>
+                
+            </div>
+          </div>
+      </div>
+    </div>
+</a>
+
+</div> ))}
+
+          </div>) : props.searched && (<Typography variant="subheading" component="h4" className={classes.title}>No products found! :(</Typography>)}
       </div>)
 }
 Products.propTypes = {

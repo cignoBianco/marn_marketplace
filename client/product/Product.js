@@ -103,8 +103,10 @@ export default function Product ({match}) {
           : '/api/product/defaultphoto'
     return (
         <div className={classes.root}>
+
           <Grid container spacing={10}>
             <Grid item xs={7} sm={7}>
+              
               <Card className={classes.card}>
                 <CardHeader
                   title={product.name}
