@@ -10,6 +10,7 @@ import Divider from '@material-ui/core/Divider'
 import {list} from './api-shop.js'
 import {Link} from 'react-router-dom'
 import Search from './../product/Search'
+import {listLatest, listCategories} from './../product/api-product.js'
 import Categories from './../product/Categories'
 import Grid from '@material-ui/core/Grid'
 
@@ -282,7 +283,7 @@ export default function Shops(){
                </div>
                <Grid item xs={8} sm={8}>
             <Search categories={categories}/>
-            <Categories categories={categories}/>
+   {/*'<Categories categories={categories}/>*/}
           </Grid>
             </app-store-list>
          </div>

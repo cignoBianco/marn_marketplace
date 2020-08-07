@@ -87,7 +87,7 @@ export default function NewAuction() {
       values.itemName && auctionData.append('itemName', values.itemName)
       values.description && auctionData.append('description', values.description)
       values.image && auctionData.append('image', values.image)
-      values.startingBid && auctionData.append('startingBid', values.startingBid)
+      values.startingBid && auctionData.append('Discount', values.startingBid)
       values.bidStart && auctionData.append('bidStart', values.bidStart)
       values.bidEnd && auctionData.append('bidEnd', values.bidEnd)
       create({
@@ -111,7 +111,7 @@ export default function NewAuction() {
       <Card className={classes.card}>
         <CardContent>
           <Typography type="headline" component="h2" className={classes.title}>
-            New Auction
+            New Action
           </Typography>
           <br/>
           <input accept="image/*" onChange={handleChange('image')} className={classes.input} id="icon-button-file" type="file" />
@@ -136,7 +136,7 @@ export default function NewAuction() {
           <br/>
           <TextField
             id="datetime-local"
-            label="Auction Start Time"
+            label="Action Start Time"
             type="datetime-local"
             defaultValue={defaultStartTime}
             className={classes.textField}
@@ -148,7 +148,7 @@ export default function NewAuction() {
           <br/>
           <TextField
             id="datetime-local"
-            label="Auction End Time"
+            label="Action End Time"
             type="datetime-local"
             defaultValue={defaultEndTime}
             className={classes.textField}

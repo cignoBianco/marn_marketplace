@@ -58,7 +58,7 @@ const useStyles = makeStyles(theme => ({
   },
   price: {
     padding: '6px 16px',
-    height: '100%',
+    height: '45px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'flex-end',

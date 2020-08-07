@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 export default function City(){
 
     return (
-      <div>
+      <div class="pt-75">
           <div>
         city</div>
       </div>

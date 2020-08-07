@@ -337,7 +337,7 @@ export default function Home(){
         
 
 
-        <Grid container spacing={2}>
+        {/*<Grid container spacing={2}>
           <Grid item xs={8} sm={8}>
             <Search categories={categories}/>
             <Categories categories={categories}/>
@@ -345,7 +345,7 @@ export default function Home(){
           <Grid item xs={4} sm={4}>
             <Suggestions products={suggestions} title={suggestionTitle}/>
           </Grid>
-        </Grid>
+    </Grid>*/}
       </div>
     )
 }

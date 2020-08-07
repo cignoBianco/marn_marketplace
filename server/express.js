@@ -7,6 +7,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import Template from './../template'
 import userRoutes from './routes/user.routes'
+import cityRoutes from './routes/city.routes'
 import authRoutes from './routes/auth.routes'
 import shopRoutes from './routes/shop.routes'
 import productRoutes from './routes/product.routes'
@@ -45,6 +46,7 @@ app.use(cors())
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 // mount routes
+app.use('/', cityRoutes)
 app.use('/', userRoutes)
 app.use('/', authRoutes)
 app.use('/', shopRoutes)
