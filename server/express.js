@@ -46,7 +46,7 @@ app.use(cors())
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 // mount routes
-app.use('/', cityRoutes)
+//app.use('/', cityRoutes)
 app.use('/', userRoutes)
 app.use('/', authRoutes)
 app.use('/', shopRoutes)
