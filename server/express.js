@@ -13,6 +13,7 @@ import shopRoutes from './routes/shop.routes'
 import productRoutes from './routes/product.routes'
 import orderRoutes from './routes/order.routes'
 import auctionRoutes from './routes/auction.routes'
+import onceRoutes from './routes/once.routes'
 
 // modules for server side rendering
 import React from 'react'
@@ -53,9 +54,11 @@ app.use('/', shopRoutes)
 app.use('/', productRoutes)
 app.use('/', orderRoutes)
 app.use('/', auctionRoutes)
+app.use('/', onceRoutes)
 
 app.get('*', (req, res) => {
   const sheets = new ServerStyleSheets()
+  sheets.options = { configureJSX: true }
   const context = {}
   const markup = ReactDOMServer.renderToString(
     sheets.collect(
