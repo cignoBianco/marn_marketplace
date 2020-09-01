@@ -5,7 +5,7 @@ export default ({markup, css}) => {
       <html lang="en">
         <head>
           <meta charset="utf-8">
-          <title>DoDoma</title>
+          <title>Merketa</title>
           <base href="/">
           <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
           <style>
