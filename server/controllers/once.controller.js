@@ -6,14 +6,15 @@ import config from './../../config/config'
 import stripe from 'stripe'
 import auth from './../helpers/onceConfig'
 
-
+const axios = require('axios')
 
 const initialize = async (req, res, next) => {
     //try {
-const axios = require('axios')
-
+        console.log("hey");
+        //return res.status(200).json({"data": "he"});
+    
     const URL = 'http://1cdev.my70.ru/dostavka_uni_final/hs/sitebackend_v2/getsession';
-    async (req, res) => {
+    const getSession = async (request, result) => {
         let users = await axios.post(URL, '', {
             auth: {
                 username: "web",
@@ -21,19 +22,37 @@ const axios = require('axios')
             }
         })
         .then(function(response) {
-            console.log(response.data);
-            res.json(response.data)
-            res.status(200).send({ 'data': response.data })
+            let responseData = response.data;
+            console.log(responseData);
+            //res.json(response.data)
+            return res.status(200).json({ "data": responseData })
         }).catch((err) => { return err });
-
     }
+
+    await getSession();
 }
 
 const getit = async (req, res, next) => {
-    res.json(req.data);
-    console.log(req.data);
+    // res.json(req.data);
+    let reqBody = req.body;
+     console.log(reqBody);
+
+     let date = new Date();
+
+    const fs = require('fs');
+
+    fs.appendFile("server/files/test", "Hey there!" + JSON.stringify(reqBody) + " " + date.getMinutes() + "\n", (err) => {
+        if (err) {
+            console.log(err)
+            return res.json({"status": "success"})
+        }
+        console.log("The file was saved!")
+        return res.json({"status": "success"})
+    })
+
 }
 
 export default {
-    initialize
+    initialize,
+    getit
 }
