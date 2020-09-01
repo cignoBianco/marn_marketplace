@@ -9,7 +9,7 @@ const URL = 'http://1cdev.my70.ru/dostavka_uni_final/hs/sitebackend_v2/getsessio
 
 router.route('/api/getSession')
   .get(onceCtrl.initialize)
-  .post(onceCtrl.getit);
+ // .post(onceCtrl.getit);
 
 /*router.route('/api/users/:userId')
   .get(authCtrl.requireSignin, userCtrl.read)

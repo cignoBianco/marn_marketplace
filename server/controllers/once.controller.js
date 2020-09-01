@@ -35,6 +35,5 @@ const getit = async (req, res, next) => {
 }
 
 export default {
-    initialize,
-    getit
+    initialize
 }
