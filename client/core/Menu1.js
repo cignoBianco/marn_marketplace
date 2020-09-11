@@ -31,4 +31,4 @@ const Menu = withRouter(({history}) => (
   <div></div>
 ))
 
-export default Menu
+export default Menu1
