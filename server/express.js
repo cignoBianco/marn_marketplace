@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser'
 import compress from 'compression'
 import cors from 'cors'
 import helmet from 'helmet'
-import Template from './../template'
+import Template from '../template1'
 import userRoutes from './routes/user.routes'
 import cityRoutes from './routes/city.routes'
 import authRoutes from './routes/auth.routes'
@@ -14,6 +14,7 @@ import productRoutes from './routes/product.routes'
 import orderRoutes from './routes/order.routes'
 import auctionRoutes from './routes/auction.routes'
 import onceRoutes from './routes/once.routes'
+import htmlRoutes from './routes/html.routes'
 
 // modules for server side rendering
 import React from 'react'
@@ -55,6 +56,7 @@ app.use('/', productRoutes)
 app.use('/', orderRoutes)
 app.use('/', auctionRoutes)
 app.use('/', onceRoutes)
+app.use('/', htmlRoutes)
 
 app.get('*', (req, res) => {
   const sheets = new ServerStyleSheets()

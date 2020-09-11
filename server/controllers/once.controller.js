@@ -52,6 +52,8 @@ const getit = async (req, res, next) => {
 
 }
 
+const getOrganizations = async (req, res, nexxt) => {}
+
 export default {
     initialize,
     getit

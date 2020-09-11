@@ -26,7 +26,7 @@ import NewAuction from './auction/NewAuction'
 import EditAuction from './auction/EditAuction'
 import Auction from './auction/Auction'
 import Html from './html/Html'
-import Sidebar from './core/Sidebar'
+import Sidebar from './core/Sidebar1'
 import City from './city/City'
 
 const MainRouter = () => {
