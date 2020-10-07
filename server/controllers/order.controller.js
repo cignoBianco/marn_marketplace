@@ -1,8 +1,5 @@
 import {Order, CartItem} from '../models/order.model'
-<<<<<<< HEAD
-=======
 import _ from 'lodash'
->>>>>>> ab2cda3db27318b2a9b1f9bede90b5c6965ef955
 import errorHandler from './../helpers/dbErrorHandler'
 
 const create = async (req, res) => {
