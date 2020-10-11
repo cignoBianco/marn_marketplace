@@ -9,13 +9,13 @@ import { Redirect } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
   iconButton: {
-    width: '20px',
-    height: '20px'
+    width: '28px',
+    height: '28px'
   },
   disabledIconButton: {
     color: '#7f7563',
-    width: '20px',
-    height: '20px'
+    width: '28px',
+    height: '28px'
   }
 }))
 
@@ -34,7 +34,7 @@ export default function AddToCart(props) {
     return (<span>
       {props.item.quantity >= 0 ?
         <IconButton color="secondary" dense="dense" onClick={addToCart}>
-          <button className="primary-button-filled"> Adicionar </button>
+          <AddCartIcon className={props.cartStyle || classes.iconButton}/>
         </IconButton> :
         <IconButton disabled={true} color="secondary" dense="dense">
           <DisabledCartIcon className={props.cartStyle || classes.disabledIconButton}/>

@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     margin: 'auto',
     textAlign: 'center',
     paddingTop: 10,
-    backgroundColor: '#e2e2e224'
+    backgroundColor: '#80808024'
   },
   menu: {
     width: 200,

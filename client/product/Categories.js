@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
-    /*background: theme.palette.background.paper,*/
+    background: theme.palette.background.paper,
   },
   gridList: {
     flexWrap: 'nowrap',
@@ -25,7 +25,7 @@ const useStyles = makeStyles(theme => ({
   },
   tileTitle: {
     verticalAlign: 'middle',
-    lineHeight: 2,
+    lineHeight: 2.5,
     textAlign: 'center',
     fontSize: '1.35em',
     margin: '0 4px 0 0',
@@ -36,16 +36,13 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     padding:`${theme.spacing(3)}px ${theme.spacing(2.5)}px ${theme.spacing(2)}px`,
-    /*color: theme.palette.openTitle,
-    backgroundColor: '#80808024',*/
+    color: theme.palette.openTitle,
+    backgroundColor: '#80808024',
     fontSize: '1.1em'
-  },
-  title2: {
-      color: 'orange'
   },
   icon: {
     verticalAlign: 'sub',
-    /*color: '#738272',*/
+    color: '#738272',
     fontSize: '0.9em'
   },
   link: {
@@ -94,13 +91,13 @@ export default function Categories(props){
     return (
       <div>
         <Card className={classes.card}>
-          <Typography type="title" className={classes.title2}>
-            By category
+          <Typography type="title" className={classes.title}>
+            Explore by category
           </Typography>
           <div className={classes.root}>
             <GridList className={classes.gridList} cols={4}>
               {props.categories.map((tile, i) => (
-                <GridListTile key={i} className={classes.tileTitle} style={{height: '50px', backgroundColor: selected == tile? 'rgb(220, 220, 220)':'rgb(240, 240, 240)'}}>
+                <GridListTile key={i} className={classes.tileTitle} style={{height: '64px', backgroundColor: selected == tile? 'rgba(95, 139, 137, 0.56)':'rgba(95, 124, 139, 0.32)'}}>
                   <span className={classes.link} onClick={listbyCategory(tile)}>{tile}  <Icon className={classes.icon}>{selected == tile && 'arrow_drop_down'}</Icon></span>
                 </GridListTile>
               ))}

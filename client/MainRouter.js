@@ -25,24 +25,17 @@ import OpenAuctions from './auction/OpenAuctions'
 import NewAuction from './auction/NewAuction'
 import EditAuction from './auction/EditAuction'
 import Auction from './auction/Auction'
-import Html from './html/Html'
-import Sidebar from './core/Sidebar'
-import City from './city/City'
 
 const MainRouter = () => {
   return (<div>
       <Menu/>
-      <Sidebar/>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/city" component={City}/>
         <Route path="/users" component={Users}/>
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
-
-        <Route path="/html" component={Html}/>
 
         <Route path="/cart" component={Cart}/>
         <Route path="/product/:productId" component={Product}/>

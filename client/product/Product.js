@@ -33,15 +33,12 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#93c5ae3d',
     fontSize: '1.3em',
     color: '#375a53',
-    width: 'max-content',
   },
   media: {
     height: 200,
     display: 'inline-block',
-    marginLeft: '24px',
-    width: '-webkit-fill-available',
-    display: 'inline-block',
-    backgroundSize: 'cover'
+    width: '50%',
+    marginLeft: '24px'
   },
   icon: {
     verticalAlign: 'sub'
@@ -60,11 +57,6 @@ const useStyles = makeStyles(theme => ({
   action: {
     margin: '8px 24px',
     display: 'inline-block'
-  },
-  description: {
-    width: 175,
-    maxHeight: 150,
-    overflowY: 'scroll'
   }
 }))
 
@@ -111,33 +103,9 @@ export default function Product ({match}) {
           : '/api/product/defaultphoto'
     return (
         <div className={classes.root}>
-
-          <Grid container spacing={10} className="pt-75">
-
-  
+          <Grid container spacing={10}>
             <Grid item xs={7} sm={7}>
-
-              
-              
               <Card className={classes.card}>
-                
-                <div className={classes.flex}>
-                  <CardMedia
-                    className={classes.media}
-                    image={imageUrl}
-                    title={product.name}
-                  />
-                  <Typography component="p" variant="subtitle1" className={classes.subheading}>
-                    <p className={classes.description}>{product.description}</p><br/>
-                    <span className={classes.price}>$ {product.price}</span>
-                    <Link to={'/shops/'+product.shop._id} className={classes.link}>
-                      <span>
-                        <Icon className={classes.icon}>shopping_basket</Icon> {product.shop.name}
-                      </span>
-                    </Link>
-                  </Typography>
-
-                </div>
                 <CardHeader
                   title={product.name}
                   subheader={product.quantity > 0? 'In Stock': 'Out of Stock'}
@@ -147,6 +115,23 @@ export default function Product ({match}) {
                     </span>
                   }
                 />
+                <div className={classes.flex}>
+                  <CardMedia
+                    className={classes.media}
+                    image={imageUrl}
+                    title={product.name}
+                  />
+                  <Typography component="p" variant="subtitle1" className={classes.subheading}>
+                    {product.description}<br/>
+                    <span className={classes.price}>$ {product.price}</span>
+                    <Link to={'/shops/'+product.shop._id} className={classes.link}>
+                      <span>
+                        <Icon className={classes.icon}>shopping_basket</Icon> {product.shop.name}
+                      </span>
+                    </Link>
+                  </Typography>
+
+                </div>
               </Card>
             </Grid>
             {suggestions.length > 0 &&
