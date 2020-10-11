@@ -1,8 +1,7 @@
 {
-  "name": "mern-marketplace",
+  "name": "marketa-marketplace",
   "version": "2.0.0",
   "description": "A MERN stack based online marketplace application",
-  "license": "MIT",
   "keywords": [
     "react",
     "express",
