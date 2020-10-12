@@ -25,6 +25,14 @@ import OpenAuctions from './auction/OpenAuctions'
 import NewAuction from './auction/NewAuction'
 import EditAuction from './auction/EditAuction'
 import Auction from './auction/Auction'
+import SearchOrganization from './core/SearchOrganization'
+import CompanyMenu from './core/CompanyMenu'
+import Checkout from './core/Checkout'
+import Cb from './core/Cb'
+import Main from './core/Main'
+import Success from './core/success'
+import e404 from './core/e404'
+
 
 const MainRouter = () => {
   return (<div>
@@ -57,6 +65,14 @@ const MainRouter = () => {
         <PrivateRoute path="/auction/edit/:auctionId" component={EditAuction}/>
         <Route path="/auction/:auctionId" component={Auction}/>
         <Route path="/auctions/all" component={OpenAuctions}/>
+
+        <Route path="/SearchOrganization" component={SearchOrganization} />
+        <Route path="/CompanyMenu" component={CompanyMenu} />
+        <Route path="/main" component={Main} />
+        <Route path="/checkout" component={Checkout} />
+        <Route path="/cb" component={Cb} />
+        <Route path="/success" component={Success} />
+        <Route path="/" component={e404} />
       </Switch>
     </div>)
 }
