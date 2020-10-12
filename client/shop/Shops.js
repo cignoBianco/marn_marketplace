@@ -76,7 +76,7 @@ export default function Shops(){
                 <div className={classes.details}>
                   <Typography type="headline" component="h2" color="primary" className={classes.shopTitle}>
                     {shop.name}
-                  </Typography>
+                  </Typography>{shop.category}
                   <Typography type="subheading" component="h4" className={classes.subheading}>
                     {shop.description}
                   </Typography>

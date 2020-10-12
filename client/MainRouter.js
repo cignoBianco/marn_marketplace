@@ -30,7 +30,7 @@ import CompanyMenu from './core/CompanyMenu'
 import Checkout from './core/Checkout'
 import Cb from './core/Cb'
 import Main from './core/Main'
-import Success from './core/success'
+import Success from './core/Success'
 import e404 from './core/e404'
 
 

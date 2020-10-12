@@ -98,6 +98,7 @@ export default function NewShop() {
             </Button>
           </label> <span className={classes.filename}>{values.image ? values.image.name : ''}</span><br/>
           <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
+          <TextField id="name" label="Category" className={classes.textField} value={values.category} onChange={handleChange('category')} margin="normal"/><br/>
           <TextField
             id="multiline-flexible"
             label="Description"

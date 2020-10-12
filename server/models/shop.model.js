@@ -13,6 +13,10 @@ const ShopSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  category: {
+    type: String,
+    trim: true
+  },
   updated: Date,
   created: {
     type: Date,

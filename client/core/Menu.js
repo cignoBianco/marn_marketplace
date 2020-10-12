@@ -257,7 +257,9 @@ const classes = useStyles()
             <SearchBtn/>
         </div>
         <div>
-            <Button className={classes.Button} texttransform="none" padding={`7px 40px`} >Войти</Button>
+          <Link to="/signin">
+              <Button className={classes.Button} texttransform="none" padding={`7px 40px`} >Войти</Button>
+          </Link>
         </div>
         <div>
             <CartBtn />
