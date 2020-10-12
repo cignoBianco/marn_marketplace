@@ -21,7 +21,7 @@ import MenuRoundedIcon from '@material-ui/icons/MenuRounded'
 import logo from './../assets/images/logo.png'
 import Buy from './../assets/images/icons/Buy.png'
 import Search from './../assets/images/icons/Search.png'
-import Cart2 from './../cart/Cart2'
+import Cart2 from './../cart/Cart2.js'
 
 const useStyles = makeStyles(theme => ({
   header: {

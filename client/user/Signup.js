@@ -14,6 +14,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import {Link} from 'react-router-dom'
+import basket from './../assets/images/basket.png'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -38,7 +39,127 @@ const useStyles = makeStyles(theme => ({
   submit: {
     margin: 'auto',
     marginBottom: theme.spacing(2)
-  }
+  },
+  container: {
+    marginLeft: theme.basic.outerMargins,
+    marginRight: theme.basic.outerMargins,
+}, 
+h3t: {
+    fontSize: 32,
+    fontStyle: 'normal',
+    fontWeight: 700,
+    lineHeight: '38px',
+    letterSpacing: 0.15000000596046448,
+    textAlign: 'left',
+    color: '#2C2738',
+    margin: '60px 0px 52px'
+},
+h3: {
+  fontSize: 32,
+},
+p22: {
+  fontSize: 22,
+  fontWeight: 200
+},
+sloganContainer: {
+    display: "grid",
+    marginBottom: 165,
+    gridAutoFlow: 'row dense',
+    /* grid-auto-columns: 200px 1fr; */
+    gridAutoRows: '1fr auto',
+    gridTemplateColumns: 'repeat( auto-fit, minmax(400px, 1fr) )',
+    gridGap: '40px 71px',
+    justifyItems: 'center',
+    alignItems: 'center'
+},
+sloganDiv: {
+    maxWidth: 400,
+    height: 300,
+    //left: 224,
+    marginTop: 80,
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    //justifyContent: "space-between"
+},
+card: {
+    maxWidth: 600,
+    margin: 'auto',
+    marginTop: theme.spacing(5),
+    //boxShadow: '10px 10px 10px rgba(0, 0, 0, 0.25)'
+    
+},
+title: {
+    padding: `${theme.spacing(3) }px ${theme.spacing(2.5) }px 
+        ${theme.spacing(2) }px`,
+    color: theme.palette.openTitle,
+},
+picture: {
+    marginTop: 129,
+    width: 458,
+    height: 685
+},
+someText: {
+    width: 498,
+    height: 58,
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    fontSize: 64,
+    textAlign: 'center',
+    color: theme.palette.primary.text,
+    marginBottom: 25,
+    fontFamily: 'Gilroy',
+},
+description: {
+    width: 498,
+    height: 48,
+    fontFamily: 'Gilroy',
+    fontStyle: 'normal',
+    //fontWeight: 700,
+    fontSize: 48,
+    textAlign: 'center',
+    color: theme.palette.secondary.text,
+    marginBottom: 40
+},
+buttonSlogan: {
+   display: 'flex',
+   flexDirection: 'row',
+   alignItems: 'flex-start',
+   padding: '17px 0px',
+   width: '100%',
+   height: 58,
+   backgroundColor: '#fbfbfb',
+   boxShadow: '0 8px 16px 0 rgba(52, 60, 68, 0.1)',
+   borderRadius: theme.basic.borderRadius,
+   fontFamily: 'Gilroy',
+
+   textTransform: 'none',
+   fontSize: 20
+},
+flexAround : {
+  display: 'flex',
+  justifyContent: 'space-evenly'
+},
+activeLinkBorderBottom: {
+  borderBottom: '5px solid ' + theme.palette.primary.accent,
+},
+greyBottom: {
+  borderBottom: '1px solid rgba(121, 121, 121, 0.25)',
+  marginBottom: 20,
+},
+inputLight: {
+  border: '1px solid #E6E6EB',
+  boxSizing: 'border-box',
+  borderRadius: 8,
+  height: 40,
+  width: 400,
+  marginBottom: 20,
+  padding: '1em 3em'
+},
+p22: {
+  alignSelf: 'center',
+  fontSize: 24
+}
 }))
 
 export default function Signup() {
@@ -69,40 +190,50 @@ export default function Signup() {
       }
     })
   }   
+
+
     return (<div>
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography variant="h6" className={classes.title}>
-            Sign Up
-          </Typography>
-          <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
-          <TextField id="email" type="email" label="Email" className={classes.textField} value={values.email} onChange={handleChange('email')} margin="normal"/><br/>
-          <TextField id="password" type="password" label="Password" className={classes.textField} value={values.password} onChange={handleChange('password')} margin="normal"/>
-          <br/> {
-            values.error && (<Typography component="p" color="error">
-              <Icon color="error" className={classes.error}>error</Icon>
-              {values.error}</Typography>)
-          }
-        </CardContent>
-        <CardActions>
-          <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
-        </CardActions>
-      </Card>
-      <Dialog open={values.open} disableBackdropClick={true}>
+
+  <div  className={classes.container} >  
+    <div className={classes.sloganContainer}>
+        <img src={basket} className={classes.picture} alt="Marketa" />
+        <div className={classes.sloganDiv}>
+          <div className={classes.flexAround + ' ' + classes.greyBottom}>
+            <h3 className={classes.h3 + ' ' + classes.activeLinkBorderBottom}>Регистрация</h3>
+            <Link to="/signin"><p className={classes.p22}>Вход</p></Link>
+          </div>
+          <div>
+            <input className={classes.inputLight} id="name" label="Name" onChange={handleChange('name')} value={values.name} placeholder="Имя"/>
+            <input className={classes.inputLight}  id="email" type="email" label="Email" value={values.email} onChange={handleChange('email')} placeholder="Электронная почта"/>
+            <input className={classes.inputLight}  id="password" type="password" label="Password" value={values.password} onChange={handleChange('password')} placeholder="Пароль"/>
+            {
+              values.error && (<Typography component="p" color="error">
+                <Icon color="error" className={classes.error}>error</Icon>
+                {values.error}</Typography>)
+            }
+            <Button className={classes.buttonSlogan}  onClick={clickSubmit} >
+                Зарегистрироваться
+            </Button>
+            <Dialog open={values.open} disableBackdropClick={true}>
         <DialogTitle>New Account</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            New account successfully created.
+            Аккаунт успешн создан.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Link to="/signin">
-            <Button color="primary" autoFocus="autoFocus" variant="contained">
-              Sign In
+            <Button autoFocus="autoFocus">
+              Войти
             </Button>
           </Link>
         </DialogActions>
       </Dialog>
+          </div>
+        </div>
+    </div>
+  </div>
+
     </div>
   )
 }
