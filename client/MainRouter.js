@@ -59,7 +59,6 @@ const MainRouter = () => {
         <PrivateRoute path="/seller/:shopId/products/new" component={NewProduct}/>
         <PrivateRoute path="/seller/:shopId/:productId/edit" component={EditProduct}/>
 
-        <Route path="/seller/stripe/connect" component={StripeConnect}/>
         <PrivateRoute path="/myauctions" component={MyAuctions}/>
         <PrivateRoute path="/auction/new" component={NewAuction}/>
         <PrivateRoute path="/auction/edit/:auctionId" component={EditAuction}/>

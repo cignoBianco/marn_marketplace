@@ -264,6 +264,21 @@ const classes = useStyles()
         <div>
             <CartBtn />
         </div>
+        {
+        auth.isAuthenticated() && (<span>
+          {auth.isAuthenticated().user.seller && (<>
+            <Link to="/seller/shops"><Button style={isPartActive(history, "/seller/")}>My Shops</Button></Link>
+            <Link to="/myauctions"><Button style={isPartActive(history, "/myauctions")}>My Auctions</Button></Link>
+            </>
+          )}
+          <Link to={"/user/" + auth.isAuthenticated().user._id}>
+            <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
+          </Link>
+          <Button color="inherit" onClick={() => {
+              auth.clearJWT(() => history.push('/'))
+            }}>Sign out</Button>
+        </span>)
+      }
     </div>
   </div>
   <div></div>

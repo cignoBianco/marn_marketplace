@@ -105,6 +105,7 @@ export default function Shop({match}) {
               <Typography type="headline" component="h2" className={classes.title}>
                 {shop.name}
               </Typography>
+              {shop.category}
               <br/>
               <Avatar src={logoUrl} className={classes.bigAvatar}/><br/>
                 <Typography type="subheading" component="h2" className={classes.subheading}>

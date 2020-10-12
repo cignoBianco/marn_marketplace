@@ -49,6 +49,7 @@ export default function NewShop() {
   const classes = useStyles()
   const [values, setValues] = useState({
       name: '',
+      category: '',
       description: '',
       image: '',
       redirect: false,

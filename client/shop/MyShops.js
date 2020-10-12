@@ -51,7 +51,8 @@ export default function MyShops(){
       userId: jwt.user._id
     }, {t: jwt.token}, signal).then((data) => {
       if (data.error) {
-        setRedirectToSignin(true)
+        console.log(data.error)
+        //setRedirectToSignin(true)
       } else {
         setShops(data)
       }
