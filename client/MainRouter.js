@@ -8,6 +8,7 @@ import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 import Menu from './core/Menu'
+import Footer from './core/Footer'
 import NewShop from './shop/NewShop'
 import Shops from './shop/Shops'
 import MyShops from './shop/MyShops'
@@ -73,6 +74,7 @@ const MainRouter = () => {
         <Route path="/success" component={Success} />
         <Route path="/" component={e404} />
       </Switch>
+      <Footer/>
     </div>)
 }
 

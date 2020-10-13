@@ -8,6 +8,7 @@ import GridListTileBar from '@material-ui/core/GridListTileBar'
 import {Link} from 'react-router-dom'
 import AddToCart from './../cart/AddToCart'
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',

@@ -417,7 +417,7 @@ export default function Main() {
                             </div>
                         </div>
                         <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
+                            <div style={{height: 212, backgrlatestoundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
                                 backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
                                 <div className={classes.cardStatusDiv}>
                                     <div className={classes.cardStatus}>открыто</div>

@@ -120,6 +120,19 @@ const list = async (params, signal) => {
   }
 }
 
+const listAll = async (signal) => {
+  const query = queryString.stringify(params)
+  try {
+    let response = await fetch('/api/products', {
+      method: 'GET',
+      signal: signal
+    })
+    return response.json()
+  }catch(err) {
+    console.log(err)
+  }
+}
+
 export {
   create,
   read,
@@ -129,5 +142,6 @@ export {
   listLatest,
   listRelated,
   listCategories,
-  list
+  list,
+  listAll
 }
