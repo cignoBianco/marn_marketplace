@@ -265,7 +265,7 @@ const classes = useStyles()
             <CartBtn />
         </div>
         {
-        auth.isAuthenticated() && (<span>
+        auth.isAuthenticated() && (<span style={{gridColumnEnd: 'none'}}>
           {auth.isAuthenticated().user.seller && (<>
             <Link to="/seller/shops"><Button style={isPartActive(history, "/seller/")}>My Shops</Button></Link>
             <Link to="/myauctions"><Button style={isPartActive(history, "/myauctions")}>My Auctions</Button></Link>
