@@ -339,9 +339,10 @@ export default function Product ({match}) {
                 <div style={{width: 292, backgroundImage: `url(${pepe})`, backgroundRepeat:'no-repeat'}}></div>
                 <div className={classes.cardMain}>
                     <div className={classes.Title}>
-                        <div className={classes.h2}>Пепперони</div>
+                        <div className={classes.h2}>{product.name}</div>
                         <div className={classes.titleDescription}>
-                            25 см, традиционное тесто, 410 г
+                          {product.description}<br/>
+                          {product.quantity > 0? 'In Stock': 'Out of Stock'}
                         </div>
                     </div>
                     <div className={classes.control}>
@@ -381,7 +382,7 @@ export default function Product ({match}) {
                         </div>
                     </div>
                     <div className={classes.Actions}>
-                        <div className={classes.h2}>400 руб <span className={classes.discount}>500 руб</span></div>
+                        <div className={classes.h2}>{product.price} руб <span className={classes.discount}>{product.price}0 руб</span></div>
                         <div className={classes.radioGroup}>
                             <Rating
                             value={3}
@@ -391,41 +392,17 @@ export default function Product ({match}) {
                         <p style={{fontSize: 22}}>Акция</p>
                         </div>
                     </div>
+
+                    
+                    <span className={classes.action}>
+                      <AddToCart cartStyle={classes.addCart} item={product}/>
+                    </span>
                     <Button className={classes.lightBtn}>Добавить в корзину</Button>
 
     <p onClick={toggleDetails} className={classes.hideLink}>{details ? 'Скрыть подробную информацию' : 'Показать подробную информацию'}</p>
                     
                 </div>
-                <Grid item xs={7} sm={7}>
-              <Card className={classes.card}>
-                <CardHeader
-                  title={product.name}
-                  subheader={product.quantity > 0? 'In Stock': 'Out of Stock'}
-                  action={
-                    <span className={classes.action}>
-                      <AddToCart cartStyle={classes.addCart} item={product}/>
-                    </span>
-                  }
-                />
-                <div className={classes.flex}>
-                  <CardMedia
-                    className={classes.media}
-                    image={imageUrl}
-                    title={product.name}
-                  />
-                  <Typography component="p" variant="subtitle1" className={classes.subheading}>
-                    {product.description}<br/>
-                    <span className={classes.price}>$ {product.price}</span>
-                    <Link to={'/shops/'+product.shop._id} className={classes.link}>
-                      <span>
-                        <Icon className={classes.icon}>shopping_basket</Icon> {product.shop.name}
-                      </span>
-                    </Link>
-                  </Typography>
-
-                </div>
-              </Card>
-            </Grid>
+              
                 
             </div>
             {details ? 
