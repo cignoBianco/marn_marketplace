@@ -567,7 +567,7 @@ export default function Shops(){
               </Link>
               <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
                 <Link to={"/shops/"+shop._id}>
-                  <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>{shop.title}</div>
+                  <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>{shop.name}</div>
                 </Link>
                   <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
                       <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
