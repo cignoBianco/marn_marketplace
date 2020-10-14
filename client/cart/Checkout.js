@@ -255,8 +255,7 @@ export default function Checkout (){
                 </div>
                 <input className={classes.inputLight} style={{width: '100%'}}  id="name" label="Name"  placeholder="Адрес"/>
                 <div className={classes.grid3}>
-                <TextField id="city" label="City" className={classes.addressField} value={values.checkoutDetails.delivery_address.city} onChange={handleAddressChange('city')} margin="normal"/>
-                    <input className={classes.inputLight} id="street" label="Street Address"  value={values.checkoutDetails.delivery_address.street} onChange={handleAddressChange('street')}  placeholder="Дом"/>
+                  <input className={classes.inputLight} id="street" label="Street Address"  value={values.checkoutDetails.delivery_address.street} onChange={handleAddressChange('street')}  placeholder="Дом"/>
                     <input className={classes.inputLight} id="state" label="State"  value={values.checkoutDetails.delivery_address.state} onChange={handleAddressChange('state')}placeholder="Дом"/>
                     <input className={classes.inputLight} id="name" label="Name" placeholder="Корпус"/>
                     <input className={classes.inputLight} id="name" label="Name"  placeholder="Этаж"/>
@@ -301,6 +300,10 @@ export default function Checkout (){
                 <Icon color="error" className={classes.error}>error</Icon>
                 {values.error}</Typography>)
           }
+          <Button>Оформить заказ</Button>
+          <Link to={'/success'}>
+          <Button color="primary" variant="contained"  className={classes.submit}>Заказть</Button>
+          </Link>
             </div>
            </div>
 </div>
