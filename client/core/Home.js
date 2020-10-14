@@ -3,9 +3,11 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Suggestions from './../product/Suggestions'
 import {listLatest, listCategories} from './../product/api-product.js'
+import {list} from './../shop/api-shop.js'
 import Search from './../product/Search'
 import Categories from './../product/Categories'
 import {read, listRelated, listAll} from './../product/api-product.js'
+import {Link} from 'react-router-dom'
 
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
@@ -30,6 +32,20 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     margin: 30,
   },
+  grid: {
+    display: 'grid',
+    //gridTemplateColumns: '1fr 1fr 1fr 1fr',
+    gridTemplateRows: '1fr 1fr',
+    gridGap: '40px 36px',
+   // border: '1px solid black',
+    gridTemplateColumns: 'repeat( auto-fill, minmax(310px, 1fr) )',
+    width: 'inherit',
+    gridAutoFlow: 'row dense',
+    height: 721,
+    overflowY: 'hidden',
+    paddingLeft: theme.basic.lightPadding,
+    paddingRight: theme.basic.lightPadding,
+},
   container: {
     marginLeft: theme.basic.outerMargins,
     marginRight: theme.basic.outerMargins,
@@ -244,29 +260,35 @@ Icon: {
 bold: theme.bold,
 }))
 
-function ListAl() {
-  let res = 0;
-  /*listAll().then((data) => {
-    if (data.error) {
-      res = data.error
-      console.log(data.error)
-    } else {
-      res = data;
-      console.log(data)
-    }
-
-  })*/
-  return (
-    <div>{res}1</div>
-  )
-}
-
 
 export default function Home() {
   const classes = useStyles()
   const [suggestionTitle, setSuggestionTitle] = useState("Latest Products")
   const [categories, setCategories] = useState([])
   const [suggestions, setSuggestions] = useState([])
+
+const [shops, setShops] = useState([])
+const [value, setValue] = React.useState(30);
+
+const handleChange = (event, newValue) => {
+  setValue(newValue);
+};
+
+useEffect(() => {
+  const abortController = new AbortController()
+  const signal = abortController.signal
+  list(signal).then((data) => {
+    if (data.error) {
+      console.log(data.error)
+    } else {
+      setShops(data)
+    }
+  })
+  return function cleanup(){
+    abortController.abort()
+  }
+
+}, [])
   
   useEffect(() => {
     const abortController = new AbortController()
@@ -317,9 +339,8 @@ export default function Home() {
                     </div>
                 </div>
                 
-                <ListAl/>
                 
-                <Categories categories={categories}/>
+                {/*<Categories categories={categories}/>*/}
                 <div className={classes.divNearU}>
                     <div className={classes.nearUTitleDiv}>
                         <h3 className={classes.nearULabel}>
@@ -329,207 +350,41 @@ export default function Home() {
                             Просмотреть все
                         </div>
                     </div>
-                    <div className={classes.gridNearU}>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={classes.card}>
-                            <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-                                backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                                <div className={classes.cardStatusDiv}>
-                                    <div className={classes.cardStatus}>открыто</div>
-                                </div>
-                            </div>
-                            <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-                                <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Пятёрочка</div>
-                                <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                                    <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                                        бесплатная доставка от 
-                                        <span style={{color: '#000'}}> 1000 руб</span>
-                                    </div>
-                                    <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                                        <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                                            height: 'inherit'}}> 40-60 мин
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div className={classes.suggestionsDiv}>
                         <div style={{paddingLeft: '1em', paddingRight: '1em', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateColumns: 'repeat( auto-fit, minmax(250px, 1fr) )', gridGap: 50, width: '100%', height: '100%'}}>
-                            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 30}}>
-                                <div className={classes.card1 + ' ' + classes.noRepeatCenter + ' ' + classes.Icon} style={{backgroundImage: `url(${cardIcon})`}}></div>
-                                <div>
-                                    <div className={classes.h4} style={{margin: '27px auto 15px'}}>Огромный выбор</div>
-                                    <div className={classes.description16}>100 ресторанов и магазинов в Томске с доставкой</div>
-                                </div>
-                            </div>
-                            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 30}}>
-                                <div className={classes.card1 + ' ' + classes.noRepeatCenter + ' ' + classes.Icon}  style={{backgroundImage: `url(${locationIcon})`}}></div>
-                                <div>
-                                    <div className={classes.h4} style={{margin: '27px auto 15px'}}>Экономьте время</div>
-                                    <div className={classes.description16}>Все ваши любимые товары на расстоянии вытянутой руки</div>
-                                </div>
-                            </div>
-                            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 30}}>
-                                <div className={classes.card1 + ' ' + classes.noRepeatCenter + ' ' + classes.Icon}  style={{backgroundImage: `url(${timeCircleIcon})`}}></div>
-                                <div>
-                                <div className={classes.h4} style={{margin: '27px auto 15px'}}>60 минут</div>
-                                    <div className={classes.description16}>Среднее время доставки</div>
-                                </div>
-                            </div>
+                        
+                    <div className={classes.grid}>
+          {shops.map((shop, i) => {
+            return <div className={classes.card} onClick={() => {showThisCard(); console.log('i')}}>
+              <Link to={"/shops/"+shop._id} key={i}>
+                <div style={{height: 212, backgroundImage: `url('/api/shops/logo/${shop._id}')`, backgroundRepeat: 'no-repeat',
+                    backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
+                    <div className={classes.cardStatusDiv}>
+                        <div className={classes.cardStatus}>открыто</div>
+                    </div>
+                </div>
+              </Link>
+              <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
+                <Link to={"/shops/"+shop._id}>
+                  <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>{shop.name}</div>
+                </Link>
+                  <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
+                      <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
+                          бесплатная доставка от 
+                          <span style={{color: '#000'}}> 1000 руб</span>
+                      </div>
+                      <div style={{ width: 80, height: 50}} className={classes.greenBg}>
+                          <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
+                              height: 'inherit'}}> 2 по цене 1
+                          </p>
+                      </div>
+                  </div>
+                </div>
+            </div>
+
+          })}
+              </div> 
                         </div>
                     </div>
                     <div style={{height: 495, marginBottom: 20, marginLeft:'1em', marginRight: '1em', display: 'grid', alignContent: 'center', padding: '0 4em', alignContent: 'start'}}
