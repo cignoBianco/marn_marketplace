@@ -5,6 +5,7 @@ import IconButton from '@material-ui/core/IconButton'
 import AddCartIcon from '@material-ui/icons/AddShoppingCart'
 import DisabledCartIcon from '@material-ui/icons/RemoveShoppingCart'
 import cart from './cart-helper.js'
+import Button from '@material-ui/core/Button'
 import { Redirect } from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
@@ -29,16 +30,17 @@ export default function AddToCart(props) {
     })
   }
     if (redirect) {
+      window.history.go(-1); return false;
       return (<Redirect to={'/cart'}/>)
     }
     return (<span>
       {props.item.quantity >= 0 ?
-        <IconButton color="secondary" dense="dense" onClick={addToCart}>
-          <AddCartIcon className={props.cartStyle || classes.iconButton}/>
-        </IconButton> :
-        <IconButton disabled={true} color="secondary" dense="dense">
-          <DisabledCartIcon className={props.cartStyle || classes.disabledIconButton}/>
-        </IconButton>}
+          <Button className={props.cartStyle}  onClick={addToCart}>Добавить в корзину</Button>
+         :
+        
+          <DisabledCartIcon  onClick={addToCart} className={props.cartStyle || classes.disabledIconButton}/>
+       >
+        }
       </span>)
 }
 

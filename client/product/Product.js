@@ -395,9 +395,8 @@ export default function Product ({match}) {
 
                     
                     <span className={classes.action}>
-                      <AddToCart cartStyle={classes.addCart} item={product}/>
+                      <AddToCart cartStyle={classes.lightBtn} item={product}/>
                     </span>
-                    <Button className={classes.lightBtn}>Добавить в корзину</Button>
 
     <p onClick={toggleDetails} className={classes.hideLink}>{details ? 'Скрыть подробную информацию' : 'Показать подробную информацию'}</p>
                     
