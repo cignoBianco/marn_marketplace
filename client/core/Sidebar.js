@@ -68,25 +68,25 @@ export default function Sidebar({hide}) {
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${dinner})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/restaurants" className={classes.label}>Еда из ресторанов</Link> 
+                <Link to="/shops/all" className={classes.label}>Еда из ресторанов</Link> 
             </section>
             <section className={classes.section}>
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${flower})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/" className={classes.label}>Цветы</Link> 
+                <Link to="/shops/all" className={classes.label}>Цветы</Link> 
             </section>
             <section className={classes.section}>
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${box})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/" className={classes.label}>Товары/продукты</Link> 
+                <Link to="/shops/all" className={classes.label}>Товары/продукты</Link> 
             </section>
             <section className={classes.section}>
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${stuff})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/" className={classes.label}>Услуги</Link> 
+                <Link to="/shops/all" className={classes.label}>Услуги</Link> 
             </section>
         </div>
     )
