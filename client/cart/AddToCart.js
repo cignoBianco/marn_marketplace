@@ -39,7 +39,7 @@ export default function AddToCart(props) {
          :
         
           <DisabledCartIcon  onClick={addToCart} className={props.cartStyle || classes.disabledIconButton}/>
-       >
+       
         }
       </span>)
 }
