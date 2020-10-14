@@ -135,7 +135,9 @@ export default function Cart2({hide}) {
     return (
         <div className={classes.container}>
             <div style={{display: 'flex', justifyContent: 'space-around', height: 60}}>
-                <h3 className={classes.label}>Ваша корзина</h3>
+              
+                <h3 onClick={() => {window.location.href = '../cart';}} className={classes.label} >Ваша корзина</h3>
+                
                 <CloseIcon className={classes.cross} onClick={(e) => hide()}/>
             </div>
             <div className={classes.greenHat}>
