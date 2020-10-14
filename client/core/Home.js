@@ -350,10 +350,6 @@ useEffect(() => {
                             Просмотреть все
                         </div>
                     </div>
-                    
-                    <div className={classes.suggestionsDiv}>
-                        <div style={{paddingLeft: '1em', paddingRight: '1em', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateColumns: 'repeat( auto-fit, minmax(250px, 1fr) )', gridGap: 50, width: '100%', height: '100%'}}>
-                        
                     <div className={classes.grid}>
           {shops.map((shop, i) => {
             return <div className={classes.card} onClick={() => {showThisCard(); console.log('i')}}>
@@ -384,7 +380,30 @@ useEffect(() => {
             </div>
 
           })}
-              </div> 
+              </div>
+                    <div className={classes.suggestionsDiv}>
+                        <div style={{paddingLeft: '1em', paddingRight: '1em', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateColumns: 'repeat( auto-fit, minmax(250px, 1fr) )', gridGap: 50, width: '100%', height: '100%'}}>
+                            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 30}}>
+                                <div className={classes.card1 + ' ' + classes.noRepeatCenter + ' ' + classes.Icon} style={{backgroundImage: `url(${cardIcon})`}}></div>
+                                <div>
+                                    <div className={classes.h4} style={{margin: '27px auto 15px'}}>Огромный выбор</div>
+                                    <div className={classes.description16}>100 ресторанов и магазинов в Томске с доставкой</div>
+                                </div>
+                            </div>
+                            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 30}}>
+                                <div className={classes.card1 + ' ' + classes.noRepeatCenter + ' ' + classes.Icon}  style={{backgroundImage: `url(${locationIcon})`}}></div>
+                                <div>
+                                    <div className={classes.h4} style={{margin: '27px auto 15px'}}>Экономьте время</div>
+                                    <div className={classes.description16}>Все ваши любимые товары на расстоянии вытянутой руки</div>
+                                </div>
+                            </div>
+                            <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gridGap: 30}}>
+                                <div className={classes.card1 + ' ' + classes.noRepeatCenter + ' ' + classes.Icon}  style={{backgroundImage: `url(${timeCircleIcon})`}}></div>
+                                <div>
+                                <div className={classes.h4} style={{margin: '27px auto 15px'}}>60 минут</div>
+                                    <div className={classes.description16}>Среднее время доставки</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div style={{height: 495, marginBottom: 20, marginLeft:'1em', marginRight: '1em', display: 'grid', alignContent: 'center', padding: '0 4em', alignContent: 'start'}}
