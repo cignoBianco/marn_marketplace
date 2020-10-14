@@ -7,6 +7,7 @@ import stuff from './../assets/images/icons/menu/staff 1.png'
 import flower from './../assets/images/icons/menu/flower 1.png'
 import CloseIcon from '@material-ui/icons/Close';
 import Link from "@material-ui/core/Link"
+import {Link as LinkRouter, withRouter} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
     sideBarContainer: {
@@ -68,25 +69,25 @@ export default function Sidebar({hide}) {
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${dinner})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/shops/all" className={classes.label}>Еда из ресторанов</Link> 
+                <LinkRouter to="/shops/all" className={classes.label}>Еда из ресторанов</LinkRouter> 
             </section>
             <section className={classes.section}>
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${flower})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/shops/all" className={classes.label}>Цветы</Link> 
+                <LinkRouter to="/shops/all" className={classes.label}>Цветы</LinkRouter> 
             </section>
             <section className={classes.section}>
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${box})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/shops/all" className={classes.label}>Товары/продукты</Link> 
+                <LinkRouter to="/shops/all" className={classes.label}>Товары/продукты</LinkRouter> 
             </section>
             <section className={classes.section}>
                 <div className={classes.icon}>
                     <div style={{backgroundImage: `url(${stuff})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center'}}></div>
                 </div>
-                <Link to="/shops/all" className={classes.label}>Услуги</Link> 
+                <LinkRouter to="/shops/all" className={classes.label}>Услуги</LinkRouter> 
             </section>
         </div>
     )
