@@ -334,6 +334,7 @@ export default function CompanyMenu() {
 
                         </div>
                         <div className={classes.grid}>
+
                         <div className={classes.card} onClick={() => {showThisCard(); console.log('i')}}>
                             <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
                                 backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
@@ -356,6 +357,7 @@ export default function CompanyMenu() {
                                 </div>
                             </div>
                         </div>
+                        
                         <div className={classes.card}  onClick={() => showThisCard}>
                             <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
                                 backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
