@@ -301,9 +301,8 @@ export default function Checkout (){
                 <Icon color="error" className={classes.error}>error</Icon>
                 {values.error}</Typography>)
           }
-          <Button>Оформить заказ</Button>
-          <Link to={'/success'}>
-          <Button color="primary" variant="contained"  className={classes.submit}>Заказть</Button>
+          <Link to="success" onClick={()=>{window.location.replace("http://marketplace.entrega.su/success");}}>
+            111<Button  variant="contained"  className={classes.submit}>Заказть</Button>
           </Link>
             </div>
            </div>

@@ -10,14 +10,14 @@ import Divider from '@material-ui/core/Divider'
 import PropTypes from 'prop-types'
 import {makeStyles} from '@material-ui/core/styles'
 import cart from './cart-helper.js'
-import {Link} from 'react-router-dom'
+//import {Link} from 'react-router-dom'
 
 import box from './../assets/images/icons/menu/box 1.png'
 import dinner from './../assets/images/icons/menu/dinner 1.png'
 import stuff from './../assets/images/icons/menu/staff 1.png'
 import flower from './../assets/images/icons/menu/flower 1.png'
 import CloseIcon from '@material-ui/icons/Close';
-//import Link from "@material-ui/core/Link"
+import Link from "@material-ui/core/Link"
 import pizza from './../assets/images/pizza.png'
 import lock from './../assets/images/icons/Lock.png'
 
@@ -351,15 +351,15 @@ export default function CartItems (props) {
           </span>})
         }
         <div className={classes.checkout}>
-          <span className={classes.total}>Total: ${getTotal()}</span>
+          <span className={classes.total}>Итого: ${getTotal()}</span><br/><br/>
           {!props.checkout && (auth.isAuthenticated()?
-            <Button color="secondary" variant="contained" onClick={openCheckout}>Checkout</Button>
+            <Button variant="contained" onClick={openCheckout}>Оформить заказ</Button>
             :
             <Link to="/signin">
-              <Button color="primary" variant="contained">Sign in to checkout</Button>
+              <Button variant="contained">Войдите, чтобы оформить заказ</Button>
             </Link>)}
-          <Link to='/' className={classes.continueBtn}>
-            <Button variant="contained">Continue Shopping</Button>
+            <Link to='/' className={classes.continueBtn}>
+            <Button variant="contained">Продолжить заказывать</Button>
           </Link>
         </div>
       </span>) :
