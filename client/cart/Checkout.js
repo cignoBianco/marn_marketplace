@@ -296,9 +296,44 @@ export default function Checkout (){
                 <p style={{margin: 0}} >
                     Необходимы закрывающие документы
                 </p>
+                {
+            values.error && (<Typography component="p" color="error">
+                <Icon color="error" className={classes.error}>error</Icon>
+                {values.error}</Typography>)
+          }
+          <Link to="success" onClick={()=>{window.location.replace("http://marketplace.entrega.su/success");}}>
+            111<Button  variant="contained"  className={classes.submit}>Заказть</Button>
+          </Link>
+            </div>
+           </div>
 </div>
-</div>
-</div>
-
-    )
+      )
 }
+
+/*
+<Card className={classes.card}>
+        <Typography type="title" className={classes.title}>
+          Checkout
+        </Typography>
+        <TextField id="name" label="Name" className={classes.textField} value={values.checkoutDetails.customer_name} onChange={handleCustomerChange('customer_name')} margin="normal"/><br/>
+        <TextField id="email" type="email" label="Email" className={classes.textField} value={values.checkoutDetails.customer_email} onChange={handleCustomerChange('customer_email')} margin="normal"/><br/>
+        <Typography type="subheading" component="h3" className={classes.subheading}>
+            Delivery Address
+        </Typography>
+        <TextField id="street" label="Street Address" className={classes.streetField} value={values.checkoutDetails.delivery_address.street} onChange={handleAddressChange('street')} margin="normal"/><br/>
+        <TextField id="city" label="City" className={classes.addressField} value={values.checkoutDetails.delivery_address.city} onChange={handleAddressChange('city')} margin="normal"/>
+        <TextField id="state" label="State" className={classes.addressField} value={values.checkoutDetails.delivery_address.state} onChange={handleAddressChange('state')} margin="normal"/><br/>
+        <TextField id="zipcode" label="Zip Code" className={classes.addressField} value={values.checkoutDetails.delivery_address.zipcode} onChange={handleAddressChange('zipcode')} margin="normal"/>
+        <TextField id="country" label="Country" className={classes.addressField} value={values.checkoutDetails.delivery_address.country} onChange={handleAddressChange('country')} margin="normal"/>
+        <br/> {
+            values.error && (<Typography component="p" color="error">
+                <Icon color="error" className={classes.error}>error</Icon>
+                {values.error}</Typography>)
+          }
+        <div>
+          <Elements>
+            <PlaceOrder checkoutDetails={values.checkoutDetails} />
+          </Elements>
+        </div>
+      </Card>
+*/
