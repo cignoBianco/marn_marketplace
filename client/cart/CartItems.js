@@ -58,7 +58,7 @@ cross: {
     position: 'absolute',
     position: 'relative',
     top: -25,
-    right: -500
+    right: '-80%'
 },
 greenHat: {
     height: 60,
@@ -113,7 +113,7 @@ item: {
     borderBottom: '1px solid #EDEDED',
     display: 'grid',
     gridGap: 40,
-    gridTemplateColumns: '100px 310px 1fr',
+    gridTemplateColumns: '100px 250px 1fr',
 
 },
 button: {
@@ -256,18 +256,29 @@ export default function CartItems (props) {
   const classes = useStyles()
   const [cartItems, setCartItems] = useState(cart.getCart())
 
-  const handleChange = index => event => {
+  const handleChange = (index, plus = 0) => event => {
     let updatedCartItems = cartItems
-    if(event.target.value == 0){
+    console.log(updatedCartItems[index].quantity, updatedCartItems)
+    if(updatedCartItems[index].quantity <= 0 || updatedCartItems[index].quantity == NaN || !updatedCartItems[index].quantity){
       updatedCartItems[index].quantity = 1
     }else{
-      updatedCartItems[index].quantity = event.target.value
+      updatedCartItems[index].quantity = (plus) ? updatedCartItems[index].quantity + 1 : updatedCartItems[index].quantity - 1
+      if (updatedCartItems[index].quantity == 0) updatedCartItems[index].quantity = 1
     }
     setCartItems([...updatedCartItems])
     cart.updateCart(index, event.target.value)
   }
 
   const getTotal = () => {
+    return cartItems.reduce((a, b) => {
+        return a + (b.quantity*(b.product.price))
+    }, 0)
+  }
+
+  const getTotalOfMagazines = () => {
+
+    //let cartPri
+
     return cartItems.reduce((a, b) => {
         return a + (b.quantity*b.product.price)
     }, 0)
@@ -292,8 +303,9 @@ export default function CartItems (props) {
                 <h3 className={classes.label} style={{fontSize: 26}}>Ваш заказ</h3>
             </div>
       {cartItems.length>0 ? (<span>
-         
-          {cartItems.map((item, i) => {
+
+          {cartItems.map((item, i) => {  
+
             return <span key={i}>
               { i <= 1 ?
               (<div><div className={classes.greenHat}>
@@ -311,41 +323,25 @@ export default function CartItems (props) {
             }
               <Card className={classes.cart}>
               
-
-              <CardMedia
-                className={classes.cover}
-                image={'/api/product/image/'+item.product._id}
-                title={item.product.name}
-              />
-              <div className={classes.details}>
-                <CardContent className={classes.content}>
-                  <Link to={'/product/'+item.product._id}>
-                    
-                    <h3 className={classes.label}>{item.product.name}</h3>
-                    
-                  </Link>
-                  <div>
-            
-                    <span className={classes.itemTotal}>${item.product.price * item.quantity}</span>
-                    <Typography type="subheading" component="h3" className={classes.price} color="primary">$ {item.product.price}</Typography>
-                  </div>
-                </CardContent>
-                <div className={classes.subheading}>
-                  Количество: <TextField
-                              value={item.quantity}
-                              onChange={handleChange(i)}
-                              type="number"
-                              inputProps={{
-                                  min:1
-                              }}
-                              className={classes.textField}
-                              InputLabelProps={{
-                                shrink: true,
-                              }}
-                              margin="normal"/>
-                            <Button className={classes.removeButton} color="primary" onClick={removeItem(i)}>Удалить</Button>
+              <div className={classes.item}>
+                    <div style={{backgroundImage: `url(/api/product/image/${item.product._id})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div>
+                      <Link to={'/product/'+item.product._id}>
+                        <h3 className={classes.label}>{item.product.name}</h3>
+                      </Link>
+                        <CloseIcon className={classes.cross} onClick={removeItem(i)}/>
+                       <div style={{    display: 'grid',
+    gridTemplateColumns: '1fr 20px'}}>
+                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
+                            <p onClick={handleChange(i)}>—</p>
+                            <p>{item.quantity > 0 ? item.quantity : 1}</p>
+                            <p onClick={handleChange(i, 1)}>+</p>
+                        </div>
+                        <span>{item.product.price * item.quantity}</span>
+                       </div>
+                    </div>
                 </div>
-              </div>
+
             </Card>
             <Divider/>
           </span>})
