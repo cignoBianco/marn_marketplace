@@ -296,16 +296,9 @@ export default function Checkout (){
                 <p style={{margin: 0}} >
                     Необходимы закрывающие документы
                 </p>
-                {
-            values.error && (<Typography component="p" color="error">
-                <Icon color="error" className={classes.error}>error</Icon>
-                {values.error}</Typography>)
-          }
-          <Link to="success" onClick={()=>{window.location.replace("http://marketplace.entrega.su/success");}}>
-            <Button  variant="contained"  className={classes.submit}>Заказть</Button>
-          </Link>
-            </div>
-           </div>
 </div>
-      )
+</div>
+</div>
+
+    )
 }

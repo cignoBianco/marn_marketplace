@@ -47,6 +47,21 @@ icon: {
     borderRadius: 10,
     display: 'grid'
 },
+buttonSlogan: {
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'flex-start',
+  padding: '17px 0px',
+  width: 498,
+  height: 58,
+  backgroundColor: '#fbfbfb',
+  boxShadow: '0 8px 16px 0 rgba(52, 60, 68, 0.1)',
+  borderRadius: theme.basic.borderRadius,
+  fontFamily: 'Gilroy',
+
+  textTransform: 'none',
+  fontSize: 20
+},
 label: {
     textTransform: 'uppercase',
     fontSize: 22,
@@ -347,15 +362,10 @@ export default function CartItems (props) {
           </span>})
         }
         <div className={classes.checkout}>
-          <span className={classes.total}>Итого: ${getTotal()}</span>
-          {!props.checkout && (auth.isAuthenticated()?
-            <Button  variant="contained" onClick={openCheckout}>Оформить заказ</Button>
-            :
-            <Link to="/signin">
-              <Button variant="contained">Войдите, чтобы оформить заказ</Button>
-            </Link>)}
+          <span className={classes.label}>Итого: ${getTotal()}</span>
+          
           <Link to='/' className={classes.continueBtn}>
-            <Button variant="contained">Продолжить заказывать</Button>
+            <Button variant="contained" className={classes.buttonSlogan}>Продолжить заказывать</Button>
           </Link>
         </div>
       </span>) :
