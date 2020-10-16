@@ -187,12 +187,12 @@ export default function Cart () {
           <CartItems checkout={checkout}
                      setCheckout={showCheckout}/>
         </Grid>
-        {checkout &&
+        
           <Grid item xs={6} sm={6}>
             <StripeProvider apiKey={config.stripe_test_api_key}>
               <Checkout/>
             </StripeProvider>
-          </Grid>}
+          </Grid>
         </Grid>
       </div>)
 }
