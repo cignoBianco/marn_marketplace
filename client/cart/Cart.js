@@ -189,9 +189,9 @@ export default function Cart () {
         </Grid>
         
           <Grid item xs={6} sm={6}>
-            <StripeProvider apiKey={config.stripe_test_api_key}>
+            
               <Checkout/>
-            </StripeProvider>
+            
           </Grid>
         </Grid>
       </div>)

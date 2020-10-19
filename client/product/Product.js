@@ -333,7 +333,7 @@ export default function Product ({match}) {
     return (
 
 <div className={classes.container}>
-            <div className={classes.cross}><CloseIcon  onClick={(e)=>{window.history.go(-1); return false;}} /*onClick={(e) => hide()}*/ />  </div>
+            <div className={classes.cross}><CloseIcon  onClick={(e)=>{/*window.history.go(-1); return false;}*/}} /*onClick={(e) => hide()}*/ />  </div>
             
             <div style={{display: 'grid', gridGap: 40, gridTemplateColumns: '295px 1fr'}}>
                 <div style={{width: 292, backgroundImage: `url(${pepe})`, backgroundRepeat:'no-repeat'}}></div>
