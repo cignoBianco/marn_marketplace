@@ -6,7 +6,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import { shadows } from '@material-ui/system'
 import Button from "@material-ui/core/Button"
-import Group from './../assets/images/Group.png'
+import Group from './../assets/images/feedback.png'
 import cardIcon from './../assets/images/icons/BuyCard.png'
 import locationIcon from './../assets/images/icons/Location.png'
 import timeCircleIcon from './../assets/images/icons/Time Circle.png'
