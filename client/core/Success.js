@@ -46,7 +46,7 @@ const useStyles = makeStyles(theme => ({
     },
     sloganDiv: {
         width: 498,
-        height: 231,
+        //height: 231,
         //left: 224,
         marginTop: 80,
         position: "relative",
@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
     },
     someText: {
         width: 498,
-        height: 58,
+        //height: 58,
         fontStyle: 'normal',
         fontWeight: 'bold',
         fontSize: 64,
@@ -84,7 +84,7 @@ const useStyles = makeStyles(theme => ({
     },
     description: {
         width: 498,
-        height: 48,
+       // height: 48,
         fontFamily: 'Gilroy',
         fontStyle: 'normal',
         //fontWeight: 700,
