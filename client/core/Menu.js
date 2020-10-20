@@ -71,7 +71,11 @@ const useStyles = makeStyles(theme => ({
       borderRadius: theme.basic.borderRadius,
       filter: 'drop-shadow(0px 2px 4px rgba(117, 131, 142, 0.04)), drop-shadow(0px 8px 16px rgba(52, 60, 68, 0.1))',
       boxShadow: '1px 1px 8px -1px rgba(117, 131, 142, 0.60)',
-      borderRadius: 8
+      borderRadius: 8,
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: '0 0 0 12px'
   },
   Button: {
       maxHeight: 36,
@@ -87,7 +91,7 @@ const useStyles = makeStyles(theme => ({
   gridContainer: {
       alignItems: "center",
       display: 'grid',
-      gridTemplateColumns: '0.5fr 2fr 4.1fr 4.1fr 1.6fr 0.5fr',
+      gridTemplateColumns: '0.5fr 2fr 4.1fr 4.1fr auto 40px',
       gridTemplateRows: '1fr',
       gap: '1px 48px',
       width: 'inherit',
@@ -160,7 +164,7 @@ function CartBtn() {
     return(
       <div> 
         <div  onClick={() => setCartVisible(cartVisible + 1)}>
-          <div className={classes.relative} style={{cursor: 'pointer'}} 
+          <div className={classes.relative} style={{cursor: 'pointer', height: 35, width: 35, display: 'flex', alignItems: 'center'}} 
             onMouseOver={() => {setShowDialog({ showDialog: true })} }
             onMouseLeave={() => {setShowDialog(false)} }
             
@@ -197,6 +201,7 @@ function SearchBtn() {
     return(
       <div> 
           <div  onClick={() => setSearchVisible(searchVisible + 1)} className={classes.dropdown} height={'inherit'}>
+              <div style={{fontSize: 15}}>Выбор города</div>
               <svg width="16" height="10" className={classes.svg} viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 1.5L8 8.5L1 1.5" stroke="#2C2738" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -288,7 +293,7 @@ const classes = useStyles()
               <Button className={classes.Button} texttransform="none" padding={`7px 40px`} >Войти</Button>
           </Link>
         </div>
-        <div>
+        <div style={{ height: '100%', display: 'flex', alignItems: 'center'}}>
             <CartBtn />
         </div>
         {

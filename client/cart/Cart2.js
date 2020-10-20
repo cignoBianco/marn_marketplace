@@ -14,15 +14,17 @@ const useStyles = makeStyles(theme => ({
         width: 710,
         height: '100vh',
         background: '#fff',
-        paddingTop: 56,//'86px 40px 0 20px',
         display: 'grid',
         //gridGap: 35,
-        position: 'absolute',
+        position: 'fixed',
         right: 0,
         overflowY: 'scroll',
         top: 0,
         gridAutoRows: 'min-content',
         zIndex: 100,
+        boxShadow: '0px 2px 8px rgba(117, 131, 142, 0.04), 0px 16px 24px rgba(52, 60, 68, 0.12), 140px 16px 140px 939px rgba(52, 60, 68, 0.2)',
+        zIndex: 10,
+        paddingBottom: 30
     },
     section: {
         width: 326,
@@ -52,10 +54,8 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 700,
         paddingLeft: 40
     },
-    cross: {
-        position: 'absolute',
-        left: 20, 
-        top: 20
+    fs22: {
+        fontSize: 22
     },
     greenHat: {
         height: 60,
@@ -65,6 +65,7 @@ const useStyles = makeStyles(theme => ({
         display: 'grid',
         gridTemplateColumns: '40px 1fr 150px',
         gridGap: 16,
+        alignContent: 'center',
     },
     greySquare: {
         background: '#EDEDED',
@@ -109,8 +110,8 @@ const useStyles = makeStyles(theme => ({
         paddingTop: 20,
         borderBottom: '1px solid #EDEDED',
         display: 'grid',
-        gridGap: 40,
-        gridTemplateColumns: '100px 310px 1fr',
+        gridGap: 20,
+        gridTemplateColumns: '150px 310px 1fr',
 
     },
     button: {
@@ -124,7 +125,7 @@ const useStyles = makeStyles(theme => ({
         borderRadius: 8,
         marginLeft: 'auto',
         marginRight: 'auto',
-        marginBottom: 45
+        marginBottom: 125
     }
 }))
 
@@ -134,7 +135,7 @@ export default function Cart2({hide}) {
     const classes = useStyles()
     return (
         <div className={classes.container}>
-            <div style={{display: 'flex', justifyContent: 'space-around', height: 60}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', height: 60, alignItems: 'center'}}>
               
                 <h3 onClick={(e) => {window.location.href = '../cart';}} className={classes.label} >Ваша корзина</h3>
                 
@@ -154,35 +155,53 @@ export default function Cart2({hide}) {
             </div>
             <div className={classes.mainBlock}>
                 <div className={classes.item}>
-                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{backgroundPositionX: 'right', backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
-                        <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center', }}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                        <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
                 <div className={classes.item}>
-                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{backgroundPositionX: 'right', backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
                 <div className={classes.item}>
-                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{backgroundPositionX: 'right', backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
@@ -201,35 +220,53 @@ export default function Cart2({hide}) {
             </div>
             <div className={classes.mainBlock}>
                 <div className={classes.item}>
-                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{paddingLeft: 70, backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
                 <div className={classes.item}>
-                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{paddingLeft: 70, backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
                 <div className={classes.item}>
-                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{paddingLeft: 70, backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
@@ -252,7 +289,10 @@ export default function Cart2({hide}) {
                 <div className={classes.item}>
                     <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
                     <div>
-                        <h3 style={{paddingBottom: 30}} className={classes.label}>Пицца 4 сыра </h3> <h6> 560г</h6>
+                        <div style={{display: 'flex'}}> 
+                            <h3 style={{paddingBottom: 30, paddingLeft: 0}} className={classes.label}>Пицца 4 сыра </h3>
+                            <h6 style={{fontWeight: 200, alignSelf: 'center', paddingLeft: 10}}> 560г</h6>
+                        </div>
                         <div>
                             <div>
                                 <span className={classes.bold}>Добавки</span>
@@ -265,9 +305,16 @@ export default function Cart2({hide}) {
                             </ul>
                         </div>
                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center', marginTop: 15, marginBottom: 15}}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                        
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
@@ -276,14 +323,20 @@ export default function Cart2({hide}) {
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
-                            <p>—</p>
-                            <p>1</p>
-                            <p>+</p>
+                            <p className={classes.fs22}>—</p>
+                            <p className={classes.fs22}>1</p>
+                            <p className={classes.fs22}>+</p>
+                        </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', width: 147}}>
+                        <CloseIcon/>
+                        <div style={{}}>
+                            600 руб 
                         </div>
                     </div>
                 </div>
             </div>
-            <div className={classes.button}>
+            <div className={classes.button}  onClick={(e) => {window.location.href = '../cart';}} >
                 Сделать заказ на сумму 2500 руб
             </div>
 

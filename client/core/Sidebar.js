@@ -20,7 +20,9 @@ const useStyles = makeStyles(theme => ({
         position: 'fixed',
         left: 0,
         top: 0,
-        gridAutoRows: 'min-content'
+        gridAutoRows: 'min-content',
+        boxShadow: '0px 2px 8px rgba(117, 131, 142, 0.04), 0px 16px 24px rgba(52, 60, 68, 0.12), 140px 16px 140px 939px rgba(52, 60, 68, 0.2)',
+        zIndex: 10
     },
     section: {
         width: 326,
