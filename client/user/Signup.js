@@ -1,9 +1,5 @@
 import React, {useState} from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
@@ -15,6 +11,7 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import {Link} from 'react-router-dom'
 import basket from './../assets/images/basket.png'
+import NumberFormat from 'react-number-format';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -159,6 +156,17 @@ inputLight: {
 p22: {
   alignSelf: 'center',
   fontSize: 24
+},
+sendCodeBtn: {
+  width: 138,
+  height: 28,   
+  background: '#B0CB1F',
+  boxShadow: '0px 2px 4px rgba(117, 131, 142, 0.04), 0px 8px 16px rgba(52, 60, 68, 0.1)',
+  borderRadius: 8,
+  position: 'absolute',
+  right: 0,
+  margin: 6,
+  border: 'none'
 }
 }))
 
@@ -166,8 +174,8 @@ export default function Signup() {
   const classes = useStyles()
   const [values, setValues] = useState({
     name: '',
-    password: '',
-    email: '',
+    phone: '',
+    birthday: '',
     open: false,
     error: ''
   })
@@ -179,8 +187,8 @@ export default function Signup() {
   const clickSubmit = () => {
     const user = {
       name: values.name || undefined,
-      email: values.email || undefined,
-      password: values.password || undefined
+      birthday: values.birthday || undefined,
+      phone: values.phone || undefined
     }
     create(user).then((data) => {
       if (data.error) {
@@ -204,8 +212,17 @@ export default function Signup() {
           </div>
           <div>
             <input className={classes.inputLight} id="name" label="Name" onChange={handleChange('name')} value={values.name} placeholder="Имя"/>
-            <input className={classes.inputLight}  id="email" type="email" label="Email" value={values.email} onChange={handleChange('email')} placeholder="Электронная почта"/>
-            <input className={classes.inputLight}  id="password" type="password" label="Password" value={values.password} onChange={handleChange('password')} placeholder="Пароль"/>
+            <input className={classes.inputLight}  id="birthday" type="text" label="Дата рождения" value={values.birthday} onChange={handleChange('birthday')} placeholder="Дата рождения"/>
+            <div style={{display: 'flex', height: 40, position: 'relative', paddingBottom: 40 }}>
+              <NumberFormat format="+7 (###) ###-####" mask="_" className={classes.inputLight} placeholder="Номер телефона" id="phone" 
+                value={values.phone} label="phone" onChange={handleChange('phone')}/>
+              <button className={classes.sendCodeBtn}>Получить код</button>
+            </div>
+            {
+              !values.error ?
+              <input className={classes.inputLight} id="sms" type="text" label="sms" value={values.sms} onChange={handleChange('sms')} placeholder="SMS - код"/>
+              : ''
+            }
             {
               values.error && (<Typography component="p" color="error">
                 <Icon color="error" className={classes.error}>error</Icon>

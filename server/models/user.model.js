@@ -4,14 +4,13 @@ const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: 'Name is required'
+    required: 'Заполните имя'
   },
-  email: {
+  phone: {
     type: String,
     trim: true,
-    unique: 'Email already exists',
-    match: [/.+\@.+\..+/, 'Please fill a valid email address'],
-    required: 'Email is required'
+    unique: 'Номер уже существует',
+    required: 'Введите номер телефона'
   },
   hashed_password: {
     type: String,
@@ -51,6 +50,11 @@ UserSchema.path('hashed_password').validate(function(v) {
   }
 }, null)
 
+/*UserSchema.path('phone').validate(function (v) {
+  console.log(v.length, this._phone)
+  return v.length <= 17;
+}, 'Неверный формат телефона');*/
+
 UserSchema.methods = {
   authenticate: function(plainText) {
     return this.encryptPassword(plainText) === this.hashed_password
@@ -72,3 +76,13 @@ UserSchema.methods = {
 }
 
 export default mongoose.model('User', UserSchema)
+
+/*
+ email: {
+    type: String,
+    trim: true,
+    unique: 'Email уже существует',
+    match: [/.+\@.+\..+/, 'Please fill a valid email address'],
+    required: 'Заполните еmail'
+  },
+*/

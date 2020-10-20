@@ -229,8 +229,8 @@ export default function Main() {
                             Страница не найдена
                         </Typography>
                         <Typography className={classes.description15}>
-                        Возможно страница была удалена или ошибка в адресе.
-                        <Link to='/' style={{color: '#B0CB1F'}}> Вернуться на главную.</Link>   <br/>
+                        Возможно страница была удалена или ошибка в адресе.<br/>
+                        <Link to='/' style={{color: '#B0CB1F'}}> Вернуться на главную.</Link>  
                         <br/>
                         Попробуйте найти нужный товар или заведение через наш поиск.
                         </Typography>
