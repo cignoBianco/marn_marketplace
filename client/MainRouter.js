@@ -30,7 +30,6 @@ import SearchOrganization from './core/SearchOrganization'
 import CompanyMenu from './core/CompanyMenu'
 import Checkout from './core/Checkout'
 import Cb from './core/Cb'
-import Main from './core/Main'
 import Success from './core/Success'
 import e404 from './core/e404'
 
@@ -68,7 +67,6 @@ const MainRouter = () => {
 
         <Route path="/SearchOrganization" component={SearchOrganization} />
         <Route path="/CompanyMenu" component={CompanyMenu} />
-        <Route path="/main" component={Main} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/cb" component={Cb} />
         <Route path="/success" component={Success} />

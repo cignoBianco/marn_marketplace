@@ -339,7 +339,7 @@ export default function CartItems (props) {
               <Card className={classes.cart}>
               
               <div className={classes.item}>
-                    <div style={{backgroundImage: `url(/api/product/image/${item.product._id})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{backgroundImage: `url(/api/product/image/${item.product._id})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center'}}></div>
                     <div>
                       <Link to={'/product/'+item.product._id}>
                         <h3 className={classes.label}>{item.product.name}</h3>
