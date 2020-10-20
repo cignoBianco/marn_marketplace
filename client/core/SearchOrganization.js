@@ -218,15 +218,15 @@ export default function SearchOrganization() {
             <h1 className={classes.h1}>Поиск по запросу "пицца"</h1>
                 <div className={classes.category}>
                     <div className={classes.categories}>
-                        {/*<div className={classes.cat + ' ' + classes.activeTab}>
+                        <div className={classes.cat + ' ' + classes.activeTab}>
                             Заведения (6)
-                        </div>*/}
+                        </div>
                         <div className={classes.cat + ' ' + classes.activeTab}>
                             Товары (100)
                         </div>
-                        {/*<div className={classes.cat}>
+                        <div className={classes.cat}>
                             Адреса
-                        </div>*/}
+                        </div>
                     </div>
                 </div>
             <div className={classes.container}>

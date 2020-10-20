@@ -27,6 +27,7 @@ import NewAuction from './auction/NewAuction'
 import EditAuction from './auction/EditAuction'
 import Auction from './auction/Auction'
 import SearchOrganization from './core/SearchOrganization'
+import SearchOrganizationNone from './core/SearchOrganizationNone'
 import CompanyMenu from './core/CompanyMenu'
 import Checkout from './core/Checkout'
 import Cb from './core/Cb'
@@ -66,6 +67,7 @@ const MainRouter = () => {
         <Route path="/auctions/all" component={OpenAuctions}/>
 
         <Route path="/SearchOrganization" component={SearchOrganization} />
+        <Route path="/SearchOrganizationFailed" component={SearchOrganizationNone} />
         <Route path="/CompanyMenu" component={CompanyMenu} />
         <Route path="/checkout" component={Checkout} />
         <Route path="/cb" component={Cb} />

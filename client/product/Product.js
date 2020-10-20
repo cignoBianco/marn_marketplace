@@ -31,7 +31,6 @@ const useStyles = makeStyles(theme => ({
     background: '#fff',
     padding: '41px 34px',
     display: 'grid',
-    gridGap: 30,
     position: 'fixed',
     boxShadow: '0px 8px 16px rgba(52, 60, 68, 0.3), 0px 8px 500em 500em rgba(52, 60, 68, 0.23)',
     borderRadius: 20,
@@ -48,7 +47,8 @@ const useStyles = makeStyles(theme => ({
     textAlign: 'center',
     alignContent: 'start',
     overflowY: 'scroll',
-    padding: '38px 30px 60px 40px'
+    padding: '38px 30px 60px 40px',
+    height: 'fit-content'
 },
   flex:{
     display:'flex'
@@ -137,7 +137,7 @@ cross: {
     position: 'fixed',
     justifySelf: 'end',
     width: 'inherit',
-    //right: '1em',
+    marginTop: '-1em',
     textAlign: '-webkit-right',
 },
 Button: {
@@ -192,6 +192,7 @@ activeControl: {
 },
 p: {
     fontSize: 13,
+    textAlign: 'start'
 },
 additions: {
     margin: '25px 9px 25px 0'
@@ -238,7 +239,8 @@ lightBtn: {
     boxSizing: 'border-box',
     boxShadow: '0px 8px 16px rgba(52, 60, 68, 0.1)',
     borderRadius: 8,
-    marginBottom: '3em',
+    marginBottom: '2em',
+    marginTop: '1em',
 },
 hideLink: {
     fontSize: 20,
@@ -263,7 +265,7 @@ cardDetailsCol: {
     order: 0,
     alignSelf: 'flex-start',
     flexGrow: 0,
-    margin: '82px 0px',
+    margin: '42px 0px',
     width: 333,
     '& > div': {
         borderBottom: '1px solid #d3d3d378'
@@ -273,6 +275,7 @@ divRow: {
     minHeight: 36,
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
+    alignContent: 'space-around',
     width: '100%',
     '& p': {
         fontSize: 15
@@ -282,6 +285,7 @@ lightH2: {
     fontSize: 20,
     fontWeight: 200,
     width: '100%',
+    paddingBottom: '1em'
   },
 }))
 
@@ -333,7 +337,7 @@ export default function Product ({match}) {
     return (
 
 <div className={classes.container}>
-            <div className={classes.cross}><CloseIcon  onClick={(e)=>{/*window.history.go(-1); return false;}*/}} /*onClick={(e) => hide()}*/ />  </div>
+            <div className={classes.cross}><CloseIcon  onClick={(e)=>{window.history.go(-1); return false;}} /*onClick={(e) => hide()}*/ />  </div>
             
             <div style={{display: 'grid', gridGap: 40, gridTemplateColumns: '295px 1fr'}}>
                 <div style={{width: 292, backgroundImage: `url(${pepe})`, backgroundRepeat:'no-repeat'}}></div>
@@ -341,8 +345,7 @@ export default function Product ({match}) {
                     <div className={classes.Title}>
                         <div className={classes.h2}>{product.name}</div>
                         <div className={classes.titleDescription}>
-                          {product.description}<br/>
-                          {product.quantity > 0? 'In Stock': 'Out of Stock'}
+                          {product.description}
                         </div>
                     </div>
                     <div className={classes.control}>
@@ -408,7 +411,7 @@ export default function Product ({match}) {
             <div className={classes.cardDetails}>
                 <div className={classes.cardDetailsCol}>
                     <div>
-                        <h2 className="classes.lightH2">Общая информация</h2>
+                        <h2 className={classes.lightH2}>Общая информация</h2>
                     </div>
                     <div className={classes.divRow}>
                         <p className={classes.bold}>Бренд</p>
@@ -433,7 +436,7 @@ export default function Product ({match}) {
                 </div>
                 <div className={classes.cardDetailsCol}>
                     <div>
-                        <h2 className="classes.lightH2">Пищевая ценность на 100 гр</h2>
+                        <h2 className={classes.lightH2}>Пищевая ценность на 100 гр</h2>
                     </div>
                     <div className={classes.divRow}>
                         <p className={classes.bold}>Белки</p>
@@ -458,47 +461,3 @@ export default function Product ({match}) {
 
    )
 }
-
-
-/*
-
-     <div className={classes.root}>
-          <Grid container spacing={10}>
-            <Grid item xs={7} sm={7}>
-              <Card className={classes.card}>
-                <CardHeader
-                  title={product.name}
-                  subheader={product.quantity > 0? 'In Stock': 'Out of Stock'}
-                  action={
-                    <span className={classes.action}>
-                      <AddToCart cartStyle={classes.addCart} item={product}/>
-                    </span>
-                  }
-                />
-                <div className={classes.flex}>
-                  <CardMedia
-                    className={classes.media}
-                    image={imageUrl}
-                    title={product.name}
-                  />
-                  <Typography component="p" variant="subtitle1" className={classes.subheading}>
-                    {product.description}<br/>
-                    <span className={classes.price}>$ {product.price}</span>
-                    <Link to={'/shops/'+product.shop._id} className={classes.link}>
-                      <span>
-                        <Icon className={classes.icon}>shopping_basket</Icon> {product.shop.name}
-                      </span>
-                    </Link>
-                  </Typography>
-
-                </div>
-              </Card>
-            </Grid>
-            {suggestions.length > 0 &&
-              (<Grid item xs={5} sm={5}>
-                <Suggestions  products={suggestions} title='Related Products'/>
-              </Grid>)}
-          </Grid>
-        </div>
-
-*/

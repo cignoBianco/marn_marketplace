@@ -224,8 +224,8 @@ hat: {
     alignItems: 'center'
 },
 searchbar: {
+    maxWidth: 378,
     height: 50,
-    width: 380,
     backgroundColor: '#fbfbfb',
     boxShadow: 'inset 0px 2px 10px 0px rgba(0, 0, 0, 0.1)',
     borderRadius: theme.basic.borderRadius,
@@ -235,35 +235,23 @@ searchbar: {
     display: 'flex',
     alignItems: 'center',
 
+    height: 50,
+    width: 380,
+
 },
-  /*root: {
-    flexGrow: 1,
-    margin: 30,
-  },
-  card: {
-    textAlign: 'center',
-    paddingBottom: theme.spacing(2)
-  },
-  title: {
-    margin: theme.spacing(2),
-    color: theme.palette.protectedTitle,
-    fontSize: '1.2em'
-  },
-  subheading: {
-    marginTop: theme.spacing(1),
-    color: theme.palette.openTitle
-  },
-  bigAvatar: {
-    width: 100,
-    height: 100,
-    margin: 'auto'
-  },
-  productTitle: {
-    padding:`${theme.spacing(3)}px ${theme.spacing(2.5)}px ${theme.spacing(1)}px ${theme.spacing(2)}px`,
-    color: theme.palette.openTitle,
-    width: '100%',
-    fontSize: '1.2em'
-  }*/
+mg12: {
+  marginLeft: 12
+},
+placeholder: {
+fontSize: 15,
+color: '#797979',
+paddingLeft: 10,
+height: '100%',
+width: '100%',
+background: 'none',
+border: 'none',
+outline: 'none',
+},
 }))
 
 export default function Shop({match}) {
@@ -402,11 +390,14 @@ export default function Shop({match}) {
                     <div className={classes.parent}>
                         <div className={classes.filter}>
                                 
-                             <div>
-                        <div className={classes.searchbar}>
-                            <img src={Search} alt="Search Icon" className={classes.mg12} />
-                        </div>
-                    </div>
+                             
+                        
+             <div className={classes.searchbar}>
+                <img src={Search} alt="Search Icon" className={classes.mg12} />
+                <input className={classes.placeholder} placeholder="Поиск" />
+              </div>
+
+                   
                                 <div className={classes.radioGroup}>
                                     <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 1</div>
                                 </div>
@@ -439,54 +430,3 @@ export default function Shop({match}) {
 
     </div>)
 }
-
-/*
-
-      <Grid container spacing={8}>
-        <Grid item xs={4} sm={4}>
-          <Card className={classes.card}>
-            <CardContent>
-              <Typography type="headline" component="h2" className={classes.title}>
-                {shop.name}
-              </Typography>
-              {shop.category}
-              <br/>
-              <Avatar src={logoUrl} className={classes.bigAvatar}/><br/>
-                <Typography type="subheading" component="h2" className={classes.subheading}>
-                  {shop.description}
-                </Typography><br/>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item xs={8} sm={8}>
-          <Card>
-            <Products products={products} searched={false}/>
-          </Card>
-        </Grid>
-      </Grid>
-*/
-
-/*
-<div className={classes.card} onClick={() => {showThisCard()}}>
-    <div style={{height: 212, backgroundImage: `url(${imageUrl})`, backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-        <div className={classes.cardStatusDiv}>
-            <div className={classes.cardStatus}>открыто</div>
-        </div>
-    </div>
-    <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
-        <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>Pizza</div>
-        <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-            <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                бесплатная доставка от 
-                <span style={{color: '#000'}}> 1000 руб</span>
-            </div>
-            <div style={{ width: 80, height: 50}} className={classes.greenBg}>
-                <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                    height: 'inherit'}}> 2 по цене 1
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-*/
