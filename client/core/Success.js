@@ -1,22 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import { shadows } from '@material-ui/system'
-import Button from "@material-ui/core/Button"
 import Group from './../assets/images/feedback.png'
-import cardIcon from './../assets/images/icons/BuyCard.png'
-import locationIcon from './../assets/images/icons/Location.png'
-import timeCircleIcon from './../assets/images/icons/Time Circle.png'
-import phonePic from './../assets/images/phone.png'
-import google from './../assets/images/icons/google play.png'
-import apple from './../assets/images/icons/apple.png'
-import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded'
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded'
-import imageUrl from './../assets/images/org/cards/Block.png'
-//import { Group } from '@material-ui/icons'
+import {Link, withRouter} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -34,15 +20,10 @@ const useStyles = makeStyles(theme => ({
         margin: '60px 0px 52px'
     },
     sloganContainer: {
-        display: "grid",
-        marginBottom: 165,
-        gridAutoFlow: 'row dense',
-        /* grid-auto-columns: 200px 1fr; */
-        gridAutoRows: '1fr auto',
-        gridTemplateColumns: 'repeat( auto-fit, minmax(400px, 1fr) )',
-        gridGap: '40px 71px',
+        display: 'grid',
+        alignItems: 'center',
         justifyItems: 'center',
-        alignItems: 'center'
+        marginBottom: 165
     },
     sloganDiv: {
         width: 498,
@@ -68,15 +49,15 @@ const useStyles = makeStyles(theme => ({
     },
     picture: {
         marginTop: 129,
-        width: 458,
-        height: 685
+        width: 100,
+        height: 100
     },
     someText: {
         width: 498,
         //height: 58,
         fontStyle: 'normal',
         fontWeight: 'bold',
-        fontSize: 64,
+        fontSize: 32,
         textAlign: 'center',
         color: theme.palette.primary.text,
         marginBottom: 25,
@@ -216,9 +197,10 @@ const useStyles = makeStyles(theme => ({
         fontSize: 18,
         textShadow: '0 0 black'
     },
-    description16: {
-        fontSize: 16,
-        color: '#797979'
+    description15: {
+        fontSize: 15,
+        color: '#797979',
+        textAlign: 'center'
     },
     aboutBlock: {
         maxWidth: 1440,
@@ -244,8 +226,9 @@ export default function Main() {
                         <Typography variant="body1" className={classes.someText}>
                             Заказ оформлен. Спасибо
                         </Typography>
-                        <Typography variant="body2" className={classes.description}>
-                        Ваш заказ №1 от 09.09.2020 15:50 успешно создан. На ваш номер телефона придет уведомление по каждому изменению статуса Вашего заказа.
+                        <Typography className={classes.description15}>
+                        Ваш заказ №1 от 09.09.2020 15:50 успешно создан.<br/>
+                            Отследить статус заказа вы можетее в <Link style={{color: '#B0CB1F'}} to="/profile">личном кабинете.</Link>
                         </Typography>
                     </div>
                 </div>
