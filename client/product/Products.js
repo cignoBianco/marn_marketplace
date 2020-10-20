@@ -7,6 +7,7 @@ import GridListTile from '@material-ui/core/GridListTile'
 import GridListTileBar from '@material-ui/core/GridListTileBar'
 import {Link} from 'react-router-dom'
 import AddToCart from './../cart/AddToCart'
+import Add from './../assets/images/icons/Add.png'
 
 
 const useStyles = makeStyles(theme => ({
@@ -104,6 +105,7 @@ card: {
    // width: 305,
     maxHeight: 814,
     minHeight: 321,
+    height: '100%',
     left: 0,
     top: 0,
     flex: 'none',
@@ -249,6 +251,16 @@ searchbar: {
     alignItems: 'center',
 
 },
+add: {
+  backgroundImage: `url(${Add})`,
+  width: 53,
+  height: 46,
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+  position: 'absolute',
+  borderRadius: '50%',
+  marginLeft: '17em',
+  marginTop: '-0.5em'
+}
 }))
 // <AddToCart item={product}/>
 export default function Products(props){
@@ -264,19 +276,18 @@ export default function Products(props){
                 <Link to={"/product/"+product._id}>
                   <div style={{height: 212, backgroundImage: `url('/api/product/image/${product._id}')`, backgroundRepeat: 'no-repeat',
                       backgroundSize: 'contain', backgroundPosition: 'center', backgroundPositionY: '50%'}}>
-                      <div className={classes.cardStatusDiv}>
-                          <div className={classes.cardStatus}>открыто</div>
-                      </div>
                   </div>
                 </Link>
+                <div className={classes.add}></div>
                 <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
                   <Link to={"/product/"+product._id}>
-                    <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>{product.name}</div>
+                    <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black', paddingBottom: 14}}>{product.name}</div>
                   </Link>
-                    <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignSelf: 'end'}}>
-                        <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
-                            бесплатная доставка от 
-                            <span style={{color: '#000'}}> 1000 руб</span>
+                  <div style={{fontSize: 12, paddingBottom: 15}}>{product.description}</div>
+                    <div style={{display: 'grid', gridTemplateColumns: '5fr 1fr', alignItems: 'flex-start', alignSelf: 'end'}}>
+                        <div style={{ fontWeight: 400, fontSize: 32, width: 135, display: 'flex', alignItems: 'center' }}>
+                            {product.price}
+                            <span style={{color: '#797979', textDecorationLine: 'line-through', paddingLeft: 10, fontSize: 18}}>{product.price}</span>
                         </div>
                         <div style={{ width: 80, height: 50}} className={classes.greenBg}>
                             <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',

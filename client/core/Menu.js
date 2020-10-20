@@ -20,6 +20,7 @@ import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded'
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded'
 import logo from './../assets/images/logo.png'
 import Buy from './../assets/images/icons/Buy.png'
+import Dialog from './../assets/images/Union.png'
 import Search from './../assets/images/icons/Search.png'
 import Cart2 from './../cart/Cart2.js'
 
@@ -123,6 +124,16 @@ const useStyles = makeStyles(theme => ({
   mg12: {
       marginLeft: 12
   },
+  placeholder: {
+    fontSize: 15,
+    color: '#797979',
+    paddingLeft: 10,
+    height: '100%',
+    width: '100%',
+    background: 'none',
+    border: 'none',
+    outline: 'none',
+  },
 }))
 
 function SidebarBtn() {
@@ -144,23 +155,37 @@ function SidebarBtn() {
 
 function CartBtn() {
   const [cartVisible, setCartVisible] = useState(0);
+  const [showDialog, setShowDialog] = useState(0);
   const classes = useStyles()
     return(
       <div> 
         <div  onClick={() => setCartVisible(cartVisible + 1)}>
-        <div className={classes.relative}>
-                          <img src={Buy} alt="cart" width={24} height={24}/>
-                          <span className={classes.cardCircle} >
-                              <Typography variant="body2" component="p" className={classes.cartCount}>
-                                  4
-                              </Typography>
-                          </span>
-                      </div>
+          <div className={classes.relative} style={{cursor: 'pointer'}} 
+            onMouseOver={() => {setShowDialog({ showDialog: true })} }
+            onMouseLeave={() => {setShowDialog(false)} }
+            
+            >
+            <img src={Buy} alt="cart" width={24} height={24}/>
+            <span className={classes.cardCircle} >
+              <Typography variant="body2" component="p" className={classes.cartCount}>
+                  4
+              </Typography>
+            </span>
+          </div>
+          { showDialog ? 
+            <div style={{ position: 'absolute', backgroundImage: `url(${Dialog})`, width: 108, height: 39, display: 'flex', justifyContent: 'center', alignItems: 'center', paddingTop: 2 }}>
+              <div style={{fontSize: 9, textAlign: 'center', color: '#2c2738'}}>
+                0 товаров<br/>на сумму 0 руб
+              </div>
+            </div>
+            : null
+          }
+          
         </div>
         {
           cartVisible
             ? <Cart2 hide={ ()=>{setCartVisible(false)} } />
-            : null
+            : <></>
         }
       </div>
     )
@@ -208,7 +233,7 @@ function Modal2BtnBtn() {
     return(
       <div> 
           <div  onClick={() => setModal2Visible(modal2Visible + 1)}>
-              -
+              
           </div>
         {
           modal2Visible
@@ -249,8 +274,10 @@ const classes = useStyles()
           <Modal2BtnBtn />
         </div>
         <div>
+            
             <div className={classes.searchbar}>
-                <img src={Search} alt="Search Icon" className={classes.mg12} />
+              <img src={Search} alt="Search Icon" className={classes.mg12} />
+              <input className={classes.placeholder} placeholder="Блюда, товары, заведения, адрес" />
             </div>
         </div>
         <div>

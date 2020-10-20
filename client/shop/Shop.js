@@ -55,7 +55,7 @@ category: {
     width: '100%',
     borderBottom: '1px solid rgba(121, 121, 121, 0.25)',
     height: 32,
-    textalign: '-webkit-center'
+    textAlign: '-webkit-center'
 },
 categories: {
     display: 'flex',
