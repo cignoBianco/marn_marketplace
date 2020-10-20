@@ -327,10 +327,10 @@ useEffect(() => {
                 <div className={classes.sloganContainer}>
                     <img src={basket} className={classes.picture} alt="Marketa" />
                     <div className={classes.sloganDiv}>
-                        <Typography variant="body1" className={classes.someText}>
+                        <Typography className={classes.someText}>
                             Какая-то фраза
                         </Typography>
-                        <Typography variant="body2" className={classes.description}>
+                        <Typography className={classes.description}>
                             Описание
                         </Typography>
                         <Button className={classes.buttonSlogan} >
