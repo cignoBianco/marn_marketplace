@@ -12,15 +12,15 @@ export default ({markup, css}) => {
               } @font-face {
                 font-family: 'Gilroy';
                 font-style: normal;
-                src: local('Gilroy-Light'), url('./../fonts/Gilroy-Light.otf') format('opentype');
-               /* src: local('Gilroy-Bold'), url(./../fonts/Gilroy-Bold.otf) format('otf');*/
+                src: local('Gilroy-Light'), url('./client/css/fonts/Gilroy-Light.otf') format('opentype');
+               /* src: local('Gilroy-Bold'), url(./client/css/fonts/Gilroy-Bold.otf) format('otf');*/
             }
             
             @font-face {
                 font-family: 'Gilroy';
                 font-weight: bold;
-                src: local('Gilroy-ExtraBold'), url('./../fonts/Gilroy-ExtraBold.otf') format('opentype');
-               /* src: local('Gilroy-Bold'), url(./../fonts/Gilroy-Bold.otf) format('otf');*/
+                src: local('Gilroy-ExtraBold'), url('./client/css/fonts/Gilroy-ExtraBold.otf') format('opentype');
+               /* src: local('Gilroy-Bold'), url(./client/css/fonts/Gilroy-Bold.otf) format('otf');*/
             }
             
             * {

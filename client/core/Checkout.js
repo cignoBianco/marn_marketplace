@@ -356,7 +356,7 @@ export default function Checkout() {
                 </div>
                 
                 <div className={classes.item}>
-                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat'}}></div>
+                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'center', backgroundSize:'100%'}}></div>
                     <div>
                         <h3 className={classes.label}>Название продукта</h3>
                         <CloseIcon className={classes.cross}/>

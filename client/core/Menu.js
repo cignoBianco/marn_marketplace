@@ -208,7 +208,7 @@ function Modal2BtnBtn() {
     return(
       <div> 
           <div  onClick={() => setModal2Visible(modal2Visible + 1)}>
-              
+              -
           </div>
         {
           modal2Visible
@@ -246,7 +246,7 @@ const classes = useStyles()
           <Link to="/">
             <img src={logo} alt="marketa" className={classes.logo}/>
           </Link>
-          <Modal2BtnBtn style={{display:'none'}}/>
+          <Modal2BtnBtn />
         </div>
         <div>
             <div className={classes.searchbar}>
