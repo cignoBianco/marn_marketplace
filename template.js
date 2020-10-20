@@ -9,20 +9,8 @@ export default ({markup, css}) => {
           <style>
               a{
                 text-decoration: none
-              } @font-face {
-                font-family: 'Gilroy';
-                font-style: normal;
-                src: local('Gilroy-Light'), url('./client/css/fonts/Gilroy-Light.otf') format('opentype');
-               /* src: local('Gilroy-Bold'), url(./client/css/fonts/Gilroy-Bold.otf) format('otf');*/
-            }
-            
-            @font-face {
-                font-family: 'Gilroy';
-                font-weight: bold;
-                src: local('Gilroy-ExtraBold'), url('./client/css/fonts/Gilroy-ExtraBold.otf') format('opentype');
-               /* src: local('Gilroy-Bold'), url(./client/css/fonts/Gilroy-Bold.otf) format('otf');*/
-            }
-            
+              } 
+              
             * {
                 font-family: 'Gilroy-light', 'Gilroy', 'Arial', monospace;
                 color: #2C2738;
