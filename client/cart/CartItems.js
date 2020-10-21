@@ -1,12 +1,9 @@
 import React, {useState} from 'react'
 import auth from './../auth/auth-helper'
 import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
-import Divider from '@material-ui/core/Divider'
 import PropTypes from 'prop-types'
 import {makeStyles} from '@material-ui/core/styles'
 import cart from './cart-helper.js'
@@ -22,11 +19,10 @@ import pizza from './../assets/images/pizza.png'
 import lock from './../assets/images/icons/Lock.png'
 
 const useStyles = makeStyles(theme => ({
- /* card: {
-    margin: '24px 0px',
-    padding: '16px 40px 60px 40px',
-    backgroundColor: '#80808017'
-  },*/section: {
+  card: {
+    /*margin: '24px 0px',
+    padding: '16px 40px 60px 40px'*/
+  },section: {
     width: 326,
     height: 80,
     display: 'grid',
@@ -52,13 +48,13 @@ buttonSlogan: {
   flexDirection: 'row',
   alignItems: 'flex-start',
   padding: '17px 0px',
-  width: 498,
+  width: '100%',
   height: 58,
   backgroundColor: '#fbfbfb',
   boxShadow: '0 8px 16px 0 rgba(52, 60, 68, 0.1)',
   borderRadius: theme.basic.borderRadius,
   fontFamily: 'Gilroy',
-
+  alignSelf: 'center',
   textTransform: 'none',
   fontSize: 20
 },
@@ -83,6 +79,9 @@ greenHat: {
     display: 'grid',
     gridTemplateColumns: '40px 1fr 150px',
     gridGap: 16,
+    borderRadius: 8,
+    alignContent: 'center',
+    alignItems: 'baseline'
 },
 greySquare: {
     background: '#EDEDED',
@@ -128,8 +127,8 @@ item: {
     borderBottom: '1px solid #EDEDED',
     display: 'grid',
     gridGap: 40,
-    gridTemplateColumns: '100px 250px 1fr',
-
+    gridTemplateColumns: '100px 2fr 77px',
+    width: '100%',
 },
 button: {
     width: 418,
@@ -151,6 +150,25 @@ table: {
     fontSize: 22,
     color: '#797979',
     gridGap: 13
+},
+divider: {
+  width: '100%',
+  borderBottom: '1px solid black',
+  height: 0,
+  opacity: 0.2,
+  border: '1px solid #2C2738',
+  '&:first-of-type': {
+    display: 'none'
+  },
+  '&:first-child': {
+    display: 'none'
+  },
+  '&.divider:first-of-type': {
+    display: 'none'
+  },
+  '&.divider:first-child': {
+    display: 'none'
+  },
 },
 inputLight: {
     border: '1px solid #E6E6EB',
@@ -221,7 +239,13 @@ activeControl: {
   },
   cart: {
     width: '100%',
-    display: 'inline-flex'
+    display: 'inline-flex',
+    '&divider:first-of-type': {
+      display: 'none'
+    },
+    '&divider:first-child': {
+      display: 'none'
+    },
   },
   details: {
     display: 'inline-block',
@@ -244,8 +268,7 @@ activeControl: {
     color: 'rgb(72, 175, 148)'
   },
   checkout: {
-    float: 'right',
-    margin: '24px'
+    padding: 24
   },
   total: {
     fontSize: '1.2em',
@@ -264,7 +287,22 @@ activeControl: {
   },
   removeButton: {
     fontSize: '0.8em'
-  }
+  },
+  labeln: {
+    textTransform: 'uppercase',
+    fontSize: 22,
+    color: theme.palette.primary.text,
+    fontWeight: 700,
+},fs22: {
+  fontSize: 22
+},
+fs16: {
+  fontSize: 16
+},
+fbetween: {
+  display: 'flex',
+  justifyContent: 'space-between'
+}
 }))
 
 export default function CartItems (props) {
@@ -313,56 +351,101 @@ export default function CartItems (props) {
 
     return (
 
-        <Card className={classes.card}>
-          <div style={{display: 'flex', height: 60, alignItems: 'center', paddingLeft: 40}}>
-                <h3 className={classes.label} style={{fontSize: 26}}>Ваш заказ</h3>
+        <div className={classes.card}>
+          <div style={{display: 'flex', height: 60, alignItems: 'center'}}>
+                <h3 className={classes.label} style={{fontSize: 22}}>Ваш заказ</h3>
             </div>
-      {cartItems.length>0 ? (<span>
+      {cartItems.length > 0 ? (<span>
 
           {cartItems.map((item, i) => {  
 
             return <span key={i}>
-              { i <= 1 ?
+              { i < 1 ?
               (<div><div className={classes.greenHat}>
                 <div className={classes.greySquare}>
                     3
                 </div>
-                <h2><span className={classes.bold}>{item.product.shop.name} | </span> 2 кг</h2>
+                <h2><span className={classes.bold}  style={{fontSize: 20}}>{item.product.shop.name} | </span> 2 кг</h2>
                 <div className={classes.greyRec}>
                     <span className={classes.bold}>1800 руб </span>
                 </div>
             </div>
-            <div className={classes.greyLine}>
-                Ваш заказ доставят бесплатно
-            </div></div>) : ''
+            </div>) : ''
             }
-              <Card className={classes.cart}>
-              
+              <div className={classes.cart}>
+
               <div className={classes.item}>
-                    <div style={{backgroundImage: `url(/api/product/image/${item.product._id})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center'}}></div>
+                <div style={{backgroundImage: `url(/api/product/image/${item.product._id})`, backgroundRepeat: 'no-repeat', backgroundSize: '100%', backgroundPosition: 'center'}}></div>
                     <div>
                       <Link to={'/product/'+item.product._id}>
-                        <h3 className={classes.label}>{item.product.name}</h3>
+                        <h3 className={classes.labeln}  style={{fontSize: 18}}>{item.product.name}</h3>
                       </Link>
-                        <CloseIcon className={classes.cross} onClick={removeItem(i)}/>
-                       <div style={{    display: 'grid',
-    gridTemplateColumns: '1fr 20px'}}>
-                         <div style={{width: 250, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
-                            <p onClick={handleChange(i)}>—</p>
-                            <p>{item.quantity > 0 ? item.quantity : 1}</p>
-                            <p onClick={handleChange(i, 1)}>+</p>
+                        <div style={{maxWidth: 185, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
+                            <p className={classes.fs22} onClick={handleChange(i)}>—</p>
+                            <p className={classes.fs22}>{item.quantity > 0 ? item.quantity : 1}</p>
+                            <p className={classes.fs22} onClick={handleChange(i, 1)}>+</p>
                         </div>
-                        <span>{item.product.price * item.quantity}</span>
-                       </div>
+                    </div>
+                    <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', maxWidth: 147}}>
+                      <CloseIcon onClick={removeItem(i)}/>
+                        <div style={{}}>
+                          <span>{item.product.price * item.quantity}</span> руб 
+                        </div>
                     </div>
                 </div>
+            
 
-            </Card>
-            <Divider/>
+            </div>
+            
+            <div className={classes.divider}/>
+
+            {  
+              i == cartItems.length - 1 ? 
+              <div>
+          <div className={classes.fbetween} style={{marginBottom: 14, marginTop: 30, paddingLeft: 24}}>
+            <div className={classes.fs16} style={{color: '#797979'}}>Стоимость</div>
+            <div className={classes.fs16} style={{color: '#797979'}}>1800 руб</div>
+          </div>
+          <div className={classes.fbetween} style={{marginBottom: 14, paddingLeft: 24}}>
+            <div className={classes.fs16} style={{color: '#797979'}}>Доставка</div>
+            <div className={classes.fs16} style={{color: '#797979'}}>бесплатная</div>
+          </div>
+          <div className={classes.fbetween} style={{marginBottom: 14, paddingLeft: 24}}>
+            <div className={classes.fs16} style={{color: '#797979'}}>Акции</div>
+            <div className={classes.fs16} style={{color: '#797979'}}>0</div>
+          </div>
+          <div className={classes.fbetween} style={{marginBottom: 14, paddingLeft: 24}}>
+            <div className={classes.fs16} style={{color: '#797979'}}>Промокод</div>
+            <div className={classes.fs16}>
+              <input placeholder="Введите промокод" type="text"
+                style={{
+                  background: '#EDEDED',
+                  boxShadow: 'inset 0px 2px 10px rgba(0, 0, 0, 0.1)',
+                  borderRadius: 4,
+                  height: 40,
+                  width: 165.5,
+                  textAlignLast: 'center',
+                  border: 'none'
+                }}/>
+              
+            </div>
+          </div>
+          <div className={classes.fbetween} style={{marginBottom: 14, paddingLeft: 24}}>
+            <div className={classes.fs16}>Итого</div>
+            <div className={classes.fs16}>1000 руб</div>
+          </div>
+        </div> : ''
+            }
+
           </span>})
         }
+
+
         <div className={classes.checkout}>
-          <span className={classes.label}>Итого: ${getTotal()}</span>
+          <div style={{display: 'flex', justifyContent: 'space-between'}}>
+            <span className={classes.label} style={{fontSize: 24}}>Итого:</span>
+            <span className={classes.label} style={{fontSize: 24}}>${getTotal()}</span>
+          </div>
           
           <Link to='/' className={classes.continueBtn}>
             <Button variant="contained" className={classes.buttonSlogan}>Продолжить заказывать</Button>
@@ -371,9 +454,7 @@ export default function CartItems (props) {
       </span>) :
       <Typography variant="subtitle1" component="h3" color="primary">No items added to your cart.</Typography>
     }
-    </Card>
-
-
+    </div>
 
     
     )

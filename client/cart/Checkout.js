@@ -75,10 +75,10 @@ icon: {
 },
 label: {
     textTransform: 'uppercase',
-    fontSize: 22,
+    fontSize: 18,
     color: theme.palette.primary.text,
     fontWeight: 700,
-    paddingLeft: 40
+    /*paddingLeft: 40*/
 },
 cross: {
     position: 'absolute',
@@ -180,7 +180,9 @@ grid2: {
 grid3: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr 1fr',
-    gridGap: '0 1em',
+    gridGap: '0 32px',
+    gridTemplateColumns: '160px 160px 160px',
+    maxWidth: 600
 },
 control: {
     height: 40,
@@ -205,6 +207,21 @@ activeControl: {
     justifyContent: 'center',
     alignItems: 'center'
 },
+submit: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    padding: '17px 0px',
+    width: '100%',
+    height: 58,
+    backgroundColor: '#fbfbfb',
+    boxShadow: '0 8px 16px 0 rgba(52, 60, 68, 0.1)',
+    borderRadius: theme.basic.borderRadius,
+    fontFamily: 'Gilroy',
+  
+    textTransform: 'none',
+    fontSize: 20
+  },
 }))
 
 export default function Checkout (){
@@ -233,8 +250,8 @@ export default function Checkout (){
 
       <div className={classes.container}>
             <div>
-                <div style={{display: 'flex', height: 60}}>
-                    <h3 className={classes.label}>Контакты</h3>
+                <div style={{display: 'flex', height: 60, marginBottom: 20, alignItems: 'flex-end'}}>
+                    <h3 className={classes.label} style={{fontSize: 20, marginBottom: 15}}>Контакты</h3>
                 </div>
                 <div className={classes.grid2}>
                     <input className={classes.inputLight} id="name" label="Name"   placeholder="Имя"/>
@@ -244,8 +261,8 @@ export default function Checkout (){
             </div>
 
             <div>
-                <div style={{display: 'flex', height: 60}}>
-                    <h3 className={classes.label}>Способ доставки</h3>
+                <div style={{display: 'flex', height: 60, alignItems: 'flex-end'}}>
+                    <h3 className={classes.label} style={{fontSize: 20}}>Способ доставки</h3>
                 </div>
                 <div className={classes.control}>
                     <p>Самовывоз</p>
@@ -253,8 +270,8 @@ export default function Checkout (){
                 </div>
                 <input className={classes.inputLight} style={{width: '100%'}}  id="name" label="Name"  placeholder="Адрес"/>
                 <div className={classes.grid3}>
-                  <input className={classes.inputLight} id="street" label="Street Address"  value={values.checkoutDetails.delivery_address.street}   placeholder="Дом"/>
-                    <input className={classes.inputLight} id="state" label="State"  value={values.checkoutDetails.delivery_address.state} placeholder="Дом"/>
+                  <input className={classes.inputLight} id="street" label="Street Address"    placeholder="Дом"/>
+                    <input className={classes.inputLight} id="state" label="State"  placeholder="Дом"/>
                     <input className={classes.inputLight} id="name" label="Name" placeholder="Корпус"/>
                     <input className={classes.inputLight} id="name" label="Name"  placeholder="Этаж"/>
                     <input className={classes.inputLight} id="name" label="Name" placeholder="Подъезд"/>
@@ -264,8 +281,8 @@ export default function Checkout (){
             </div>
             
             <div>
-                <div style={{display: 'flex', height: 60}}>
-                    <h3 className={classes.label}>Оплата</h3>
+                <div style={{display: 'flex', height: 60, alignItems: 'flex-end'}}>
+                    <h3 className={classes.label} style={{fontSize: 20}}>Оплата</h3>
                 </div>
                 <div className={classes.control}>
                     <p>Картой онлайн</p>
@@ -289,20 +306,44 @@ export default function Checkout (){
                     Мы не храним и не обрабатываем данные банковских карт. Все операции проводятся в процессинговом цетре CloudPayments, сертифицированном по международному стандарту безопасности платежных карт PCI DSS. 
                     </p>
                 </div>
-                <div style={{height: 24, border: '2px solid lightgrey'}}></div>
-                <p style={{margin: 0}} >
-                    Необходимы закрывающие документы
-                </p>
+                
                 {
-            values.error && (<Typography component="p" color="error">
+                    values.error && (<Typography component="p" color="error">
                 <Icon color="error" className={classes.error}>error</Icon>
                 {values.error}</Typography>)
-          }
-          <Link to="success" onClick={()=>{window.location.replace("http://marketplace.entrega.su/success");}}>
+                }
+          
+            </div>
+            
+           </div>
+
+           <div>
+                <h3 className={classes.label} style={{fontSize: 20, marginBottom: 20, padding: 0,marginTop: 50}}>Время получения</h3>
+
+                <div style={{display:'grid', alignItems: 'center', gridTemplateColumns: '40px 1fr', gridGap: '2em', margin:'1em 0'}}>
+                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat', height: 40, backgroundPosition: 'center'}}></div>
+                    <div className={classes.bold}>Ашан</div>
+                </div>
+                
+                <div className={classes.grid2}>
+                    <input className={classes.inputLight} type="text"  placeholder="Дата"/>
+                    <input className={classes.inputLight} type="text"  placeholder="Время"/>
+                </div>
+
+                <div style={{display:'grid', alignItems: 'center', gridTemplateColumns: '40px 1fr', gridGap: '2em', margin:'1em 0'}}>
+                    <div style={{backgroundImage: `url(${pizza})`, backgroundRepeat: 'no-repeat', height: 40, backgroundPosition: 'center'}}></div>
+                    <div className={classes.bold}>Metro</div>
+                </div>
+                
+                <div className={classes.grid2}>
+                    <input className={classes.inputLight} type="text"  placeholder="Дата"/>
+                    <input className={classes.inputLight} type="text"  placeholder="Время"/>
+                </div>
+            </div>
+           
+           <Link to="success" style={{width: 545}} onClick={()=>{window.location.replace("http://marketplace.entrega.su/success");}}>
             <Button  variant="contained"  className={classes.submit}>Заказть</Button>
           </Link>
-            </div>
-           </div>
 </div>
       )
 }

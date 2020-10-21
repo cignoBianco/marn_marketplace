@@ -9,6 +9,7 @@ import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 import Menu from './core/Menu'
+import ModalPhone from './core/ModalPhone'
 import Footer from './core/Footer'
 import NewShop from './shop/NewShop'
 import Shops from './shop/Shops'
@@ -41,6 +42,7 @@ const MainRouter = () => {
       <Menu/>
       <Switch>
         <Route exact path="/" component={Home}/>
+        <Route path="/modalphone" component={ModalPhone}/>
         <Route path="/users" component={Users}/>
         <Route path="/signup" component={Signup}/>
         <Route path="/signin" component={Signin}/>

@@ -60,6 +60,7 @@ greenHat: {
     display: 'grid',
     gridTemplateColumns: '40px 1fr 150px',
     gridGap: 16,
+    borderRadius: 8
 },
 greySquare: {
     background: '#EDEDED',
@@ -171,6 +172,13 @@ activeControl: {
     justifyContent: 'center',
     alignItems: 'center'
 },
+itemsdiv: {
+    boxShadow: '0px 2px 4px rgba(117, 131, 142, 0.04), 0px 8px 16px rgba(52, 60, 68, 0.1)',
+    borderRadius: 20,
+    maxWidth: 608,
+    margin: '0 auto',
+    padding: '0 32px'
+}
 }))
 
 export default function Cart () {
@@ -184,11 +192,13 @@ export default function Cart () {
     return (<div className={classes.root}>
       <Grid container spacing={8}>
         <Grid item xs={6} sm={6}>
-          <CartItems checkout={checkout}
-                     setCheckout={showCheckout}/>
+            <div className={classes.itemsdiv}>
+          <CartItems  checkout={checkout}
+                     setCheckout={showCheckout} 
+            /></div>
         </Grid>
         
-          <Grid item xs={6} sm={6}>
+          <Grid item xs={6} sm={6} style={{maxWidth: 608, marginTop: 30}}>
             
               <Checkout/>
             
