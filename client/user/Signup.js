@@ -175,20 +175,59 @@ export default function Signup() {
   const [values, setValues] = useState({
     name: '',
     phone: '',
+    formattedPhone: '',
+    validated: false,
+    password: 'temporarly',
     birthday: '',
     open: false,
-    error: ''
+    error: '',
+    codeSent: false
   })
 
   const handleChange = name => event => {
     setValues({ ...values, [name]: event.target.value })
   }
 
+  const handleChangePhone = (name, value) => {
+    values.phone = value
+  }
+
+  const showPhone = () => {
+    if (values.phone.length >= 10) {
+      setValues({ ...values, ['validated']: true })
+      values.validated = true
+    } else {
+      const user = {
+        name: values.name || undefined,
+        birthday: values.birthday || undefined,
+        phone: values.phone || undefined,
+        password: 'temporarly'
+      }
+      create(user).then((data) => {
+        if (data.error) {
+          setValues({ ...values, error: data.error})
+          console.log('err')
+        }
+      })
+    }
+  }
+
+  const sendCode = () => {
+    console.log(values.phone.length)
+    if (values.phone.length >= 10) {
+      setValues({ ...values, ['validated']: true })
+      values.validated = true 
+      setValues({ ...values, ['codeSent']: true })
+      values.codeSent = true
+    } 
+  }
+
   const clickSubmit = () => {
     const user = {
       name: values.name || undefined,
       birthday: values.birthday || undefined,
-      phone: values.phone || undefined
+      phone: values.phone || undefined,
+      password: 'temporarly'
     }
     create(user).then((data) => {
       if (data.error) {
@@ -213,13 +252,22 @@ export default function Signup() {
           <div>
             <input className={classes.inputLight} id="name" label="Name" onChange={handleChange('name')} value={values.name} placeholder="Имя"/>
             <input className={classes.inputLight}  id="birthday" type="text" label="Дата рождения" value={values.birthday} onChange={handleChange('birthday')} placeholder="Дата рождения"/>
-            <div style={{display: 'flex', height: 40, position: 'relative', paddingBottom: 40 }}>
+           
+            <div style={{display: 'flex', height: 40, position: 'relative', paddingBottom: 20 }}>
               <NumberFormat format="+7 (###) ###-####" mask="_" className={classes.inputLight} placeholder="Номер телефона" id="phone" 
-                value={values.phone} label="phone" onChange={handleChange('phone')}/>
-              <button className={classes.sendCodeBtn}>Получить код</button>
+                value={values.formattedPhone} label="phone" onChange={handleChange('formattedPhone')}
+                onValueChange={(values) => {
+                  const {formattedValue, value} = values;
+                  // formattedValue = $2,223
+                  // value ie, 2223
+                  
+                  console.log(value)
+                  handleChangePhone('phone', value)
+                }} />
+              <button className={classes.sendCodeBtn} onClick={() => {sendCode()}}>Получить код</button>
             </div>
             {
-              !values.error ?
+               values.codeSent ?
               <input className={classes.inputLight} id="sms" type="text" label="sms" value={values.sms} onChange={handleChange('sms')} placeholder="SMS - код"/>
               : ''
             }
@@ -228,7 +276,9 @@ export default function Signup() {
                 <Icon color="error" className={classes.error}>error</Icon>
                 {values.error}</Typography>)
             }
-            <Button className={classes.buttonSlogan}  onClick={clickSubmit} >
+            <Button className={classes.buttonSlogan}  onClick={() => { 
+              clickSubmit() 
+            }} >
                 Зарегистрироваться
             </Button>
             <Dialog open={values.open} disableBackdropClick={true}>
