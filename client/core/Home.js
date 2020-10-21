@@ -1,19 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
-import Suggestions from './../product/Suggestions'
 import {listLatest, listCategories} from './../product/api-product.js'
 import {list} from './../shop/api-shop.js'
-import Search from './../product/Search'
-import Categories from './../product/Categories'
-import {read, listRelated, listAll} from './../product/api-product.js'
 import {Link} from 'react-router-dom'
 
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
-import { shadows } from '@material-ui/system'
 import Button from "@material-ui/core/Button"
 import basket from './../assets/images/basket.png'
 import cardIcon from './../assets/images/icons/BuyCard.png'
@@ -22,22 +13,12 @@ import timeCircleIcon from './../assets/images/icons/Time Circle.png'
 import phonePic from './../assets/images/phone.png'
 import google from './../assets/images/icons/google play.png'
 import apple from './../assets/images/icons/apple.png'
-import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded'
-import MenuRoundedIcon from '@material-ui/icons/MenuRounded'
-
-import imageUrl from './../assets/images/org/cards/Block.png'
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-    margin: 30,
-  },
   grid: {
     display: 'grid',
-    //gridTemplateColumns: '1fr 1fr 1fr 1fr',
     gridTemplateRows: '1fr 1fr',
     gridGap: '40px 36px',
-   // border: '1px solid black',
     gridTemplateColumns: 'repeat( auto-fill, minmax(310px, 1fr) )',
     width: 'inherit',
     gridAutoFlow: 'row dense',
@@ -186,8 +167,6 @@ card: {
     order: 0,
     alignSelf: 'center',
     flexGrow: 0,
-    //margin: '36px 0px',
-   // border: '1px solid black',
     overflow: 'hidden',
     borderRadius: 20,
     boxShadow: '0px 2px 4px rgba(117, 131, 142, 0.04), 0px 8px 16px rgba(52, 60, 68, 0.1)',
@@ -340,7 +319,7 @@ useEffect(() => {
                 </div>
                 
                 
-                {/*<Categories categories={categories}/>*/}
+                
                 <div className={classes.divNearU}>
                     <div className={classes.nearUTitleDiv}>
                         <h3 className={classes.nearULabel}>
@@ -437,4 +416,4 @@ useEffect(() => {
     )
 }
 
-
+/*<Categories categories={categories}/>*/
