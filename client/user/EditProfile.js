@@ -1,46 +1,75 @@
 import React, {useState, useEffect} from 'react'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import Button from '@material-ui/core/Button'
-import TextField from '@material-ui/core/TextField'
-import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import Switch from '@material-ui/core/Switch'
 import { makeStyles } from '@material-ui/core/styles'
 import auth from './../auth/auth-helper'
+import Calendar from './../assets/images/icons/Calendar.jpg'
 import {read, update} from './api-user.js'
 import {Redirect} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
-  card: {
-    maxWidth: 600,
-    margin: 'auto',
-    textAlign: 'center',
-    marginTop: theme.spacing(5),
-    paddingBottom: theme.spacing(2)
+  bold20: {
+    fontSize: 20,
+    fontWeight: 700,
+    marginBottom: '2em'
   },
-  title: {
-    margin: theme.spacing(2),
-    color: theme.palette.protectedTitle
+  Button2: {
+    height: 44,
+    width: 250,
+    padding: '7px 40px',
+    borderWidth: 1,
+    borderColor: theme.palette.primary.accent,
+    borderRadius: theme.basic.borderRadius,
+    borderStyle: 'solid',
+    fontSize: 20,
+    margin: '40px 0',
+    alignSelf: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    "&:hover": {
+        boxShadow: '0px 8px 16px rgba(52, 60, 68, 0.3)'
+      },
   },
-  error: {
-    verticalAlign: 'middle'
+  inputLight: {
+    border: '1px solid #E6E6EB',
+    boxSizing: 'border-box',
+    borderRadius: 8,
+    height: 40,
+    marginBottom: 20,
+    padding: '1em 3em'
   },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 300
+  grid2: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gridGap: '0 1em',
+    marginTop: 25,
   },
-  submit: {
-    margin: 'auto',
-    marginBottom: theme.spacing(2)
+  date: {
+    '&::-webkit-calendar-picker-indicator': {
+      background: `url(${Calendar})`,
+      width: 24,
+      height: 24,
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+      paddingLeft: 0,
+    }
   },
-  subheading: {
-    marginTop: theme.spacing(2),
-    color: theme.palette.openTitle
-  }
+  radioLabel: {
+    display: 'grid',
+    gridTemplateColumns: 'min-content 1fr',
+    gridGap: 5,
+    alignItems: 'center'
+  },
+  radioGroup: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    height: 40
+  },
+  p15: {
+    fontSize: 15,
+    color: "#797979",
+    fontWeight: 300
+  },
 }))
 
 export default function EditProfile({ match }) {
@@ -48,26 +77,25 @@ export default function EditProfile({ match }) {
   const classes = useStyles()
   const [values, setValues] = useState({
       name: '',
+      fname: '',
       email: '',
       password: '',
       seller: false,
       redirectToProfile: false,
-      error: ''
+      error: '',
   })
+ 
   const jwt = auth.isAuthenticated()
   useEffect(() => {
     const abortController = new AbortController()
     const signal = abortController.signal
-    console.log(2, match)
 
     read({
       userId: match.params.userId
     }, {t: jwt.token}, signal).then((data) => {
       if (data && data.error) {
-        console.log(3, data)
         setValues({...values, error: data.error})
       } else {
-        console.log(4, data)
         setValues({...values, name: data.name, email: data.email, seller: data.seller})
       }
     })
@@ -109,25 +137,43 @@ export default function EditProfile({ match }) {
     return (<Redirect to={'/user/' + values.userId}/>)
   }
     return (
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography variant="h6" className={classes.title}>
-            Edit Profile
-          </Typography>
-          <TextField id="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
-          <TextField id="email" type="email" label="Email" className={classes.textField} value={values.email} onChange={handleChange('email')} margin="normal"/><br/>
-          <TextField id="password" type="password" label="Password" className={classes.textField} value={values.password} onChange={handleChange('password')} margin="normal"/>
-           {
-            values.error && (<Typography component="p" color="error">
+      <div>
+        <div>
+          <h2 className={classes.bold20}>
+            Информация о вашей учетной записи
+          </h2>
+          
+          <div className={classes.grid2}>
+            <input className={classes.inputLight} value={values.name} onChange={handleChange('name')}  id="name" label="Name"   placeholder="Имя"/>
+            <input className={classes.inputLight} value={values.fname} onChange={handleChange('fname')} id="fname" label="FName" placeholder="Фамилия"/>
+            <input className={classes.inputLight} value={values.email} onChange={handleChange('email')} id="email" type="email" label="Email"  placeholder="Email"/>
+            <input className={classes.inputLight} value={values.password} onChange={handleChange('password')}  id="password" type="password" label="Password" placeholder="Пароль"/>
+            <input className={classes.inputLight + ' ' + classes.date} type="date" id="birthday" label="birthday" placeholder="Дата рождения персон"/>
+            <div>
+              <div className={classes.radioGroup}>
+                <label className={classes.radioLabel}>
+                  <input type="radio" name="radioButtonName" value="radioButtonValue1"/>
+                  <div className={classes.p15}>Фильтр 1</div>
+                </label>
+                <label className={classes.radioLabel}>
+                  <input type="radio" name="radioButtonName" value="radioButtonValue1"/>
+                  <div className={classes.p15}>Фильтр 2</div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          {
+            values.error && (<p>
               <Icon color="error" className={classes.error}>error</Icon>
               {values.error}
-            </Typography>)
+            </p>)
           }
-        </CardContent>
-        <CardActions>
-          <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.submit}>Submit</Button>
-        </CardActions>
-      </Card>
+        </div>
+        <div>
+          <div onClick={clickSubmit} className={classes.Button2}>Применить</div>
+        </div>
+      </div>
     )
 }
 /*

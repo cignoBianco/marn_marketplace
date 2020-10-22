@@ -20,6 +20,11 @@ const useStyles = makeStyles(theme => ({
   container: {
     marginLeft: '6em',
     marginRight: '6em',
+    marginTop: 20,
+    marginBottom: '4em',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
   },
   profileCard: {
     width: 300,
@@ -61,6 +66,14 @@ const useStyles = makeStyles(theme => ({
     justifyContent: 'space-around',
     marginTop: 5
   },
+  mainBloack: {
+    maxWidth: 840,
+    minWidth: 600,
+    background: '#FFFFFF',
+    boxShadow: '0px 2px 4px rgba(117, 131, 142, 0.04), 0px 8px 16px rgba(52, 60, 68, 0.1)',
+    borderRadius: 20,
+    padding: '20px 40px'
+  }
 }))
 
 export default function Profile({ match }) {
@@ -68,6 +81,34 @@ export default function Profile({ match }) {
   const [user, setUser] = useState({})
   const [redirectToSignin, setRedirectToSignin] = useState(false)
   const jwt = auth.isAuthenticated()
+
+  const tabItems = [
+    {
+      id: 1,
+      content: 
+        <EditProfile match={ {
+          params: {
+            userId: user._id
+          }
+          }
+        } />,
+    },
+    {
+      id: 2,
+      content: <MyOrders/>,
+    },
+    {
+      id: 3,
+      content: 
+        <p>
+          {"Joined: " + (
+            new Date(user.created)).toDateString()
+          }
+        </p>
+    }
+  ];
+
+  const [tabActive, setTabActive] = useState(1)
 
   const [auctions, setAuctions] = useState([])
 
@@ -132,44 +173,25 @@ export default function Profile({ match }) {
               </div>
             </div>
             <div className={classes.profileCardMenu}>
-              <div className={classes.bold15} style={{borderBottom: '1px solid rgb(44 39 56 / 0.2)'}}>
+              <div onClick={() => setTabActive(1)} className={classes.bold15} style={{borderBottom: '1px solid rgb(44 39 56 / 0.2)'}}>
                 Настройка учетной записи
               </div>
-              <div className={classes.p15}>
+              <div onClick={() => setTabActive(2)} className={classes.p15}>
                 Последние заказы
               </div>
             </div>
           </div>
-          <h6>Profile</h6>
-          <div>
-            <div>
-              {
+          <div className={classes.mainBloack}>
+            {
               auth.isAuthenticated().user && auth.isAuthenticated().user._id == user._id &&
-              (<div>
-                <Link to={"/user/edit/" + user._id}>
-                  <div>
-                    Редактировать
-                  </div>
-                </Link>
-                <EditProfile match={ {
-                  params: {
-                    userId: user._id
-                  }
-                  }
-                 } />
-              </div>)
+              (<>
+                {tabItems.map(({ id, content }) => {
+                  return tabActive === id ? content : ''
+                })}
+              </>)
               }
-            </div>
-            <br/>
-            <div>
-              <p>
-                {"Joined: " + (
-                  new Date(user.created)).toDateString()
-                }
-              </p>
-            </div>
           </div>
-          <MyOrders/>
+          
         </div>
         
       </div>
