@@ -11,26 +11,23 @@ router.route('/api/getSession')
   .get(onceCtrl.initialize)
   .post(onceCtrl.getit);
 
-router.route('/api/categories')
-    .post(onceCtrl.getit)
-
 router.route('/api/ingredients')
     .post(onceCtrl.getit)
 
-router.route('/api/products')
-    .post(onceCtrl.getit)
-
 router.route('/api/cities')
-    .post(onceCtrl.getit)
+    .post(onceCtrl.getCities)
 
 router.route('/api/organisations')
-    .post(onceCtrl.getit)
-
-router.route('/api/cities')
-    .post(onceCtrl.getit)  
+    .post(onceCtrl.getOrganizations)
     
 router.route('/api/addresses')
     .post(onceCtrl.getAddresses)
+
+router.route('/api/products')
+    .post(onceCtrl.getMenu)
+
+router.route('/api/categories')
+    .post(onceCtrl.getCategories)
 
 /*router.route('/api/users/:userId')
   .get(authCtrl.requireSignin, userCtrl.read)
