@@ -41,6 +41,25 @@ const getit = async (req, res, next) => {
 
     const fs = require('fs');
 
+    fs.appendFile("server/files/addresses", "Hey there!" + JSON.stringify(reqBody) + " " + date.getMinutes() + "\n", (err) => {
+        if (err) {
+            console.log(err)
+            return res.json({"status": "success"})
+        }
+        console.log("Addresses was saved!")
+        return res.json({"status": "success"})
+    })
+
+}
+
+const getAddresses = async ( req, res, next) => {
+    let reqBody = req.body;
+     console.log(reqBody);
+
+    let date = new Date();
+
+    const fs = require('fs');
+
     fs.appendFile("server/files/test", "Hey there!" + JSON.stringify(reqBody) + " " + date.getMinutes() + "\n", (err) => {
         if (err) {
             console.log(err)
@@ -49,12 +68,12 @@ const getit = async (req, res, next) => {
         console.log("The file was saved!")
         return res.json({"status": "success"})
     })
-
 }
 
 const getOrganizations = async (req, res, nexxt) => {}
 
 export default {
     initialize,
-    getit
+    getit,
+    getAddresses
 }

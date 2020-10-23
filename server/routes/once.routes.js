@@ -27,7 +27,10 @@ router.route('/api/organisations')
     .post(onceCtrl.getit)
 
 router.route('/api/cities')
-    .post(onceCtrl.getit)    
+    .post(onceCtrl.getit)  
+    
+router.route('/api/addresses')
+    .post(onceCtrl.getAddresses)
 
 /*router.route('/api/users/:userId')
   .get(authCtrl.requireSignin, userCtrl.read)

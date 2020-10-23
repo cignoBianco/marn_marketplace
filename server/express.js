@@ -13,6 +13,8 @@ import productRoutes from './routes/product.routes'
 import orderRoutes from './routes/order.routes'
 import auctionRoutes from './routes/auction.routes'
 
+import onceRoutes from './routes/once.routes'
+
 // modules for server side rendering
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
@@ -33,8 +35,8 @@ const app = express()
 devBundle.compile(app)
 
 // parse body params and attache them to req.body
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({limit: '50mb'}))
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true, parameterLimit:50000 }))
 app.use(cookieParser())
 app.use(compress())
 // secure apps by setting various HTTP headers
@@ -51,6 +53,7 @@ app.use('/', shopRoutes)
 app.use('/', productRoutes)
 app.use('/', orderRoutes)
 app.use('/', auctionRoutes)
+app.use('/', onceRoutes)
 
 app.get('*', (req, res) => {
   const sheets = new ServerStyleSheets()
