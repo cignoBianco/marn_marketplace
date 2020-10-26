@@ -9,6 +9,9 @@ const router = express.Router()
 router.route('/api/categories')
   .get(categoriesCtrl.listCategories)
 
+router.route('/api/categories/:categoryId')
+  .get(categoriesCtrl.categoryById)
+
 router.route('/api/send/categories')
   .post(categoriesCtrl.createCategories)
 

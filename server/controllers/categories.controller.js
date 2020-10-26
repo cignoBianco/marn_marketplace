@@ -37,7 +37,6 @@ const categoryById = async (req, res, next, id) => {
         error: `category  not found`
       })
     req.category = category
-    console.log(req.category)
     res.status(200).json(category)
     //next()
   } catch (err) {
