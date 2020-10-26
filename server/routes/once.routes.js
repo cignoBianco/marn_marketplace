@@ -1,5 +1,6 @@
 import express from 'express'
 import onceCtrl from '../controllers/once.controller'
+import cityCtrl from '../controllers/city.controller'
 /*import userCtrl from '../controllers/user.controller'
 import authCtrl from '../controllers/auth.controller'*/
 
@@ -20,8 +21,30 @@ router.route('/api/cities')
 router.route('/api/organisations')
     .post(onceCtrl.getOrganizations)
     
+//router.route('/api/addresses')
+    //.post(onceCtrl.getAddresses)
+
+/*router.route('/addresses')
+  .get(onceCtrl.addresses)*/
+
+router.route('/api/send/addresses')
+  .get(cityCtrl.createAddress)
+
 router.route('/api/addresses')
-    .post(onceCtrl.getAddresses)
+  .get(cityCtrl.listAddresses)
+
+router.route('/api/cities')
+  .get(cityCtrl.create)
+
+router.route('/api/show/cities')
+  .get(cityCtrl.list)
+
+router.route('/api/cities/by/:cityName')
+  .get(cityCtrl.cityByName)
+  .post(cityCtrl.cityByName)
+//.post(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.isSeller, shopCtrl.create)
+
+router.param('cityName', cityCtrl.cityByName)
 
 router.route('/api/products')
     .post(onceCtrl.getMenu)

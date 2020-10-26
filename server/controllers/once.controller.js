@@ -90,6 +90,10 @@ const getAddresses = async ( req, res, next) => {
     })
 }
 
+const addresses = async (req, res, next) => {
+    //
+}
+
 const getMenu = async ( req, res, next) => {
     let reqBody = req.body;
      console.log(reqBody);
