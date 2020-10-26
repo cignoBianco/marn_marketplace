@@ -1,9 +1,16 @@
 import express from 'express'
 import userCtrl from '../controllers/user.controller'
 import authCtrl from '../controllers/auth.controller'
+import categoriesCtrl from '../controllers/categories.controller'
 import shopCtrl from '../controllers/shop.controller'
 
 const router = express.Router()
+
+router.route('/api/categories')
+  .get(categoriesCtrl.listCategories)
+
+router.route('/api/send/categories')
+  .post(categoriesCtrl.createCategories)
 
 router.route('/api/shops')
   .get(shopCtrl.list)
