@@ -31,6 +31,30 @@ const create = (req, res) => {
   })
 }
 
+const create1c = (req, res) => {
+  const fs = require('fs')
+  fs.readFile('server/files/organizations', 'utf8', (err, data) => {
+    if (err) {
+      console.log(err)
+    }
+    console.log(JSON.parse(data))
+    data = JSON.parse(data)
+    data['organisations'].forEach(async (item) => {
+      let org = new Shop({uuid: item.id, active: item.active, name: item.name,
+      branches: 'item.branches'
+      })
+      try {
+        let result = await org.save()
+        res.status(200).json(result)
+      }catch (err){
+        return res.status(400).json({
+          error: errorHandler.getErrorMessage(err)
+        })
+      }
+    })
+  })
+}
+
 const shopByID = async (req, res, next, id) => {
   try {
     let shop = await Shop.findById(id).populate('owner', '_id name').exec()
@@ -136,6 +160,7 @@ const isOwner = (req, res, next) => {
 
 export default {
   create,
+  create1c,
   shopByID,
   photo,
   defaultPhoto,

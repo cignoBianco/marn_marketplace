@@ -1,9 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Search from './../assets/images/icons/Search.png'
 import Location from './../assets/images/icons/Location.png'
 import CloseIcon from '@material-ui/icons/Close';
 import Link from "@material-ui/core/Link"
+import {list} from './../city/api-city.js'
 
 
 const useStyles = makeStyles(theme => ({
@@ -70,6 +71,38 @@ function Citiesel() {
     )
 }
 
+function GetCities() {
+    const classes = useStyles()
+    const [cities, setCities] = useState([])
+  
+    const [value, setValue] = React.useState(30);
+  
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+  
+    useEffect(() => {
+      const abortController = new AbortController()
+      const signal = abortController.signal
+      list(signal).then((data) => {
+        if (data.error) {
+          console.log(data.error)
+        } else {
+            console.log(data)
+          setCities(data)
+        }
+      })
+      return function cleanup(){
+        abortController.abort()
+      }
+  
+    }, [])
+    
+    return (
+        cities.map(city => <li><Link href='/' onClick={()=>{localStorage.setItem('city', city['uuid'])}} className={classes.label}>{city['name']}</Link></li>)
+    )
+}
+
 export default function ModalSelectCity({hide}) {
     const classes = useStyles()
     return (
@@ -85,18 +118,12 @@ export default function ModalSelectCity({hide}) {
                     <h3 className={classes.label}>Выберите город</h3>
                 <CloseIcon className={classes.cross} onClick={(e) => hide()}/>
             </div>
-            <div className={classes.input}>
-            <div className={classes.icon} style={{backgroundImage: `url(${Search})`, width: '100%', height: '100%', backgroundPosition: 'center'}}></div>
-                <input type="text" style={{
-                        background: 'none',
-                        border: 'none'
-                }} placeholder="Поиск..." />
-            </div>
             <section className={classes.section}>
-                <Citiesel/>
-                <Citiesel/>
-                <Citiesel/>
+                <GetCities/>
+                
             </section>
         </div>
     )
             }
+            // <Citiesel/>
+            <Citiesel/>

@@ -3,7 +3,7 @@ const ShopSchema = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
-    required: 'Name is required'
+    
   },
   image: {
     data: Buffer,
@@ -13,7 +13,21 @@ const ShopSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  uuid: {
+    type: String,
+    trim: true
+  },
   category: {
+    type: String,
+    default: 'Restaurant',
+    trim: true
+  },
+  active: {
+    type:Boolean,
+    default: true,
+    trim: true
+  },
+  branches: {
     type: String,
     trim: true
   },
@@ -22,7 +36,8 @@ const ShopSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   },
-  owner: {type: mongoose.Schema.ObjectId, ref: 'User'}
+  //owner: {type: mongoose.Schema.ObjectId, ref: 'User'}
 })
 
 export default mongoose.model('Shop', ShopSchema)
+//required: 'Name is required'

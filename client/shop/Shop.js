@@ -6,8 +6,9 @@ import Typography from '@material-ui/core/Typography'
 import Avatar from '@material-ui/core/Avatar'
 import Grid from '@material-ui/core/Grid'
 import {read} from './api-shop.js'
+import {list} from './../city/api-city.js'
 import Products from './../product/Products'
-import {listByShop} from './../product/api-product.js'
+import {listCategories} from './../category/api-category.js'
 
 import Rating from 'material-ui-rating'
 import Slider from '@material-ui/core/Slider'
@@ -18,6 +19,7 @@ import box from './../assets/images/Company/box.png'
 import price from './../assets/images/Company/price.png'
 import pic from './../assets/images/Company/image 1.png'
 import Search from './../assets/images/icons/Search.png'
+import {listByShop} from './../product/api-product.js'
 
 import CardMedia from '@material-ui/core/CardMedia'
 import { shadows } from '@material-ui/system'
@@ -254,11 +256,45 @@ outline: 'none',
 },
 }))
 
+
+
 export default function Shop({match}) {
   const classes = useStyles()
   const [shop, setShop] = useState('')
   const [products, setProducts] = useState([])
   const [error, setError] = useState('')
+
+  function GetCategories() {
+    const classes = useStyles()
+    const [categories, setCategories] = useState([])
+  
+    const [value, setValue] = React.useState(30);
+  
+    const handleChange = (event, newValue) => {
+      setValue(newValue);
+    };
+  
+    useEffect(() => {
+      const abortController = new AbortController()
+      const signal = abortController.signal
+      listCategories(signal, shop.uuid).then((data) => {
+        if (data.error) {
+          console.log(data.error)
+        } else {
+            console.log(data)
+          setCategories(data)
+        }
+      })
+      return function cleanup(){
+        abortController.abort()
+      }
+  
+    }, [])
+    
+    return (
+        categories.map(city => <li>{city['name']}</li>)
+    )
+    }
 
   const [value, setValue] = React.useState(30);
 
@@ -371,6 +407,7 @@ export default function Shop({match}) {
         }}></div>
             <div className={classes.category}>
                     <div className={classes.categories}>
+                        <GetCategories/>
                         <div className={classes.cat}>
                             Информация
                         </div>
@@ -396,7 +433,7 @@ export default function Shop({match}) {
                 <img src={Search} alt="Search Icon" className={classes.mg12} />
                 <input className={classes.placeholder} placeholder="Поиск" />
               </div>
-
+                     
                    
                                 <div className={classes.radioGroup}>
                                     <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 1</div>
