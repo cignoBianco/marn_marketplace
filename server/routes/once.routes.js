@@ -21,8 +21,8 @@ router.route('/api/cities')
 router.route('/api/organisations')
     .post(onceCtrl.getOrganizations)
     
-//router.route('/api/addresses')
-    //.post(onceCtrl.getAddresses)
+router.route('/api/addresses')
+    .post(onceCtrl.getAddresses)
 
 /*router.route('/addresses')
   .get(onceCtrl.addresses)*/

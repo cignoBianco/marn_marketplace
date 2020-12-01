@@ -9,11 +9,11 @@ const router = express.Router()
 router.route('/api/categories')
   .get(categoriesCtrl.listCategories)
 
-router.route('/api/categories/:categoryId')
-  .get(categoriesCtrl.categoryById)
+router.route('/api/categories/:categoryById')
+  .post(categoriesCtrl.categoryById)
 
 router.route('/api/send/categories')
-  .post(categoriesCtrl.createCategories)
+  .get(categoriesCtrl.createCategories)
 
 router.route('/api/shops')
   .get(shopCtrl.list)
@@ -38,7 +38,9 @@ router.route('/api/shops/logo/:shopId')
 router.route('/api/shops/defaultphoto')
   .get(shopCtrl.defaultPhoto)
 
+router.param('categoryById', categoriesCtrl.categoryById)
 router.param('shopId', shopCtrl.shopByID)
 router.param('userId', userCtrl.userByID)
+
 
 export default router

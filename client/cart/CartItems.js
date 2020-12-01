@@ -307,16 +307,42 @@ fbetween: {
 
 export default function CartItems (props) {
   const classes = useStyles()
-  const [cartItems, setCartItems] = useState(cart.getCart())
+  console.log('ci 1', cart.getCart())
+  const [cartItems, setCartItems] = useState(cart.getCart().reduce(function(arr, item) {
+    console.log('arritem', arr, item)
+    let found = false;
+    console.log('prevarr', arr)
+    if (arr.length > 0 ) {
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].product._id === item.product._id) {
+            found = true;
+            arr[i].quantity++;
+        }
+    }
+
+    if (!found) {
+      console.log('444', item)
+        item.quantity = 1;
+        arr.push(item);
+        console.log(arr)
+    }
+  }
+    console.log('arr', arr)
+    return arr;
+}, []))
+
+//console.log("ca", cartItems[0].product, cartItems[0], cartItems)
+console.log('ci props', props)
+console.log('ci 12', cart.getCart())
 
   const handleChange = (index, plus = 0) => event => {
     let updatedCartItems = cartItems
-    console.log(updatedCartItems[index].quantity, updatedCartItems)
-    if(updatedCartItems[index].quantity <= 0 || updatedCartItems[index].quantity == NaN || !updatedCartItems[index].quantity){
-      updatedCartItems[index].quantity = 1
+    console.log(updatedCartItems[index]['product'].quantity, updatedCartItems)
+    if(updatedCartItems[index]['product'].quantity <= 0 || updatedCartItems[index]['product'].quantity == NaN || !updatedCartItems[index]['product'].quantity){
+      updatedCartItems[index]['product'].quantity = 1
     }else{
-      updatedCartItems[index].quantity = (plus) ? updatedCartItems[index].quantity + 1 : updatedCartItems[index].quantity - 1
-      if (updatedCartItems[index].quantity == 0) updatedCartItems[index].quantity = 1
+      updatedCartItems[index]['product'].quantity = (plus) ? updatedCartItems[index]['product'].quantity + 1 : updatedCartItems[index]['product'].quantity - 1
+      if (updatedCartItems[index]['product'].quantity == 0) updatedCartItems[index]['product'].quantity = 1
     }
     setCartItems([...updatedCartItems])
     cart.updateCart(index, event.target.value)
@@ -360,12 +386,12 @@ export default function CartItems (props) {
           {cartItems.map((item, i) => {  
 
             return <span key={i}>
-              { i < 1 ?
+              { i < 1 && item ?
               (<div><div className={classes.greenHat}>
                 <div className={classes.greySquare}>
                     3
                 </div>
-                <h2><span className={classes.bold}  style={{fontSize: 20}}>{item.product.shop.name} | </span> 2 кг</h2>
+                <h2><span className={classes.bold}  style={{fontSize: 20}}>{item.shopId} | </span> 2 кг</h2>
                 <div className={classes.greyRec}>
                     <span className={classes.bold}>1800 руб </span>
                 </div>

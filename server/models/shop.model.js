@@ -15,7 +15,8 @@ const ShopSchema = new mongoose.Schema({
   },
   uuid: {
     type: String,
-    trim: true
+    trim: true,
+    unique: true
   },
   category: {
     type: String,

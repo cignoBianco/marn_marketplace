@@ -10,6 +10,7 @@ import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
 import shopRoutes from './routes/shop.routes'
 import productRoutes from './routes/product.routes'
+import specificationRoutes from './routes/specification.routes'
 import orderRoutes from './routes/order.routes'
 import auctionRoutes from './routes/auction.routes'
 
@@ -54,6 +55,7 @@ app.use('/', productRoutes)
 app.use('/', orderRoutes)
 app.use('/', auctionRoutes)
 app.use('/', onceRoutes)
+app.use('/', specificationRoutes)
 
 app.get('*', (req, res) => {
   const sheets = new ServerStyleSheets()

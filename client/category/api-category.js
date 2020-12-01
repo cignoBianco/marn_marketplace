@@ -1,7 +1,7 @@
 const listCategories = async (signal, categoryById) => {
   try {
-    let response = await fetch(`/api/categories/{$categoryId}`, {
-      method: 'GET',
+    let response = await fetch(`/api/categories/${categoryById}`, {
+      method: 'POST',
       signal: signal,
       id: categoryById
     })
@@ -15,7 +15,7 @@ const listCategories = async (signal, categoryById) => {
 //listCategories
 const city = async (signal, cityName) => {
   try {
-    let response = await fetch(`/api/cities/by/{$cityName}`, {
+    let response = await fetch(`/api/cities/by/${cityName}`, {
       method: 'GET',
       signal: signal,
       cityName: cityName

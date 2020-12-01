@@ -1,4 +1,5 @@
 import Category from '../models/category.model'
+import Shop from '../models/shop.model'
 import Address from '../models/address.model'
 import extend from 'lodash/extend'
 import errorHandler from './../helpers/dbErrorHandler'
@@ -29,19 +30,22 @@ const createCategories = (req, res) => {
   })
 }
 
+
 const categoryById = async (req, res, next, id) => {
   try {
-    let category = await Category.find({organizationId: id})
+    let shopId = await Shop.findById(id);
+    console.log(shopId);
+    let category = await Category.find({'organizationId':  shopId['uuid']})
     if (!category)
-      return res.status('400').json({
+      return res.status('400').json({ 
         error: `category  not found`
       })
     req.category = category
-    res.status(200).json(category)
-    //next()
-  } catch (err) {
+    res.status(200).json(req.category)
+    next()
+  }catch (err) {
     return res.status('400').json({
-      error: "Could not retrieve shop"
+      error: `Could not retrieve cat ${t}`
     })
   }
 }

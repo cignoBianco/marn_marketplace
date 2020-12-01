@@ -18,6 +18,8 @@ import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button'
 import pepe from './../assets/images/pepe.png'
 import Rating from 'material-ui-rating'
+import img from './../../public/api/reduction/image/3d203d30-63ba-11e8-8f7d-00155dd9fd01.jpg'
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -158,7 +160,7 @@ cardMain: {
 },
 Title: {
     width: 240,
-    height: 63,
+    //height: 63,
     textAlign: 'start',
 },
 h2: {
@@ -334,28 +336,34 @@ export default function Product ({match}) {
     const imageUrl = product._id
           ? `/api/product/image/${product._id}?${new Date().getTime()}`
           : '/api/product/defaultphoto'
+
+  
+  console.log(product)
+
     return (
 
 <div className={classes.container}>
             <div className={classes.cross}><CloseIcon  onClick={(e)=>{window.history.go(-1); return false;}} /*onClick={(e) => hide()}*/ />  </div>
             
             <div style={{display: 'grid', gridGap: 40, gridTemplateColumns: '295px 1fr'}}>
-                <div style={{width: 292, backgroundImage: `url(${pepe})`, backgroundRepeat:'no-repeat'}}></div>
+                <div style={{backgroundPosition: 'center', backgroundImage: `url(${ img||product.image||pepe})`, backgroundRepeat:'no-repeat'}}></div>{product.image}
                 <div className={classes.cardMain}>
                     <div className={classes.Title}>
                         <div className={classes.h2}>{product.name}</div>
                         <div className={classes.titleDescription}>
                           {product.description}
+                          .{product.image}.
                         </div>
                     </div>
+                    { product.groupWith ?
                     <div className={classes.control}>
                         <p>25 cм</p>
                         <p className={classes.activeControl}>30</p>
                         <p>35 cм</p>
                     </div>
-                    <p className={classes.p}>
-                        Колбаса пепперони, бекон, копчёное куриное филе, томаты, сыр, перец халапеньо, томатный соус (в составе соуса есть лук и чеснок). Посыпается укропом.
-                    </p>
+                     : ''
+                     }
+                    { product.specifications ?
                     <div className={classes.additions}>
                         <div className={classes.h2}>Добавки</div>
                         <div className={classes.gridAdds}>
@@ -384,6 +392,7 @@ export default function Product ({match}) {
                             <div className={classes.greenRec}>+</div>
                         </div>
                     </div>
+                    : ''}
                     <div className={classes.Actions}>
                         <div className={classes.h2}>{product.price} руб <span className={classes.discount}>{product.price}0 руб</span></div>
                         <div className={classes.radioGroup}>
@@ -398,7 +407,7 @@ export default function Product ({match}) {
 
                     
                     <span className={classes.action}>
-                      <AddToCart cartStyle={classes.lightBtn} item={product}/>
+                      <AddToCart cartStyle={classes.lightBtn} item={product} />
                     </span>
 
     <p onClick={toggleDetails} className={classes.hideLink}>{details ? 'Скрыть подробную информацию' : 'Показать подробную информацию'}</p>

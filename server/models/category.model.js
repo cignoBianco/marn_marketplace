@@ -20,6 +20,7 @@ const CategorySchema = new mongoose.Schema({
   uuid: {
     type: String,
     trim: true,
+    unique: true
   },
   parentId: {
     type: String,

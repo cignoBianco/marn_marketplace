@@ -4,6 +4,7 @@ const AddressSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: 'Name is required',
+    unique: true
   },
   active: {
     type: Boolean,
@@ -12,6 +13,7 @@ const AddressSchema = new mongoose.Schema({
   uuid: {
     type: String,
     trim: true,
+    unique: true
   },
   cityId: {
     type: String,

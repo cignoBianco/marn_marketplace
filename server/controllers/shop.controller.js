@@ -66,7 +66,7 @@ const shopByID = async (req, res, next, id) => {
     next()
   } catch (err) {
     return res.status('400').json({
-      error: "Could not retrieve shop"
+      error: `Could not retrieve shop ${id} `
     })
   }
 }

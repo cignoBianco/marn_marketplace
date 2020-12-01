@@ -8,6 +8,7 @@ import Grid from '@material-ui/core/Grid'
 import {read} from './api-shop.js'
 import {list} from './../city/api-city.js'
 import Products from './../product/Products'
+import {listProducts} from './../product/api-product.js'
 import {listCategories} from './../category/api-category.js'
 
 import Rating from 'material-ui-rating'
@@ -259,42 +260,11 @@ outline: 'none',
 
 
 export default function Shop({match}) {
+  
   const classes = useStyles()
   const [shop, setShop] = useState('')
   const [products, setProducts] = useState([])
   const [error, setError] = useState('')
-
-  function GetCategories() {
-    const classes = useStyles()
-    const [categories, setCategories] = useState([])
-  
-    const [value, setValue] = React.useState(30);
-  
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
-  
-    useEffect(() => {
-      const abortController = new AbortController()
-      const signal = abortController.signal
-      listCategories(signal, shop.uuid).then((data) => {
-        if (data.error) {
-          console.log(data.error)
-        } else {
-            console.log(data)
-          setCategories(data)
-        }
-      })
-      return function cleanup(){
-        abortController.abort()
-      }
-  
-    }, [])
-    
-    return (
-        categories.map(city => <li>{city['name']}</li>)
-    )
-    }
 
   const [value, setValue] = React.useState(30);
 
@@ -308,6 +278,8 @@ export default function Shop({match}) {
     setValue(newValue);
   };
 
+  
+
   useEffect(() => {
     const abortController = new AbortController()
     const signal = abortController.signal
@@ -318,7 +290,9 @@ export default function Shop({match}) {
       if (data.error) {
         setError(data.error)
       } else {
+        
         setProducts(data)
+        
       }
     })
     read({
@@ -359,17 +333,104 @@ export default function Shop({match}) {
     const logoUrl = shop._id
           ? `/api/shops/logo/${shop._id}?${new Date().getTime()}`
           : '/api/shops/defaultphoto'
-    return (
-     
+
+    const GetCategories = () => {
+      const [categories, setCategories] = useState([])
+    
+      const [value, setValue] = React.useState(30);
+    
+      const handleChange = (event, newValue) => {
+        setValue(newValue);
+      };
+    
+      useEffect(() => {
+        const abortController = new AbortController()
+        const signal = abortController.signal
+        listCategories(signal, match.params.shopId).then((data) => {
+          //console.log(33333)
+          if (!data) {
+            console.log('error')
+          } else {
+              console.log(1, data)
+            setCategories(data)
+          }
+        })
+        return function cleanup(){
+          abortController.abort()
+        }
+    
+      }, [])
+      
+      return (
+          
+            categories.length > 0 ? 
+          categories.map((city, i) => <div className={classes.radioGroup}  key={city['_id']} >
+              <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>
+                {city['name']}
+              </div>
+            </div>)
+          : <>
+            <div className={classes.radioGroup}>
+                <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 1</div>
+            </div>
+
+            <div className={classes.radioGroup}>
+                <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 2</div>
+            </div>
+            <div className={classes.radioGroup}>
+                <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 3</div>
+            </div>
+            <div className={classes.radioGroup}>
+                <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 4</div>
+            </div>
+          </>
+          
+          
+      )
+    }  
+
+    const GetProductsList = () => {
+      const [productsList, setProductsList] = useState([])
+    
+      const [value, setValue] = React.useState(30);
+    
+      const handleChange = (event, newValue) => {
+        setValue(newValue);
+      };
+    
+      useEffect(() => {
+        const abortController = new AbortController()
+        const signal = abortController.signal
+        listProducts(signal, match.params.shopId).then((data) => {
+          console.log("shopID:",match.params.shopId)
+          
+          if (!data) {
+            console.log(666)
+            console.log('error')
+          } else {
+              console.log('pro:', data)
+            setProductsList(data)
+          }
+        })
+        return function cleanup(){
+          abortController.abort()
+        }
+    
+      }, [])
+    return productsList
+    }
+
+      
+    return (    
      <div>
             <div style={{height: 50, marginLeft: '6em'}}>
-                <div style={{width: 223, height: 17, fontSize: 14, marginTop: 50}}>Главная / Реторан / <span className={classes.bold}>Пиццерия</span></div>
+                <div style={{width: 223, height: 17, fontSize: 14, marginTop: 50}}>Главная / {shop.category} / <span className={classes.bold}>{shop.name}</span></div>
             </div>
             
             <div className={classes.hat}>
                 <img src={logo} className={classes.picture} alt="Marketa" />
                 <div>
-                    <h2 style={{fontSize: 32}}>Pizza</h2>
+                    <h2 style={{fontSize: 32}}>{shop.name}</h2>
                     <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', minHeight: 77, margin: '40px 0', marginRight: 60, gridGap: 70}}>
                         <div>
                             <div style={{backgroundImage: `url(${bike})`, width: 34, height: 43, backgroundRepeat: 'no-repeat'}}></div>
@@ -407,7 +468,6 @@ export default function Shop({match}) {
         }}></div>
             <div className={classes.category}>
                     <div className={classes.categories}>
-                        <GetCategories/>
                         <div className={classes.cat}>
                             Информация
                         </div>
@@ -426,35 +486,15 @@ export default function Shop({match}) {
             <div className={classes.container}>
                     <div className={classes.parent}>
                         <div className={classes.filter}>
-                                
-                             
-                        
+                          
              <div className={classes.searchbar}>
                 <img src={Search} alt="Search Icon" className={classes.mg12} />
                 <input className={classes.placeholder} placeholder="Поиск" />
               </div>
-                     
-                   
-                                <div className={classes.radioGroup}>
-                                    <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 1</div>
-                                </div>
-
-                                <div className={classes.radioGroup}>
-                                    <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 2</div>
-                                </div>
-                                <div className={classes.radioGroup}>
-                                    <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 3</div>
-                                </div>
-                                <div className={classes.radioGroup}>
-                                    <div style={{fontSize: 20, color: '#2C2738', fontWeight: 700}}>Меню 4</div>
-                                </div>
-
+                        <GetCategories/> 
                         </div>
-                          <Products products={products} searched={false}/>
-                        
-                        <div></div>
-                        <Pagination count={10} shape="rounded" style={{marginTop: 40, marginBottom: 40, justifySelf: 'center'}} />
-                    </div>
+                          <Products products={GetProductsList()} shopId={match.params.shopId} searched={false}/>
+                         </div>
                 </div>
            
             {

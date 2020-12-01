@@ -5,6 +5,15 @@ import shopCtrl from '../controllers/shop.controller'
 
 const router = express.Router()
 
+router.route('/api/send/products')
+  .get(productCtrl.createProducts)
+
+router.route('/api/send/products/:categoryId')
+  .get(productCtrl.productByCategoryID)
+
+router.route('/api/send/products/shop/:shopId')
+  .get(productCtrl.productByShopID)
+
 router.route('/api/products/by/:shopId')
   .post(authCtrl.requireSignin, shopCtrl.isOwner, productCtrl.create)
   .get(productCtrl.listByShop)
@@ -34,6 +43,8 @@ router.route('/api/product/:shopId/:productId')
   .delete(authCtrl.requireSignin, shopCtrl.isOwner, productCtrl.remove)
 
 router.param('shopId', shopCtrl.shopByID)
+router.param('categoryId', productCtrl.productByCategoryID)
+router.param('shopId', productCtrl.productByShopID)
 router.param('productId', productCtrl.productByID)
 
 export default router

@@ -13,10 +13,11 @@ const cart = {
       if (localStorage.getItem('cart')) {
         cart = JSON.parse(localStorage.getItem('cart'))
       }
+      console.log(item, ' and shop ', item.shopUuid)
       cart.push({
         product: item,
         quantity: 1,
-        shop: item.shop._id
+        shop: item.shopUuid
       })
       localStorage.setItem('cart', JSON.stringify(cart))
       cb()
@@ -35,6 +36,7 @@ const cart = {
   getCart() {
     if (typeof window !== "undefined") {
       if (localStorage.getItem('cart')) {
+       // console.log('gc', localStorage.getItem('cart'))
         return JSON.parse(localStorage.getItem('cart'))
       }
     }

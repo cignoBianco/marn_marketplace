@@ -25,8 +25,9 @@ export default function AddToCart(props) {
   const [redirect, setRedirect] = useState(false)
 
   const addToCart = () => {
+    props.item.shopId = props.shopId
     cart.addItem(props.item, () => {
-      setRedirect({redirect:true})
+    //  setRedirect({redirect:true})
     })
   }
     if (redirect) {
@@ -34,11 +35,11 @@ export default function AddToCart(props) {
       return (<Redirect to={'/cart'}/>)
     }
     return (<span>
-      {props.item.quantity >= 0 ?
+      {props.item.quantity  ?
           <Button className={props.cartStyle}  onClick={addToCart}>Добавить в корзину</Button>
          :
         
-          <DisabledCartIcon  onClick={addToCart} className={props.cartStyle || classes.disabledIconButton}/>
+         <Button className={props.cartStyle}  onClick={addToCart}>Добавить в корзину</Button>
        
         }
       </span>)

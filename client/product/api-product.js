@@ -15,6 +15,21 @@ const create = async (params, credentials, product) => {
     }
 }
 
+const listProducts = async (signal, shopId) => {
+  try {
+
+    let response = await fetch(`/api/send/products/shop/${shopId}`, {
+      method: 'GET',
+      signal: signal
+    })
+    let res = response.json()
+    //console.log(res)
+    return res
+  } catch(err) {
+    console.log(err)
+  }
+}
+
 const read = async (params, signal) => {
   try {
     let response = await fetch('/api/products/' + params.productId, {
@@ -142,6 +157,7 @@ export {
   listLatest,
   listRelated,
   listCategories,
+  listProducts,
   list,
   listAll
 }

@@ -12,9 +12,10 @@ const create = (req, res) => {
     if (err) {
       console.log(err)
     }
-    console.log(JSON.parse(data))
+    console.log(111,JSON.parse(data))
     data = JSON.parse(data)
-    data.forEach(async (item) => {
+    console.log(222, data, data['cities'])
+    data['cities'].forEach(async (item) => {
       let city = new City({uuid: item.id, active: item.active, name: item.name})
       try {
         let result = await city.save()

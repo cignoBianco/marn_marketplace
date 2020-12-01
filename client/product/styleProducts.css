@@ -1,0 +1,16 @@
+ul.pagination {
+    display: flex;
+    width: 93%;
+    justify-content: center;
+
+}
+
+ul.pagintion > li {
+    width: 40px;
+    height: 40px;
+}
+
+ul.pagination li:first-of-type a:first-of-type,
+ul.pagination li:first-of-type a:first-of-type {
+    background-color: rgba(128, 128, 128, 0.137);
+}

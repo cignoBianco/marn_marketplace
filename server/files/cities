@@ -1,1 +1,1 @@
-[{"id":"8b72e116-938b-11e7-ac80-00155dd9fd00","name":"Томск","active":1},{"id":"5caa0f9a-3586-11e8-9fdd-00155dd9fd01","name":"Новосибирск","active":0}]
+{"cities":[{"id":"8b72e116-938b-11e7-ac80-00155dd9fd00","name":"Томск","active":1},{"id":"5caa0f9a-3586-11e8-9fdd-00155dd9fd01","name":"Новосибирск","active":0}]}
