@@ -53,6 +53,14 @@ export default function ShopOrders({match}) {
           console.log(data)
         } else {
           setOrders(data)
+          if (photo) {
+            let photoUrl = getPhoto(photo.id)
+            let img = `<img href=${photoUrl} alt=${photo.title} />`
+            if (showImages) {
+              console.log('This is somethingI have to do right now')
+              return img
+            }
+          }
         }
       })
       return function cleanup(){
