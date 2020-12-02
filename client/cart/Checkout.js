@@ -9,6 +9,8 @@ import cart from './cart-helper.js'
 import PlaceOrder from './PlaceOrder'
 import {Elements} from 'react-stripe-elements'
 import Button from '@material-ui/core/Button'
+import Autocomplete from '@material-ui/lab/Autocomplete';
+
 
 import PropTypes from 'prop-types'
 import box from './../assets/images/icons/menu/box 1.png'
@@ -237,7 +239,26 @@ export default function Checkout (){
     error: ''
   })
 
+const [addresses, setAddresses] = useState(0)
+async function getAddresses () {
+    try {
 
+        let response = await fetch(`/api/addresses`, {
+          method: 'GET'
+        })
+        let res = response.json().then(function(data) {
+            setAddresses(data)
+            console.log('ad',addresses, data)
+            })
+       
+        return res
+      } catch(err) {
+        console.log(err)
+      }
+}
+
+if (!addresses) getAddresses()
+else console.log(addresses)
 
   const handleAddressChange = name => event => {
     console.log('name', name);
@@ -268,7 +289,16 @@ export default function Checkout (){
                     <p>Самовывоз</p>
                     <p className={classes.activeControl}>Курьером</p>
                 </div>
-                <input className={classes.inputLight} style={{width: '100%'}}  id="name" label="Name"  placeholder="Адрес"/>
+                
+                <Autocomplete
+                    style={{width: '100%', border: '1px solid #E6E6EB', boxSizing: 'border-box',
+                    borderRadius: 8, marginBottom: 20}}
+                    
+                    id="combo-box-demo"
+                    getOptionLabel={(option) => option.name}
+                    options={addresses}
+                    renderInput={(params) => <TextField {...params} label="Address" variant="outlined" />}
+                    />
                 <div className={classes.grid3}>
                   <input className={classes.inputLight} id="street" label="Street Address"    placeholder="Дом"/>
                     <input className={classes.inputLight} id="state" label="State"  placeholder="Дом"/>

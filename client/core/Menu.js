@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import auth from './../auth/auth-helper'
+import cart from './../cart/cart-helper.js'
 import {Link, withRouter} from 'react-router-dom'
-
 import Sidebar from './Sidebar.js'
 import ModalSelectCity from './ModalSelectCity.js'
 import Modal1Btn from './Modal1Btn.js'
@@ -146,9 +146,54 @@ function SidebarBtn() {
     )
 };
 
+
+
 function CartBtn() {
   const [cartVisible, setCartVisible] = useState(0);
   const [showDialog, setShowDialog] = useState(0);
+  const [sum, setSum] = useState(changeCartCount())
+  const [currentCount, setCurrentCount] = useState(0);
+  function changeCartCount () {
+    let cartArr = cart.getCart()
+    console.log('tcart', cartArr)
+    let tryUseTutorial = {
+      items: cartArr
+    }
+    let cartArrRes = tryUseTutorial.items.reduce(function(arr, item) {
+      var found = false;
+      console.log('arritem', arr, item)
+  
+      for (var i = 0; i < arr.length; i++) {
+          if (arr[i].product._id === item.product._id) {
+              found = true;
+              arr[i].count++;
+          }
+      }
+      console.log(found, item.count)
+      if (!found && !item.count || item.count && item.count <= 1
+        || !found && item.count && item.count == 1) {
+          item.count = 1;
+          arr.push(item);
+      }
+      if (!found && item.count) {
+          item.count = item.count
+          arr.push(item)
+      }
+  
+      return arr;
+  }, [])
+  let sum = 0;
+  cartArrRes.forEach(element => {
+      console.log('el', element.count, element)
+      sum += element.count;
+  });
+   console.log('menuCart',cartArrRes, sum)
+   return sum
+  }
+  
+  
+  
+
   const classes = useStyles()
     return(
       <div> 
@@ -161,7 +206,7 @@ function CartBtn() {
             <img src={Buy} alt="cart" width={24} height={24}/>
             <span className={classes.cardCircle} >
               <Typography variant="body2" component="p" className={classes.cartCount}>
-                  4
+                  {sum}
               </Typography>
             </span>
           </div>

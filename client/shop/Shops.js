@@ -574,11 +574,13 @@ export default function Shops(){
                           бесплатная доставка от 
                           <span style={{color: '#000'}}> 1000 руб</span>
                       </div>
+                      { something ?
                       <div style={{ width: 80, height: 50}} className={classes.greenBg}>
                           <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
-                              height: 'inherit'}}> 2 по цене 1
+                              height: 'inherit'}}>  по цене 1
                           </p>
                       </div>
+          : ''}
                   </div>
                 </div>
             </div>

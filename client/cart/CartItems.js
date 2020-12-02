@@ -308,49 +308,57 @@ fbetween: {
 export default function CartItems (props) {
   const classes = useStyles()
   console.log('ci 1', cart.getCart())
-  const [cartItems, setCartItems] = useState(cart.getCart().reduce(function(arr, item) {
+  let cartArr = cart.getCart()
+  let tryUseTutorial = {
+    items: cartArr
+  }
+ /* let cartArrRes = tryUseTutorial.items.reduce(function(arr, item) {
+    var found = false;
     console.log('arritem', arr, item)
-    let found = false;
-    console.log('prevarr', arr)
-    if (arr.length > 0 ) {
+
     for (var i = 0; i < arr.length; i++) {
         if (arr[i].product._id === item.product._id) {
             found = true;
-            arr[i].quantity++;
+            arr[i].count++;
         }
     }
 
-    if (!found) {
-      console.log('444', item)
-        item.quantity = 1;
+    if (!found && !item.count || item.count && item.count <= 1
+      || !found && item.count && item.count == 1) {
+        item.count = 1;
         arr.push(item);
-        console.log(arr)
     }
-  }
-    console.log('arr', arr)
+
     return arr;
-}, []))
+}, [])*/
+let cartArrRes = cartArr;
+console.log('cartArrRes',cartArrRes)
+//cart.updateAllCart(cartArrRes)
+  const [cartItems, setCartItems] = useState(cartArrRes)
 
 //console.log("ca", cartItems[0].product, cartItems[0], cartItems)
 console.log('ci props', props)
 console.log('ci 12', cart.getCart())
 
+
   const handleChange = (index, plus = 0) => event => {
     let updatedCartItems = cartItems
-    console.log(updatedCartItems[index]['product'].quantity, updatedCartItems)
-    if(updatedCartItems[index]['product'].quantity <= 0 || updatedCartItems[index]['product'].quantity == NaN || !updatedCartItems[index]['product'].quantity){
-      updatedCartItems[index]['product'].quantity = 1
+    console.log(updatedCartItems[index].count, updatedCartItems)
+    if(updatedCartItems[index].count < 0 || updatedCartItems[index].count == NaN || !updatedCartItems[index].count){
+      updatedCartItems[index].count = 1
     }else{
-      updatedCartItems[index]['product'].quantity = (plus) ? updatedCartItems[index]['product'].quantity + 1 : updatedCartItems[index]['product'].quantity - 1
-      if (updatedCartItems[index]['product'].quantity == 0) updatedCartItems[index]['product'].quantity = 1
+      updatedCartItems[index].count = (plus) ? updatedCartItems[index].count + 1 : updatedCartItems[index].count - 1
+      if (updatedCartItems[index].count == 0) updatedCartItems[index].count = 1
     }
     setCartItems([...updatedCartItems])
-    cart.updateCart(index, event.target.value)
+    //cart.updateCart(index, event.target.value)
+    console.log('upct to ls?', updatedCartItems)
+    cart.updateAllCart(updatedCartItems)
   }
 
   const getTotal = () => {
     return cartItems.reduce((a, b) => {
-        return a + (b.quantity*(b.product.price))
+        return a + (b.count*(b.product.price))
     }, 0)
   }
 
@@ -389,11 +397,11 @@ console.log('ci 12', cart.getCart())
               { i < 1 && item ?
               (<div><div className={classes.greenHat}>
                 <div className={classes.greySquare}>
-                    3
+                    {cartItems.length}
                 </div>
                 <h2><span className={classes.bold}  style={{fontSize: 20}}>{item.shopId} | </span> 2 кг</h2>
                 <div className={classes.greyRec}>
-                    <span className={classes.bold}>1800 руб </span>
+                    <span className={classes.bold}>{getTotal()} руб </span>
                 </div>
             </div>
             </div>) : ''
@@ -408,14 +416,14 @@ console.log('ci 12', cart.getCart())
                       </Link>
                         <div style={{maxWidth: 185, display: 'flex', justifyContent: 'space-around', height: '100%', alignItems: 'center'}}>
                             <p className={classes.fs22} onClick={handleChange(i)}>—</p>
-                            <p className={classes.fs22}>{item.quantity > 0 ? item.quantity : 1}</p>
+                            <p className={classes.fs22}>{item.count > 0 ? item.count : item.count}</p>
                             <p className={classes.fs22} onClick={handleChange(i, 1)}>+</p>
                         </div>
                     </div>
                     <div style={{display: 'flex', flexDirection: 'column', height: 90, justifyContent: 'space-between', alignItems: 'flex-end', maxWidth: 147}}>
                       <CloseIcon onClick={removeItem(i)}/>
                         <div style={{}}>
-                          <span>{item.product.price * item.quantity}</span> руб 
+                          <span>{item.product.price * item.count}</span> руб 
                         </div>
                     </div>
                 </div>
@@ -458,7 +466,7 @@ console.log('ci 12', cart.getCart())
           </div>
           <div className={classes.fbetween} style={{marginBottom: 14, paddingLeft: 24}}>
             <div className={classes.fs16}>Итого</div>
-            <div className={classes.fs16}>1000 руб</div>
+            <div className={classes.fs16}>{getTotal()} руб</div>
           </div>
         </div> : ''
             }

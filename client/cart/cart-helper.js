@@ -23,20 +23,25 @@ const cart = {
       cb()
     }
   },
-  updateCart(itemIndex, quantity) {
+  updateCart(itemIndex, count) {
     let cart = []
     if (typeof window !== "undefined") {
       if (localStorage.getItem('cart')) {
         cart = JSON.parse(localStorage.getItem('cart'))
       }
-      cart[itemIndex].quantity = quantity
+      cart[itemIndex].count = count
       localStorage.setItem('cart', JSON.stringify(cart))
     }
+  },
+  updateAllCart(cart) {
+    console.log('newCart',cart)
+    localStorage.setItem('cart', JSON.stringify(cart))
+
   },
   getCart() {
     if (typeof window !== "undefined") {
       if (localStorage.getItem('cart')) {
-       // console.log('gc', localStorage.getItem('cart'))
+        //console.log('gc', localStorage.getItem('cart'))
         return JSON.parse(localStorage.getItem('cart'))
       }
     }

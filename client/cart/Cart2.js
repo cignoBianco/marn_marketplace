@@ -8,6 +8,7 @@ import flower from './../assets/images/icons/menu/flower 1.png'
 import CloseIcon from '@material-ui/icons/Close';
 import Link from "@material-ui/core/Link"
 import pizza from './../assets/images/pizza.png'
+import cart from './cart-helper.js'
 
 const useStyles = makeStyles(theme => ({
     container: {
@@ -133,6 +134,46 @@ const useStyles = makeStyles(theme => ({
 export default function Cart2({hide}) {
     //const [sidebarVisible, setSidebarVisible] = useState(props.0);
     const classes = useStyles()
+
+    const [currentCount, setCurrentCount] = useState(0);
+    function changeCartCount () {
+      let cartArr = cart.getCart()
+      console.log('tcart', cartArr)
+      let tryUseTutorial = {
+        items: cartArr
+      }
+      let cartArrRes = tryUseTutorial.items.reduce(function(arr, item) {
+        var found = false;
+        console.log('arritem', arr, item)
+    
+        for (var i = 0; i < arr.length; i++) {
+            if (arr[i].product._id === item.product._id) {
+                found = true;
+                arr[i].count++;
+            }
+        }
+        console.log(found, item.count)
+        if (!found && !item.count || item.count && item.count <= 1
+          || !found && item.count && item.count == 1) {
+            item.count = 1;
+            arr.push(item);
+        }
+        if (!found && item.count) {
+            item.count = item.count
+            arr.push(item)
+        }
+    
+        return arr;
+    }, [])
+    let sum = 0;
+    cartArrRes.forEach(element => {
+        console.log('el', element.count, element)
+        sum += element.count;
+    });
+     console.log('menuCart',cartArrRes, sum)
+    }
+    changeCartCount()
+
     return (
         <div className={classes.container}>
             <div style={{display: 'flex', justifyContent: 'space-between', height: 60, alignItems: 'center'}}>

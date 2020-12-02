@@ -27,3 +27,19 @@
     width: 0px;  /* Remove scrollbar space */
     background: transparent;  /* Optional: just make scrollbar invisible */
 }
+
+body .MuiOutlinedInput-notchedOutline {
+    border-color: #00ffff00;
+}
+
+body .MuiAutocomplete-hasPopupIcon.MuiAutocomplete-hasClearIcon .MuiAutocomplete-inputRoot[class*="MuiOutlinedInput-root"] {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+body .MuiInputLabel-outlined {
+    top: -.5em;
+    padding-left: 1.9em;
+    font-size: 14px;
+    font-family: 'Gilroy-light', 'Gilroy', 'Arial', monospace
+}
