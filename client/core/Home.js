@@ -14,7 +14,9 @@ import phonePic from './../assets/images/phone.png'
 import google from './../assets/images/icons/google play.png'
 import apple from './../assets/images/icons/apple.png'
 
-const useStyles = makeStyles(theme => ({
+//import {getHostname} from './../user/api-user.js'
+
+const useStyles = makeStyles(theme => ({  
   grid: {
     display: 'grid',
     gridTemplateRows: '1fr 1fr',
@@ -193,6 +195,7 @@ cardStatusDiv: {
     boxShadow: '0px 8px 16px rgba(52, 60, 68, 0.1)',
     height: 50,
     width: 92,
+    backgroundColor: '#ffffff50'
 },
 cardStatus: {
     fontWeight: 500,
@@ -245,6 +248,7 @@ export default function Home() {
   const [suggestionTitle, setSuggestionTitle] = useState("Latest Products")
   const [categories, setCategories] = useState([])
   const [suggestions, setSuggestions] = useState([])
+  const smth = false
 
 const [shops, setShops] = useState([])
 const [value, setValue] = React.useState(30);
@@ -252,6 +256,16 @@ const [value, setValue] = React.useState(30);
 const handleChange = (event, newValue) => {
   setValue(newValue);
 };
+
+async () => {try {
+    let response = await fetch('/api/auth/sms', {
+      method: 'GET'
+    })
+    console.log(7, response.json())
+  } catch(err) {
+    console.log(err)
+  }}
+console.log('ghn' )
 
 useEffect(() => {
   const abortController = new AbortController()
@@ -340,7 +354,7 @@ useEffect(() => {
                     </div>
                 </div>
               </Link>
-              <div style={{height: 100, paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
+              <div style={{height: 100, alignContent: 'space-evenly', paddingLeft: 20, paddingTop: 20, display: 'grid', alignItems: 'end'}}>
                 <Link to={"/shops/"+shop._id}>
                   <div style={{fontSize: 18, fontWeight: 400, textShadow: '0 0 black'}}>{shop.name}</div>
                 </Link>
@@ -348,12 +362,14 @@ useEffect(() => {
                       <div style={{ fontWeight: 400, fontSize: 12, width: 135, color: '#797979'}}>
                           бесплатная доставка от 
                           <span style={{color: '#000'}}> 1000 руб</span>
-                      </div>
+                      </div> 
+                      { smth ?
                       <div style={{ width: 80, height: 50}} className={classes.greenBg}>
                           <p style={{ display: 'flex', justifyContent: 'center', alignItems: 'center',
                               height: 'inherit'}}> 2 по цене 1
                           </p>
                       </div>
+          : ''}
                   </div>
                 </div>
             </div>

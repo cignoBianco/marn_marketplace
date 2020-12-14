@@ -1,4 +1,17 @@
 
+const getHostname = async () => {
+//  return 4
+try {
+  let response = await fetch('/api/auth/sms', {
+    method: 'GET'
+  })
+  return await response.json()
+} catch(err) {
+  console.log(err)
+}
+ console.log(444)
+}
+
 const create = async (user) => {
   try {
       let response = await fetch('/api/users/', {
@@ -101,5 +114,6 @@ export {
   read,
   update,
   remove,
-  stripeUpdate
+  stripeUpdate,
+  getHostname
 }

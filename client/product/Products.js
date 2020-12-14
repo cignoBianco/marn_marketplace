@@ -442,7 +442,7 @@ outline: 'none',
 // <AddToCart item={product}/>
 const ima = './../../public/api/reduction/image/120b46d3-5f32-11e8-8f7d-00155dd9fd01.jpg'
 export default function Products(props){
-  
+
   const classes = useStyles()
   const shopId = props.shopId
 

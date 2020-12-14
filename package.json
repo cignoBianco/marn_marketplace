@@ -58,6 +58,7 @@
     "formidable": "1.2.2",
     "fs": "0.0.1-security",
     "helmet": "3.22.0",
+    "ip": "^1.1.5",
     "jsonwebtoken": "8.5.1",
     "lodash": "^4.17.19",
     "material-ui-rating": "^4.2.0",

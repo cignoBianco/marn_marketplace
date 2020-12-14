@@ -5,6 +5,7 @@ import Users from './user/Users'
 import Signup from './user/Signup'
 import Signin from './auth/Signin'
 import Signin2 from './auth/Signin2'
+import Sms from './auth/Sms'
 import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
@@ -76,6 +77,7 @@ const MainRouter = () => {
         <Route path="/checkout" component={Checkout} />
         <Route path="/cb" component={Cb} />
         <Route path="/success" component={Success} />
+        <Route path="/auth/sms" component={Sms} />
         <Route path="/" component={e404} />
       </Switch>
       <Footer/>
